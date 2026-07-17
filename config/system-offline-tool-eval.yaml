@@ -1,0 +1,71 @@
+# Offline tool_eval for RHDH MCP.
+# No live agent — scores pre-filled tool_calls only.
+# lightspeed-eval still initializes an LLM client at startup; set OPENAI_API_KEY
+# (unused by custom:tool_eval if you only score tool matches).
+core:
+  max_threads: 1
+  cache_enabled: false
+
+llm_pool:
+  defaults:
+    timeout: 60
+    num_retries: 1
+    parameters:
+      temperature: 0.0
+      max_completion_tokens: 512
+  models:
+    judge_placeholder:
+      provider: openai
+      model: gpt-4o-mini
+
+judge_panel:
+  judges:
+    - judge_placeholder
+
+agents:
+  enabled: false
+
+metrics_metadata:
+  turn_level:
+    custom:tool_eval:
+      description: Binary validation of tool calls (exact/regex matching)
+      default: true
+      # ordered: require tools in expected sequence for multi-step tasks
+      ordered: true
+      # full_match false: allow extra helper calls beyond the expected set
+      full_match: false
+
+storage:
+  - type: file
+    # Relative to the process cwd — run lightspeed-eval from this repo root,
+    # or pass an absolute path if you invoke it from elsewhere.
+    output_dir: evaluation-result/offline-catalog-smoke
+    base_filename: evaluation
+    enabled_outputs:
+      - csv
+      - json
+      - txt
+    csv_columns:
+      - conversation_group_id
+      - turn_id
+      - metric_identifier
+      - score
+      - threshold
+      - result
+      - reason
+      - query
+
+visualization:
+  figsize:
+    - 10
+    - 6
+  dpi: 150
+  enabled_graphs:
+    - pass_rates
+    - status_breakdown
+
+logging:
+  source_level: INFO
+  package_level: WARNING
+  log_format: '%(asctime)s - %(levelname)s - %(message)s'
+  show_timestamps: true

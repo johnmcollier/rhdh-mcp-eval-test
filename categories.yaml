@@ -1,0 +1,7 @@
+# Topic groups for MCP evaluation tasks (analogous to Lightspeed categories_rhdh.yaml)
+catalog: software catalog queries — entities, kinds, filters, owners, tags
+scaffolder-read: list/fetch/validate templates and scaffolder tasks (non-destructive)
+scaffolder-write: execute-template and other destructive scaffolder actions (sandbox only)
+techdocs: fetch, coverage, and content retrieval for TechDocs
+multi_step: tasks that require two or more MCP tools in sequence
+negative: ambiguous prompts, wrong-tool traps, empty-result handling

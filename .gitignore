@@ -1,0 +1,28 @@
+# Local / generated
+.caches/
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+
+# Secrets — never commit
+*.pem
+*-sa.json
+*credentials*.json
+openai-token*
+mcp.token
+**/application_default_credentials.json
+
+# Generated local traces (may contain catalog dumps / LLM text)
+dataset/*.with-traces.yaml
+dataset/eval_data.with-traces.yaml
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Optional local scratch (committed results go under evaluation-result/)
+/tmp/
+*.log

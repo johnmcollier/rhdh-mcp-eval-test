@@ -1,0 +1,4 @@
+conversation_group_id,turn_id,metric_identifier,score,threshold,result,reason,query
+catalog-filter-kind-api,filter_api,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls match expected structure and arguments (full, ordered)",Show me all APIs in the catalog
+catalog-list-all,list_all,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls match expected structure and arguments (full, ordered)",Retrieve all entries in the Backstage Catalog
+catalog-wrong-tool,wrong_tool,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls match expected structure and arguments (full, ordered)",List all Components in the software catalog

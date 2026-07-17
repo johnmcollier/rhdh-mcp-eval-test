@@ -1,0 +1,106 @@
+LSC Evaluation Framework - Summary Report
+==================================================
+
+Generated: 2026-07-17 22:38:50 UTC
+Total Evaluations: 3
+
+Overall Statistics:
+--------------------
+Pass: 3 (100.0%)
+Fail: 0 (0.0%)
+Error: 0 (0.0%)
+Skipped: 0 (0.0%)
+
+Token Usage (Judge LLM):
+--------------------
+Input Tokens: 0
+Output Tokens: 0
+Total Tokens: 0
+
+Token Usage (Embeddings):
+--------------------
+Input Tokens: 0
+
+Token Usage (API Calls):
+--------------------
+Input Tokens: 0
+Output Tokens: 0
+Total Tokens: 0
+
+By Metric:
+---------
+custom:tool_eval:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+By Conversation:
+---------------
+catalog-filter-kind-api:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-list-all:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-wrong-tool:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+By Tag:
+------
+catalog:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+Configuration Parameters:
+-------------------------
+
+Llm:
+  Provider: openai
+  Model: gpt-4o-mini
+  Ssl Verify: True
+  Ssl Cert File: None
+  Temperature: 0.0
+  Max Tokens: 512
+  Timeout: 300
+  Num Retries: 3
+  Cache Enabled: False
+  Parameters: {'temperature': 0.0, 'max_completion_tokens': 512}
+
+Embedding:
+  Provider: openai
+  Model: text-embedding-3-small
+  Provider Kwargs: None
+  Cache Enabled: False
+
+Api:
+  Api Base: http://localhost:8080
+  Version: v1
+  Endpoint Type: streaming
+  Timeout: 300
+  Provider: None
+  Model: None
+  No Tools: None
+  System Prompt: None
+  Extra Request Params: None
+  Cache Enabled: False
+  Num Retries: 3
+  Enabled: True
+  Mcp Headers: None
+

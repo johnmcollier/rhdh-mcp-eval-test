@@ -14,6 +14,7 @@ evaluation-result/
 | Campaign | Metric | Result |
 | --- | --- | --- |
 | `rhidp-14578-tool-eval` | offline `custom:tool_eval` | 21/21 PASS |
+| `rhidp-14578-vertex-judge` | `tool_eval` + Vertex Gemini `intent_eval` | 42/42 PASS |
 | `offline-catalog-smoke` | early 3-turn smoke | historical |
 
 Review reports before publishing if they embed sensitive catalog text.

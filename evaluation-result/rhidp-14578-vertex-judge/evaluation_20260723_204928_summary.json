@@ -1,0 +1,1695 @@
+{
+  "timestamp": "2026-07-23T20:49:26.181289+00:00",
+  "total_evaluations": 42,
+  "summary_stats": {
+    "overall": {
+      "TOTAL": 42,
+      "PASS": 42,
+      "FAIL": 0,
+      "ERROR": 0,
+      "SKIPPED": 0,
+      "pass_rate": 100.0,
+      "fail_rate": 0.0,
+      "error_rate": 0.0,
+      "skipped_rate": 0.0,
+      "total_judge_llm_input_tokens": 0,
+      "total_judge_llm_output_tokens": 0,
+      "total_judge_llm_tokens": 0,
+      "total_embedding_tokens": 0,
+      "total_api_input_tokens": 0,
+      "total_api_output_tokens": 0,
+      "total_api_tokens": 0,
+      "total_tokens": 0
+    },
+    "by_metric": {
+      "custom:intent_eval": {
+        "pass": 21,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 21,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "custom:tool_eval": {
+        "pass": 21,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 21,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      }
+    },
+    "by_conversation": {
+      "catalog-filter-kind-and-type": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-kind-api": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-kind-component": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-kind-resource": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-owner": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-tags": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-get-entity": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-list-all": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-model-description": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "multi-owner-components-then-coverage": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "multi-techdocs-then-content": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "negative-empty-filter": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "negative-no-execute-template": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "scaffolder-list-actions": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "scaffolder-list-tasks": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "scaffolder-list-templates": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "scaffolder-write-validate-dry-run": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "techdocs-coverage": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "techdocs-coverage-by-owner": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "techdocs-fetch-components": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "techdocs-list": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      }
+    },
+    "by_tag": {
+      "catalog": {
+        "pass": 18,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 18,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "multi_step": {
+        "pass": 4,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 4,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "negative": {
+        "pass": 4,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 4,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "scaffolder-read": {
+        "pass": 6,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 6,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "scaffolder-write": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 2,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "techdocs": {
+        "pass": 8,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      }
+    }
+  },
+  "configuration": {
+    "llm": {
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "ssl_verify": true,
+      "ssl_cert_file": null,
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "timeout": 300,
+      "num_retries": 3,
+      "cache_enabled": true,
+      "parameters": {
+        "temperature": 0.0,
+        "max_completion_tokens": 512
+      }
+    },
+    "embedding": {
+      "provider": "huggingface",
+      "model": "sentence-transformers/all-mpnet-base-v2",
+      "provider_kwargs": {
+        "model_kwargs": {
+          "device": "cpu"
+        }
+      },
+      "cache_enabled": true
+    },
+    "api": {
+      "api_base": "http://localhost:8080",
+      "version": "v1",
+      "endpoint_type": "streaming",
+      "timeout": 300,
+      "provider": null,
+      "model": null,
+      "no_tools": null,
+      "system_prompt": null,
+      "extra_request_params": null,
+      "cache_enabled": true,
+      "num_retries": 3,
+      "enabled": true,
+      "mcp_headers": null
+    }
+  },
+  "results": [
+    {
+      "conversation_group_id": "catalog-list-all",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "list_all",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 0.00028454200946725905,
+      "evaluation_latency": 0.00028454200946725905,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-list-all",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "list_all",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.01806970901088789,
+      "evaluation_latency": 0.01806970901088789,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"list or summarize catalog entities using a catalog query tool\". The response directly fulfills this by providing a list of catalog entries (components, groups, resources, APIs) with their descriptions and other relevant details. Although it states it's a \"subset,\" it is still performing the action of listing catalog entities, which aligns perfectly with the \"list or summarize\" part of the expected intent. The format and content are exactly what one would expect as output from a catalog query tool.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-api",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_api",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 0.00036341598024591804,
+      "evaluation_latency": 0.00036341598024591804,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-api",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_api",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.018509167013689876,
+      "evaluation_latency": 0.018509167013689876,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The question \"Show me all APIs in the catalog\" directly asks for a list of APIs. The expected intent is \"list APIs from the catalog\". The response provides a clear, numbered list of 8 APIs, each with relevant details (description, type, owner, lifecycle, tags). This perfectly matches the expected intent of listing APIs from a catalog.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-component",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_component",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 8.212498505599797e-05,
+      "evaluation_latency": 8.212498505599797e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-component",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_component",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0011943340068683028,
+      "evaluation_latency": 0.0011943340068683028,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The user's question, \"List all Components in the software catalog,\" clearly asks for a comprehensive list of components. The response directly addresses this by providing",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-resource",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_resource",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 5.400000372901559e-05,
+      "evaluation_latency": 5.400000372901559e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-resource",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_resource",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0016710420022718608,
+      "evaluation_latency": 0.0016710420022718608,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"list Resources from the catalog via a filtered catalog query\". The response directly addresses the question \"What Resources are registered in the catalog?\" by providing a detailed list of several resources, including their names, kinds, types, descriptions, owners, and tags. This output perfectly aligns with the action of listing resources from a catalog, which would be the result of such a query. The response's purpose is clearly to provide the requested list of resources.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-owner",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_owner",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 6.379198748618364e-05,
+      "evaluation_latency": 6.379198748618364e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-owner",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_owner",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.001908959005959332,
+      "evaluation_latency": 0.001908959005959332,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"find catalog entities owned by payments-team\". The response directly addresses this by stating \"Here are the catalog entities owned by the payments-team:\" and then providing a detailed list of such entities. The response's purpose is clearly to present the requested information, which perfectly aligns with the expected intent.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-tags",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_tags",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 4.849999095313251e-05,
+      "evaluation_latency": 4.849999095313251e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-tags",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_tags",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0012054579856339842,
+      "evaluation_latency": 0.0012054579856339842,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"find catalog entities tagged with payments\". The response successfully identifies and presents three catalog entities, all of which explicitly include \"payments\" in their list of tags. This directly fulfills the stated intent.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-and-type",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_kind_type",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 0.00011304099461995065,
+      "evaluation_latency": 0.00011304099461995065,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-and-type",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_kind_type",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0010124589898623526,
+      "evaluation_latency": 0.0010124589898623526,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"find Components of type service in the catalog\". The response directly addresses this by stating \"Here are the Components of type \"service\" found in the catalog:\" and then proceeds to list several components (APIs) that fit the description of \"service\" type components, along with their details. This perfectly aligns with the user's request.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-get-entity",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "get_entity",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 6.379198748618364e-05,
+      "evaluation_latency": 6.379198748618364e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 2 extra in response: [catalog.get-catalog-entity, catalog.get-catalog-entity] (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-get-entity",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "get_entity",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0014656250132247806,
+      "evaluation_latency": 0.0014656250132247806,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"retrieve the consent-management-api catalog entity\". The response successfully retrieves and presents the details for all catalog entities named \"consent-management-api\", specifically a Component and an API, in a structured JSON format. This directly fulfills the user's request.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-model-description",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "model_description",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.1333020413294435e-05,
+      "evaluation_latency": 2.1333020413294435e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-model-description",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "model_description",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0012793329951819032,
+      "evaluation_latency": 0.0012793329951819032,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The response directly addresses both parts of the question: \"Describe the catalog model\" and \"what entity kinds are registered.\" It provides an overview of the catalog model's key concepts (entities, locations, metadata, relationships) and then explicitly lists and describes each of the registered entity kinds in Backstage. The structure and content perfectly align with the expected intent.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-coverage",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "coverage",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.0292005501687527e-05,
+      "evaluation_latency": 2.0292005501687527e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-coverage",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "coverage",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.00048824999248608947,
+      "evaluation_latency": 0.00048824999248608947,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"report TechDocs documentation coverage across the catalog\". The response directly addresses this by stating the current coverage percentage (0%) and providing supporting details (0 out of 39 entities have documentation). This clearly fulfills the reporting purpose described in the expected intent.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-list",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "fetch_techdocs",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.0957988454028964e-05,
+      "evaluation_latency": 2.0957988454028964e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-list",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "fetch_techdocs",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.001839042000938207,
+      "evaluation_latency": 0.001839042000938207,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"report which entities have TechDocs available\". The response directly addresses this by reporting that \"no entities\" have TechDocs available. While the answer is negative (there are none), it still fulfills the reporting purpose by providing the current status regarding the availability of TechDocs for entities. It is a direct and complete answer to the question, aligning perfectly with the intent to report.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-coverage-by-owner",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "coverage_owner",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 6.399999256245792e-05,
+      "evaluation_latency": 6.399999256245792e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-coverage-by-owner",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "coverage_owner",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0013129579892847687,
+      "evaluation_latency": 0.0013129579892847687,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"report TechDocs coverage for security-team owned entities\". The response directly addresses this by stating the findings of an \"analysis of TechDocs coverage for entities owned by the security-team\". It then reports the specific numbers (0 entities, 0% coverage). This perfectly fulfills the reporting purpose for the specified scope.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-list-templates",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "fetch_templates",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.0334002329036593e-05,
+      "evaluation_latency": 2.0334002329036593e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-list-templates",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "fetch_templates",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0006082500040065497,
+      "evaluation_latency": 0.0006082500040065497,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"list available software templates\". While the response doesn't provide a traditional list of items, it directly addresses the availability of templates. By stating \"There are currently no software templates available,\" it effectively provides an empty list or confirms the absence of any items that would otherwise be listed. This directly fulfills the user's request for information about available templates, even if the answer is that none exist. The intent of informing the user about the templates' availability is met.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-fetch-components",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "fetch_components",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.2249994799494743e-05,
+      "evaluation_latency": 2.2249994799494743e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-fetch-components",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "fetch_components",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0018081250018440187,
+      "evaluation_latency": 0.0018081250018440187,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"list TechDocs for Component entities\". The response, \"There are currently no TechDocs available for Component entities,\" directly addresses this intent by providing the requested information. While it doesn't provide a *list of items*, it provides the most accurate and complete \"list\" possible in this scenario, which is an empty one. It fulfills the purpose of informing the user about the availability of TechDocs for Component entities.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-list-tasks",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "list_tasks",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 5.599998985417187e-05,
+      "evaluation_latency": 5.599998985417187e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Alternative 4 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-list-tasks",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "list_tasks",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.000577333994442597,
+      "evaluation_latency": 0.000577333994442597,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"list recent scaffolder tasks\". The response, \"There are currently no recent scaffolder tasks available,\" directly addresses this intent by providing the result of checking for such tasks. While it doesn't provide a *list of items*, it provides a *list of zero items*, which is a valid and complete fulfillment of the request to list. It's not refusing, asking for clarification, or providing instructions; it's directly attempting to achieve the listing purpose.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-write-validate-dry-run",
+      "tag": [
+        "scaffolder-write"
+      ],
+      "turn_id": "validate_minimal",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 6.370799383148551e-05,
+      "evaluation_latency": 6.370799383148551e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Alternative 2 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-write-validate-dry-run",
+      "tag": [
+        "scaffolder-write"
+      ],
+      "turn_id": "validate_minimal",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0006333749915938824,
+      "evaluation_latency": 0.0006333749915938824,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The response explicitly states that \"the scaffolder template validation was successful\" and provides \"details from the dry-run\". It includes an \"Execution Log\" that clearly indicates \"Running debug:log in dry-run mode\", confirming that no real scaffolder task was executed. The overall content and language of the response directly address and fulfill the expected intent of dry-running/validating the template without actual execution.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-list-actions",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "list_actions",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.5042012566700578e-05,
+      "evaluation_latency": 2.5042012566700578e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 1 extra in response: [scaffolder.list-scaffolder-actions] (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-list-actions",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "list_actions",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0025921670021489263,
+      "evaluation_latency": 0.0025921670021489263,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The response directly addresses the expected intent by listing specific Scaffolder actions (`catalog:fetch`, `catalog:get-catalog-entity`, etc.) and providing details for each, such as their ID, description, input schema, and output schema. This perfectly matches the request to \"list all installed Scaffolder actions\".",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "multi-owner-components-then-coverage",
+      "tag": [
+        "multi_step"
+      ],
+      "turn_id": "components_then_coverage",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 3.0499999411404133e-05,
+      "evaluation_latency": 3.0499999411404133e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 2/2 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "multi-owner-components-then-coverage",
+      "tag": [
+        "multi_step"
+      ],
+      "turn_id": "components_then_coverage",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0006076249992474914,
+      "evaluation_latency": 0.0006076249992474914,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The response directly addresses both parts of the expected intent. It first attempts to list components owned by the payments-team, and finding none, it states that fact. Then, it proceeds to analyze the TechDocs coverage for those (non-existent) components, concluding with a 0% coverage, which is a valid analysis result for an empty set of components. The response fully fulfills the purpose of the question, even with a null result.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "multi-techdocs-then-content",
+      "tag": [
+        "multi_step"
+      ],
+      "turn_id": "fetch_then_retrieve",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.6291992980986834e-05,
+      "evaluation_latency": 2.6291992980986834e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Alternative 2 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 1 extra in response: [techdocs-mcp-extras.analyze-techdocs-coverage] (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "multi-techdocs-then-content",
+      "tag": [
+        "multi_step"
+      ],
+      "turn_id": "fetch_then_retrieve",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0021345420100260526,
+      "evaluation_latency": 0.0021345420100260526,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"find TechDocs entities and attempt to retrieve documentation content when available.\" The response explicitly states, \"It appears that there are currently no entities with TechDocs available in the system.\" This indicates that the system *did* perform the first part of the intent (finding TechDocs entities). Since no entities were found, the condition \"when available\" for retrieving content was not met, and the response correctly follows up by stating, \"Therefore, I am unable to retrieve the content of any documentation home page.\" The response accurately reflects the outcome of attempting to fulfill the expected intent, even if the outcome is a negative one (no entities found). It demonstrates that the system understood and tried to execute the requested task.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "negative-no-execute-template",
+      "tag": [
+        "negative"
+      ],
+      "turn_id": "inspect_only",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.500001573935151e-05,
+      "evaluation_latency": 2.500001573935151e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "negative-no-execute-template",
+      "tag": [
+        "negative"
+      ],
+      "turn_id": "inspect_only",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0014267080114223063,
+      "evaluation_latency": 0.0014267080114223063,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"inspect templates only without creating or executing a scaffolder task.\" The response directly addresses the \"inspect templates\" part of the request by stating the current status of available templates. It also implicitly fulfills the \"without creating or executing anything\" constraint, as it merely provides information and does not perform any action. The response's intent is to inform the user about the availability (or lack thereof) of templates, which aligns with the user's desire to inspect them.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "negative-empty-filter",
+      "tag": [
+        "negative"
+      ],
+      "turn_id": "empty_filter",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 8.091700146906078e-05,
+      "evaluation_latency": 8.091700146906078e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "negative-empty-filter",
+      "tag": [
+        "negative"
+      ],
+      "turn_id": "empty_filter",
+      "metric_identifier": "custom:intent_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": 1.0,
+      "execution_time": 0.0009455830149818212,
+      "evaluation_latency": 0.0009455830149818212,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_gemini_25_flash",
+          "score": 1.0,
+          "reason": "The expected intent is to \"query the catalog with an unlikely filter and report empty or no matching results.\" The question itself provides the \"unlikely filter\" (\"definitely-does-not-exist-xyz\"). The response directly addresses this query by stating, \"There are no catalog Components of type 'definitely-does-not-exist-xyz' in the Backstage catalog,\" which is a clear report of empty or no matching results. Therefore, the response perfectly aligns with the expected intent.",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    }
+  ]
+}

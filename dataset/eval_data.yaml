@@ -3,7 +3,8 @@
 # Fixture: mcp-integrations demo catalog (payments-team, security-team, etc.).
 # Template kind count is 0 → execute-template skipped; write path uses dry-run validate.
 # TechDocs may be empty locally; multi-step retrieve is optional when fetch is empty.
-# tool_calls filled from live OpenAI → MCP traces (gpt-4o-mini).
+# tool_calls + response filled from live OpenAI → MCP traces (gpt-4o-mini).
+# expected_intent supports Vertex Gemini custom:intent_eval judging.
 
 - conversation_group_id: catalog-list-all
   description: List catalog entities with no filters
@@ -17,6 +18,30 @@
     tool_calls:
     - - tool_name: software-catalog-mcp-extras.query-catalog-entities
         arguments: {}
+    response: "Here are some entries from the Backstage Catalog:\n\n1. **Group: event-team**\n\
+      \   - Description: Owns event systems and webhooks\n\n2. **Component: standing-orders-api**\n\
+      \   - Description: API for managing recurring payments and standing orders.\n\
+      \   - Owner: payments-team\n   - Lifecycle: production\n   - Depends On: beneficiary-management-api,\
+      \ consent-management-api\n\n3. **Group: accounts-team**\n   - Description: Manages\
+      \ account-related services and data\n\n4. **Component: account-access-api**\n\
+      \   - Description: API that provides authorized third-party providers access\
+      \ to customer account information.\n   - Owner: security-team\n   - Lifecycle:\
+      \ production\n   - Depends On: beneficiary-management-api, consent-management-api\n\
+      \n5. **Resource: payment-events-topic**\n   - Description: Pub/Sub topic for\
+      \ payment-related events and notifications\n   - Owner: payments-team\n\n6.\
+      \ **Group: security-team**\n   - Description: Responsible for all things SecOps\n\
+      \n7. **Component: balance-check-api**\n   - Description: API for real-time account\
+      \ balance inquiries and balance history.\n   - Owner: accounts-team\n   - Lifecycle:\
+      \ production\n   - Depends On: consent-management-api\n\n8. **Component: beneficiary-management-api**\n\
+      \   - Description: API for managing trusted payees and beneficiaries.\n   -\
+      \ Owner: payments-team\n   - Lifecycle: production\n   - Depends On: consent-management-api\n\
+      \n9. **API: transaction-history-api**\n   - Description: API for retrieving\
+      \ and filtering customer transaction history and statements\n   - Owner: accounts-team\n\
+      \   - Lifecycle: production\n\n10. **Resource: transaction-store**\n    - Description:\
+      \ BigTable database for storing transaction history and statements\n    - Owner:\
+      \ accounts-team\n\nThis is just a subset of the entries. If you need more details\
+      \ or specific entries, please let me know!"
+    expected_intent: list or summarize catalog entities using a catalog query tool
 - conversation_group_id: catalog-filter-kind-api
   description: Filter catalog by kind API
   tag: catalog
@@ -31,6 +56,33 @@
     - - tool_name: software-catalog-mcp-extras.query-catalog-entities
         arguments:
           kind: API
+    response: "Here are all the APIs in the catalog:\n\n1. **Transaction History API**\n\
+      \   - **Description**: API for retrieving and filtering customer transaction\
+      \ history and statements\n   - **Type**: OpenAPI\n   - **Owner**: Accounts Team\n\
+      \   - **Lifecycle**: Production\n\n2. **Webhook Notifications API**\n   - **Description**:\
+      \ API to set up webhook notifications for payment and transaction events\n \
+      \  - **Type**: OpenAPI\n   - **Owner**: Event Team\n   - **Lifecycle**: Production\n\
+      \   - **Tags**: notifications, real-time\n\n3. **Account Access API**\n   -\
+      \ **Description**: FDX Compliant API to retrieve account details for authorized\
+      \ third-party providers (TPPs)\n   - **Type**: OpenAPI\n   - **Owner**: Open\
+      \ Banking Team\n   - **Lifecycle**: Production\n   - **Tags**: ais, accounts,\
+      \ banking, fdx\n\n4. **Beneficiary Management API**\n   - **Description**: API\
+      \ for managing trusted payees and beneficiaries\n   - **Type**: OpenAPI\n  \
+      \ - **Owner**: Payments Team\n   - **Lifecycle**: Production\n   - **Tags**:\
+      \ payments, beneficiaries\n\n5. **Payment Initiation API**\n   - **Description**:\
+      \ API to initiate payments from customer accounts\n   - **Type**: OpenAPI\n\
+      \   - **Owner**: Payments Team\n   - **Lifecycle**: Production\n   - **Tags**:\
+      \ pis, payments\n\n6. **Balance Check API**\n   - **Description**: API for real-time\
+      \ account balance inquiries and balance history\n   - **Type**: OpenAPI\n  \
+      \ - **Owner**: Accounts Team\n   - **Lifecycle**: Production\n\n7. **Consent\
+      \ Management API**\n   - **Description**: API to manage user consent for data\
+      \ access\n   - **Type**: OpenAPI\n   - **Owner**: Security Team\n   - **Lifecycle**:\
+      \ Production\n   - **Tags**: consent, authentication\n\n8. **Standing Orders\
+      \ API**\n   - **Description**: API for managing recurring payments and standing\
+      \ orders\n   - **Type**: OpenAPI\n   - **Owner**: Payments Team\n   - **Lifecycle**:\
+      \ Production\n\nIf you need more details about any specific API, feel free to\
+      \ ask!"
+    expected_intent: list APIs from the catalog
 - conversation_group_id: catalog-filter-kind-component
   description: Filter catalog by kind Component
   tag: catalog
@@ -45,6 +97,39 @@
     - - tool_name: software-catalog-mcp-extras.query-catalog-entities
         arguments:
           kind: Component
+    response: "Here are all the Components in the software catalog:\n\n1. **Name:**\
+      \ standing-orders-api\n   - **Description:** API for managing recurring payments\
+      \ and standing orders.\n   - **Type:** service\n   - **Owner:** payments-team\n\
+      \   - **Lifecycle:** production\n   - **Depends On:** beneficiary-management-api,\
+      \ consent-management-api\n\n2. **Name:** account-access-api\n   - **Description:**\
+      \ API that provides authorized third-party providers access to customer account\
+      \ information.\n   - **Type:** service\n   - **Owner:** security-team\n   -\
+      \ **Lifecycle:** production\n   - **Tags:** ais, accounts, banking, fdx\n  \
+      \ - **Depends On:** beneficiary-management-api, consent-management-api\n\n3.\
+      \ **Name:** balance-check-api\n   - **Description:** API for real-time account\
+      \ balance inquiries and balance history.\n   - **Type:** service\n   - **Owner:**\
+      \ accounts-team\n   - **Lifecycle:** production\n   - **Depends On:** consent-management-api\n\
+      \n4. **Name:** beneficiary-management-api\n   - **Description:** API for managing\
+      \ trusted payees and beneficiaries.\n   - **Type:** service\n   - **Owner:**\
+      \ payments-team\n   - **Lifecycle:** production\n   - **Depends On:** consent-management-api\n\
+      \n5. **Name:** payment-initiation-api\n   - **Description:** API for initiating\
+      \ payments from customer accounts, supporting SEPA credit transfers.\n   - **Type:**\
+      \ service\n   - **Owner:** payments-team\n   - **Lifecycle:** production\n \
+      \  - **Depends On:** consent-management-api, audit-logs-bucket, payment-events-topic\n\
+      \n6. **Name:** transaction-history-api\n   - **Description:** API for retrieving\
+      \ and filtering customer transaction history and statements.\n   - **Type:**\
+      \ service\n   - **Owner:** accounts-team\n   - **Lifecycle:** production\n \
+      \  - **Tags:** ais, accounts, banking, fdx\n   - **Depends On:** beneficiary-management-api,\
+      \ consent-management-api, audit-logs-bucket, transaction-store\n\n7. **Name:**\
+      \ consent-management-api\n   - **Description:** API for managing user consents\
+      \ under open banking regulations.\n   - **Type:** service\n   - **Owner:** security-team\n\
+      \   - **Lifecycle:** production\n   - **Depends On:** audit-logs-bucket, consent-store\n\
+      \n8. **Name:** webhook-notifications-api\n   - **Description:** API for managing\
+      \ webhook subscriptions for event notifications.\n   - **Type:** service\n \
+      \  - **Owner:** event-team\n   - **Lifecycle:** production\n   - **Depends On:**\
+      \ None\n\nIf you need more details about any specific component, feel free to\
+      \ ask!"
+    expected_intent: list Components from the catalog via a filtered catalog query
 - conversation_group_id: catalog-filter-kind-resource
   description: Filter catalog by kind Resource
   tag: catalog
@@ -59,6 +144,23 @@
     - - tool_name: software-catalog-mcp-extras.query-catalog-entities
         arguments:
           kind: Resource
+    response: "The following Resources are registered in the catalog:\n\n1. **Name:**\
+      \ payment-events-topic\n   - **Kind:** Resource\n   - **Type:** messaging\n\
+      \   - **Description:** Pub/Sub topic for payment-related events and notifications\n\
+      \   - **Owner:** payments-team\n   - **Tags:** messaging, pubsub, payments\n\
+      \n2. **Name:** transaction-store\n   - **Kind:** Resource\n   - **Type:** database\n\
+      \   - **Description:** BigTable database for storing transaction history and\
+      \ statements\n   - **Owner:** accounts-team\n   - **Tags:** database, bigtable,\
+      \ transactions\n\n3. **Name:** api-cdn\n   - **Kind:** Resource\n   - **Type:**\
+      \ cdn\n   - **Description:** CDN for serving API documentation and static assets\n\
+      \   - **Owner:** customer-experience-team\n   - **Tags:** cdn, documentation\n\
+      \n4. **Name:** consent-store\n   - **Kind:** Resource\n   - **Type:** database\n\
+      \   - **Description:** Secure database for storing user consent records\n  \
+      \ - **Owner:** security-team\n   - **Tags:** database, security, consent\n\n\
+      5. **Name:** audit-logs-bucket\n   - **Kind:** Resource\n   - **Type:** storage\n\
+      \   - **Description:** S3 bucket for storing audit logs and compliance records\n\
+      \   - **Owner:** compliance-team\n   - **Tags:** storage, s3, compliance"
+    expected_intent: list Resources from the catalog via a filtered catalog query
 - conversation_group_id: catalog-filter-owner
   description: Filter catalog entities by owner (fixture - payments-team)
   tag: catalog
@@ -74,6 +176,31 @@
     - - tool_name: software-catalog-mcp-extras.query-catalog-entities
         arguments:
           owner: payments-team
+    response: "Here are the catalog entities owned by the **payments-team**:\n\n1.\
+      \ **Standing Orders API**\n   - **Kind**: Component\n   - **Description**: API\
+      \ for managing recurring payments and standing orders.\n   - **Type**: Service\n\
+      \   - **Lifecycle**: Production\n   - **Depends On**: \n     - component:default/beneficiary-management-api\n\
+      \     - component:default/consent-management-api\n\n2. **Payment Events Topic**\n\
+      \   - **Kind**: Resource\n   - **Description**: Pub/Sub topic for payment-related\
+      \ events and notifications.\n   - **Type**: Messaging\n   - **Tags**: messaging,\
+      \ pubsub, payments\n\n3. **Beneficiary Management API**\n   - **Kind**: Component\n\
+      \   - **Description**: API for managing trusted payees and beneficiaries.\n\
+      \   - **Type**: Service\n   - **Lifecycle**: Production\n   - **Depends On**:\
+      \ \n     - component:default/consent-management-api\n\n4. **Payment Initiation\
+      \ API**\n   - **Kind**: Component\n   - **Description**: API for initiating\
+      \ payments from customer accounts, supporting SEPA credit transfers.\n   - **Type**:\
+      \ Service\n   - **Lifecycle**: Production\n   - **Depends On**: \n     - component:default/consent-management-api\n\
+      \     - resource:default/audit-logs-bucket\n     - resource:default/payment-events-topic\n\
+      \n5. **Beneficiary Management API**\n   - **Kind**: API\n   - **Description**:\
+      \ API for managing trusted payees and beneficiaries.\n   - **Type**: OpenAPI\n\
+      \   - **Lifecycle**: Production\n\n6. **Payment Initiation API**\n   - **Kind**:\
+      \ API\n   - **Description**: API to initiate payments from customer accounts.\n\
+      \   - **Type**: OpenAPI\n   - **Lifecycle**: Production\n   - **Tags**: pis,\
+      \ payments\n\n7. **Standing Orders API**\n   - **Kind**: API\n   - **Description**:\
+      \ API for managing recurring payments and standing orders.\n   - **Type**: OpenAPI\n\
+      \   - **Lifecycle**: Production\n\nIf you need more details about any specific\
+      \ entity, feel free to ask!"
+    expected_intent: find catalog entities owned by payments-team
 - conversation_group_id: catalog-filter-tags
   description: Filter catalog entities by tag (fixture - payments)
   tag: catalog
@@ -88,6 +215,18 @@
     - - tool_name: software-catalog-mcp-extras.query-catalog-entities
         arguments:
           tags: payments
+    response: "Here are the catalog entities tagged with \"payments\":\n\n1. **Payment\
+      \ Events Topic**\n   - **Kind:** Resource\n   - **Type:** Messaging\n   - **Description:**\
+      \ Pub/Sub topic for payment-related events and notifications\n   - **Owner:**\
+      \ payments-team\n   - **Tags:** messaging, pubsub, payments\n\n2. **Beneficiary\
+      \ Management API**\n   - **Kind:** API\n   - **Type:** OpenAPI\n   - **Description:**\
+      \ API for managing trusted payees and beneficiaries\n   - **Owner:** payments-team\n\
+      \   - **Lifecycle:** Production\n   - **Tags:** payments, beneficiaries\n\n\
+      3. **Payment Initiation API**\n   - **Kind:** API\n   - **Type:** OpenAPI\n\
+      \   - **Description:** API to initiate payments from customer accounts\n   -\
+      \ **Owner:** payments-team\n   - **Lifecycle:** Production\n   - **Tags:** pis,\
+      \ payments"
+    expected_intent: find catalog entities tagged with payments
 - conversation_group_id: catalog-filter-kind-and-type
   description: Filter by kind and type together
   tag: catalog
@@ -104,6 +243,36 @@
         arguments:
           kind: Component
           type: service
+    response: "Here are the Components of type \"service\" found in the catalog:\n\
+      \n1. **Standing Orders API**\n   - **Description**: API for managing recurring\
+      \ payments and standing orders.\n   - **Owner**: payments-team\n   - **Lifecycle**:\
+      \ production\n   - **Depends On**: \n     - beneficiary-management-api\n   \
+      \  - consent-management-api\n\n2. **Account Access API**\n   - **Description**:\
+      \ API that provides authorized third-party providers access to customer account\
+      \ information.\n   - **Owner**: security-team\n   - **Lifecycle**: production\n\
+      \   - **Tags**: ais, accounts, banking, fdx\n   - **Depends On**: \n     - beneficiary-management-api\n\
+      \     - consent-management-api\n\n3. **Balance Check API**\n   - **Description**:\
+      \ API for real-time account balance inquiries and balance history.\n   - **Owner**:\
+      \ accounts-team\n   - **Lifecycle**: production\n\n4. **Beneficiary Management\
+      \ API**\n   - **Description**: API for managing trusted payees and beneficiaries.\n\
+      \   - **Owner**: payments-team\n   - **Lifecycle**: production\n   - **Depends\
+      \ On**: \n     - consent-management-api\n\n5. **Payment Initiation API**\n \
+      \  - **Description**: API for initiating payments from customer accounts, supporting\
+      \ SEPA credit transfers.\n   - **Owner**: payments-team\n   - **Lifecycle**:\
+      \ production\n   - **Depends On**: \n     - consent-management-api\n     - audit-logs-bucket\n\
+      \     - payment-events-topic\n\n6. **Transaction History API**\n   - **Description**:\
+      \ API for retrieving and filtering customer transaction history and statements.\n\
+      \   - **Owner**: accounts-team\n   - **Lifecycle**: production\n   - **Tags**:\
+      \ ais, accounts, banking, fdx\n   - **Depends On**: \n     - beneficiary-management-api\n\
+      \     - consent-management-api\n     - audit-logs-bucket\n     - transaction-store\n\
+      \n7. **Consent Management API**\n   - **Description**: API for managing user\
+      \ consents under open banking regulations.\n   - **Owner**: security-team\n\
+      \   - **Lifecycle**: production\n   - **Depends On**: \n     - audit-logs-bucket\n\
+      \     - consent-store\n\n8. **Webhook Notifications API**\n   - **Description**:\
+      \ API for managing webhook subscriptions for event notifications.\n   - **Owner**:\
+      \ event-team\n   - **Lifecycle**: production\n\nIf you need more details about\
+      \ any specific component, feel free to ask!"
+    expected_intent: find Components of type service in the catalog
 - conversation_group_id: catalog-get-entity
   description: Fetch a single entity by name via upstream catalog tool
   tag: catalog
@@ -120,12 +289,110 @@
           name: consent-management-api
     - - tool_name: catalog.get-catalog-entity
         arguments:
-          kind: component
+          kind: Component
           name: consent-management-api
     - - tool_name: catalog.get-catalog-entity
         arguments:
-          kind: api
+          kind: API
           name: consent-management-api
+    response: "Here are the details for the entities named **consent-management-api**:\n\
+      \n### Component: consent-management-api\n```json\n{\n  \"metadata\": {\n   \
+      \ \"namespace\": \"default\",\n    \"annotations\": {\n      \"backstage.io/managed-by-location\"\
+      : \"url:https://github.com/rhdh-demo-gh/ob-demo/tree/main/components/all.components.yaml\"\
+      ,\n      \"backstage.io/managed-by-origin-location\": \"url:https://github.com/rhdh-demo-gh/ob-demo/blob/main/locations.yaml\"\
+      ,\n      \"backstage.io/view-url\": \"https://github.com/rhdh-demo-gh/ob-demo/tree/main/components/all.components.yaml\"\
+      ,\n      \"backstage.io/edit-url\": \"https://github.com/rhdh-demo-gh/ob-demo/edit/main/components/all.components.yaml\"\
+      ,\n      \"backstage.io/source-location\": \"url:https://github.com/rhdh-demo-gh/ob-demo/tree/main/components/\"\
+      \n    },\n    \"name\": \"consent-management-api\",\n    \"description\": \"\
+      API for managing user consents under open banking regulations.\",\n    \"uid\"\
+      : \"c63f429a-d3d5-44bd-b7dd-a2ffed4dc7af\",\n    \"etag\": \"0569df95743dd59f42044ccbff5f39be42ce2923\"\
+      \n  },\n  \"apiVersion\": \"backstage.io/v1alpha1\",\n  \"kind\": \"Component\"\
+      ,\n  \"spec\": {\n    \"type\": \"service\",\n    \"lifecycle\": \"production\"\
+      ,\n    \"owner\": \"security-team\",\n    \"system\": \"consent-management-service\"\
+      ,\n    \"dependsOn\": [\n      \"resource:default/audit-logs-bucket\",\n   \
+      \   \"resource:default/consent-store\"\n    ],\n    \"providesApis\": [\n  \
+      \    \"default/consent-management-api\"\n    ]\n  },\n  \"relations\": [\n \
+      \   {\n      \"type\": \"dependencyOf\",\n      \"targetRef\": \"component:default/account-access-api\"\
+      \n    },\n    {\n      \"type\": \"dependencyOf\",\n      \"targetRef\": \"\
+      component:default/balance-check-api\"\n    },\n    {\n      \"type\": \"dependencyOf\"\
+      ,\n      \"targetRef\": \"component:default/beneficiary-management-api\"\n \
+      \   },\n    {\n      \"type\": \"dependencyOf\",\n      \"targetRef\": \"component:default/payment-initiation-api\"\
+      \n    },\n    {\n      \"type\": \"dependencyOf\",\n      \"targetRef\": \"\
+      component:default/standing-orders-api\"\n    },\n    {\n      \"type\": \"dependencyOf\"\
+      ,\n      \"targetRef\": \"component:default/transaction-history-api\"\n    },\n\
+      \    {\n      \"type\": \"dependsOn\",\n      \"targetRef\": \"resource:default/audit-logs-bucket\"\
+      \n    },\n    {\n      \"type\": \"dependsOn\",\n      \"targetRef\": \"resource:default/consent-store\"\
+      \n    },\n    {\n      \"type\": \"ownedBy\",\n      \"targetRef\": \"group:default/security-team\"\
+      \n    },\n    {\n      \"type\": \"partOf\",\n      \"targetRef\": \"system:default/consent-management-service\"\
+      \n    },\n    {\n      \"type\": \"providesApi\",\n      \"targetRef\": \"api:default/consent-management-api\"\
+      \n    }\n  ]\n}\n```\n\n### API: consent-management-api\n```json\n{\n  \"metadata\"\
+      : {\n    \"namespace\": \"default\",\n    \"annotations\": {\n      \"backstage.io/managed-by-location\"\
+      : \"url:https://github.com/rhdh-demo-gh/ob-demo/tree/main/apis/consents.api.yaml\"\
+      ,\n      \"backstage.io/managed-by-origin-location\": \"url:https://github.com/rhdh-demo-gh/ob-demo/blob/main/locations.yaml\"\
+      ,\n      \"backstage.io/view-url\": \"https://github.com/rhdh-demo-gh/ob-demo/tree/main/apis/consents.api.yaml\"\
+      ,\n      \"backstage.io/edit-url\": \"https://github.com/rhdh-demo-gh/ob-demo/edit/main/apis/consents.api.yaml\"\
+      ,\n      \"backstage.io/source-location\": \"url:https://github.com/rhdh-demo-gh/ob-demo/tree/main/apis/\"\
+      \n    },\n    \"name\": \"consent-management-api\",\n    \"description\": \"\
+      API to manage user consent for data access\",\n    \"tags\": [\n      \"consent\"\
+      ,\n      \"authentication\"\n    ],\n    \"uid\": \"faf92016-38d6-4b38-a647-6ab9a2ddcfcf\"\
+      ,\n    \"etag\": \"c19698252ba7cd728f5987f165b782eaf4e447b7\"\n  },\n  \"apiVersion\"\
+      : \"backstage.io/v1alpha1\",\n  \"kind\": \"API\",\n  \"spec\": {\n    \"type\"\
+      : \"openapi\",\n    \"lifecycle\": \"production\",\n    \"owner\": \"security-team\"\
+      ,\n    \"definition\": \"openapi: 3.1.0\\ninfo:\\n  title: Consent Management\
+      \ API\\n  description: API for managing user consents under open banking regulations.\\\
+      n  version: 1.0.0\\n\\nservers:\\n  - url: https://api.acme.example.com/v1\\\
+      n    description: Production Server\\n  - url: https://sandbox.acme.example.com/v1\\\
+      n    description: Sandbox Server\\n\\npaths:\\n  /consents:\\n    post:\\n \
+      \     summary: Create a consent request\\n      description: Initiate a consent\
+      \ request to access customer account data.\\n      operationId: createConsent\\\
+      n      security:\\n        - OAuth2: [consent:create]\\n      requestBody:\\\
+      n        required: true\\n        content:\\n          application/json:\\n\
+      \            schema:\\n              $ref: '#/components/schemas/ConsentRequest'\\\
+      n      responses:\\n        '201':\\n          description: Consent successfully\
+      \ created\\n          content:\\n            application/json:\\n          \
+      \    schema:\\n                $ref: '#/components/schemas/ConsentResponse'\\\
+      n        '400':\\n          description: Bad request\\n        '401':\\n   \
+      \       description: Unauthorized\\n\\n  /consents/{consentId}:\\n    get:\\\
+      n      summary: Get consent status\\n      description: Retrieve the status\
+      \ of a previously granted consent.\\n      operationId: getConsentStatus\\n\
+      \      security:\\n        - OAuth2: [consent:read]\\n      parameters:\\n \
+      \       - name: consentId\\n          in: path\\n          required: true\\\
+      n          schema:\\n            type: string\\n      responses:\\n        '200':\\\
+      n          description: Consent status retrieved\\n          content:\\n   \
+      \         application/json:\\n              schema:\\n                $ref:\
+      \ '#/components/schemas/ConsentStatus'\\n        '401':\\n          description:\
+      \ Unauthorized\\n\\n    delete:\\n      summary: Revoke consent\\n      description:\
+      \ Revoke a previously granted consent.\\n      operationId: revokeConsent\\\
+      n      security:\\n        - OAuth2: [consent:delete]\\n      parameters:\\\
+      n        - name: consentId\\n          in: path\\n          required: true\\\
+      n          schema:\\n            type: string\\n      responses:\\n        '204':\\\
+      n          description: Consent successfully revoked\\n        '401':\\n   \
+      \       description: Unauthorized\\n\\ncomponents:\\n  securitySchemes:\\n \
+      \   OAuth2:\\n      type: oauth2\\n      flows:\\n        authorizationCode:\\\
+      n          authorizationUrl: https://auth.acme.example.com/oauth2/authorize\\\
+      n          tokenUrl: https://auth.acme.example.com/oauth2/token\\n         \
+      \ scopes:\\n            consent:create: Create user consent\\n            consent:read:\
+      \ Read consent status\\n            consent:delete: Revoke consent\\n\\n  schemas:\\\
+      n    ConsentRequest:\\n      type: object\\n      properties:\\n        userId:\\\
+      n          type: string\\n        permissions:\\n          type: array\\n  \
+      \        items:\\n            type: string\\n    ConsentResponse:\\n      type:\
+      \ object\\n      properties:\\n        consentId:\\n          type: string\\\
+      n        status:\\n          type: string\\n    ConsentStatus:\\n      type:\
+      \ object\\n      properties:\\n        consentId:\\n          type: string\\\
+      n        status:\\n          type: string\\n\"\n  },\n  \"relations\": [\n \
+      \   {\n      \"type\": \"apiConsumedBy\",\n      \"targetRef\": \"component:default/account-access-api\"\
+      \n    },\n    {\n      \"type\": \"apiConsumedBy\",\n      \"targetRef\": \"\
+      component:default/balance-check-api\"\n    },\n    {\n      \"type\": \"apiConsumedBy\"\
+      ,\n      \"targetRef\": \"component:default/beneficiary-management-api\"\n \
+      \   },\n    {\n      \"type\": \"apiConsumedBy\",\n      \"targetRef\": \"component:default/payment-initiation-api\"\
+      \n    },\n    {\n      \"type\": \"apiConsumedBy\",\n      \"targetRef\": \"\
+      component:default/standing-orders-api\"\n    },\n    {\n      \"type\": \"apiConsumedBy\"\
+      ,\n      \"targetRef\": \"component:default/transaction-history-api\"\n    },\n\
+      \    {\n      \"type\": \"apiProvidedBy\",\n      \"targetRef\": \"component:default/consent-management-api\"\
+      \n    },\n    {\n      \"type\": \"ownedBy\",\n      \"targetRef\": \"group:default/security-team\"\
+      \n    }\n  ]\n}\n```\n\nIf you need more information or specific details about\
+      \ either entity, feel free to ask!"
+    expected_intent: retrieve the consent-management-api catalog entity
 - conversation_group_id: catalog-model-description
   description: Ask for the catalog model / kinds description
   tag: catalog
@@ -138,6 +405,39 @@
     tool_calls:
     - - tool_name: catalog.get-catalog-model-description
         arguments: {}
+    response: "The catalog model in Backstage consists of several key concepts, primarily\
+      \ focusing on entities and their relationships. Here's a summary of the catalog\
+      \ model and the registered entity kinds:\n\n### Catalog Model Overview\n- **Entities**:\
+      \ Rich objects with various kinds, each having different schemas. Entities can\
+      \ have relationships with one another.\n- **Locations**: Registered as type/target\
+      \ pairs, typically in the form of URLs that the catalog manages.\n\n### Entity\
+      \ Metadata\nEach entity has fields such as:\n- **kind**: The type of entity\
+      \ (e.g., Component, API).\n- **apiVersion**: The version of the API.\n- **metadata**:\
+      \ Contains fields like name, namespace, uid, etag, title, description, annotations,\
+      \ labels, tags, and links.\n\n### Registered Entity Kinds\n1. **API**\n   -\
+      \ Describes an interface exposed by a component.\n   - Versions: `backstage.io/v1alpha1`,\
+      \ `backstage.io/v1beta1`.\n\n2. **Component**\n   - Describes a software component,\
+      \ usually with a distinct deployable artifact.\n   - Versions: `backstage.io/v1alpha1`,\
+      \ `backstage.io/v1beta1`.\n\n3. **Domain**\n   - Groups a collection of systems\
+      \ sharing terminology or business purpose.\n   - Versions: `backstage.io/v1alpha1`,\
+      \ `backstage.io/v1beta1`.\n\n4. **Group**\n   - Describes an organizational\
+      \ entity, such as a team or business unit.\n   - Versions: `backstage.io/v1alpha1`,\
+      \ `backstage.io/v1beta1`.\n\n5. **Location**\n   - A marker that references\
+      \ other places to look for catalog data.\n   - Versions: `backstage.io/v1alpha1`,\
+      \ `backstage.io/v1beta1`.\n\n6. **Resource**\n   - Describes the infrastructure\
+      \ needed for a system to operate (e.g., databases, buckets).\n   - Versions:\
+      \ `backstage.io/v1alpha1`, `backstage.io/v1beta1`.\n\n7. **System**\n   - A\
+      \ collection of resources and components that exposes APIs.\n   - Versions:\
+      \ `backstage.io/v1alpha1`, `backstage.io/v1beta1`.\n\n8. **User**\n   - Describes\
+      \ a person, such as an employee or contractor.\n   - Versions: `backstage.io/v1alpha1`,\
+      \ `backstage.io/v1beta1`.\n\n### Entity Relations\nEntities can have various\
+      \ relationships, such as:\n- **ownedBy**: Indicates ownership by a user or group.\n\
+      - **providesApi**: Indicates that a component provides an API.\n- **consumesApi**:\
+      \ Indicates that a component consumes an API.\n- **dependsOn**: Indicates dependencies\
+      \ between entities.\n\nThis structure allows for a comprehensive and organized\
+      \ way to manage software components, their relationships, and the infrastructure\
+      \ they rely on within the Backstage ecosystem."
+    expected_intent: describe the Backstage catalog model / entity kinds
 - conversation_group_id: techdocs-list
   description: List entities that have TechDocs
   tag: techdocs
@@ -150,8 +450,11 @@
     - - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
           arguments: {}
     tool_calls:
-    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
         arguments: {}
+    response: It appears that there are currently no entities with TechDocs documentation
+      available in the system.
+    expected_intent: report which entities have TechDocs available
 - conversation_group_id: techdocs-coverage
   description: Analyze TechDocs coverage across the catalog
   tag: techdocs
@@ -164,6 +467,9 @@
     tool_calls:
     - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
         arguments: {}
+    response: Our TechDocs documentation coverage across catalog entities is currently
+      at 0%. Out of a total of 39 entities, none have documentation available.
+    expected_intent: report TechDocs documentation coverage across the catalog
 - conversation_group_id: techdocs-coverage-by-owner
   description: TechDocs coverage filtered by owner (fixture - security-team)
   tag: techdocs
@@ -178,6 +484,11 @@
     - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
         arguments:
           owner: user:security-team
+    response: The analysis of TechDocs coverage for entities owned by the security-team
+      shows that there are currently no entities associated with this team. Therefore,
+      the total number of entities is 0, and consequently, the coverage percentage
+      is also 0%.
+    expected_intent: report TechDocs coverage for security-team owned entities
 - conversation_group_id: techdocs-fetch-components
   description: Fetch TechDocs entities filtered to Components
   tag: techdocs
@@ -192,6 +503,8 @@
     - - tool_name: techdocs-mcp-extras.fetch-techdocs
         arguments:
           entityType: Component
+    response: There are currently no TechDocs available for Component entities.
+    expected_intent: list TechDocs for Component entities
 - conversation_group_id: scaffolder-list-templates
   description: List / search software templates
   tag: scaffolder-read
@@ -204,6 +517,8 @@
     tool_calls:
     - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
         arguments: {}
+    response: There are currently no software templates available in the scaffolder.
+    expected_intent: list available software templates
 - conversation_group_id: scaffolder-list-actions
   description: List installed scaffolder actions
   tag: scaffolder-read
@@ -218,6 +533,33 @@
     tool_calls:
     - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
         arguments: {}
+    - - tool_name: scaffolder.list-scaffolder-actions
+        arguments: {}
+    response: "Here are the installed Scaffolder actions:\n\n1. **Action ID**: `catalog:fetch`\n\
+      \   - **Description**: Returns entity or entities from the catalog by entity\
+      \ reference(s).\n   - **Input Schema**: \n     - `entityRef`: Entity reference\
+      \ of the entity to get.\n     - `entityRefs`: Array of entity references to\
+      \ get.\n     - `optional`: Allow the entity or entities to optionally exist.\
+      \ Default: false.\n     - `defaultKind`: The default kind.\n     - `defaultNamespace`:\
+      \ The default namespace.\n   - **Output Schema**: \n     - `entity`: Object\
+      \ containing the values used in the Entity schema (only when used with `entityRef`).\n\
+      \     - `entities`: Array of entities.\n\n2. **Action ID**: `catalog:get-catalog-entity`\n\
+      \   - **Description**: Allows you to get a single entity from the software catalog.\n\
+      \   - **Input Schema**: \n     - `kind`: The kind of the entity to query (optional).\n\
+      \     - `namespace`: The namespace of the entity to query (optional).\n    \
+      \ - `name`: The name of the entity to query (required).\n   - **Output Schema**:\
+      \ Returns the entity details.\n\n3. **Action ID**: `catalog:get-catalog-model-description`\n\
+      \   - **Description**: Returns a markdown formatted description of the current\
+      \ catalog model, including all registered entity kinds, annotations, labels,\
+      \ tags, and relations.\n   - **Input Schema**: None.\n   - **Output Schema**:\
+      \ \n     - `description`: Markdown description of the catalog model.\n\n4. **Action\
+      \ ID**: `catalog:query-catalog-entities`\n   - **Description**: Query entities\
+      \ from the Backstage Software Catalog using predicate filters.\n   - **Input\
+      \ Schema**: Supports various query parameters to filter entities.\n   - **Output\
+      \ Schema**: Returns the queried entities based on the input filters.\n\nThese\
+      \ actions allow for various interactions with the Backstage catalog, enabling\
+      \ fetching, querying, and retrieving descriptions of entities."
+    expected_intent: list installed scaffolder actions
 - conversation_group_id: scaffolder-list-tasks
   description: List recent scaffolder tasks
   tag: scaffolder-read
@@ -239,6 +581,8 @@
     - - tool_name: scaffolder.list-scaffolder-tasks
         arguments:
           limit: 5
+    response: There are currently no recent scaffolder tasks available.
+    expected_intent: list recent scaffolder tasks
 - conversation_group_id: scaffolder-write-validate-dry-run
   description: Sandbox-safe dry-run validation via validate-scaffolder (execute-template
     skipped — no Templates in fixture)
@@ -265,7 +609,19 @@
           templateYaml: "apiVersion: scaffolder.backstage.io/v1beta3\nkind: Template\n\
             metadata:\n  name: mcp-eval-dry-run\n  title: MCP Eval Dry Run\nspec:\n\
             \  type: service\n  parameters: []\n  steps:\n    - id: noop\n      name:\
-            \ Noop\n      action: debug:log\n      input:\n        message: mcp-eval-dry-run\n"
+            \ Noop\n      action: debug:log\n      input:\n        message: mcp-eval-dry-run"
+    response: "The scaffolder template validation was successful. Here are the details\
+      \ from the dry-run:\n\n- **Template Name**: mcp-eval-dry-run\n- **Validation\
+      \ Status**: Valid\n- **Message**: Template validation successful\n\n### Execution\
+      \ Log:\n1. **Starting up task with 2 steps**\n2. **Beginning step Noop**\n \
+      \  - Status: Processing\n3. **Running debug:log in dry-run mode with inputs\
+      \ (secrets redacted)**:\n   - Input: `{\"message\": \"mcp-eval-dry-run\"}`\n\
+      4. **Output**:\n   - `{\"message\": \"mcp-eval-dry-run\"}`\n5. **Log Message**:\
+      \ `mcp-eval-dry-run`\n6. **Finished step Noop**\n   - Status: Completed\n\n\
+      ### Steps:\n- **Step ID**: noop\n- **Step Name**: Noop\n- **Action**: debug:log\n\
+      \nThe template is correctly defined and ready for execution if needed."
+    expected_intent: dry-run/validate the provided scaffolder template without executing
+      a real task
 - conversation_group_id: multi-techdocs-then-content
   description: Find a documented entity then retrieve its TechDocs content
   tag: multi_step
@@ -286,6 +642,12 @@
         arguments: {}
     - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
         arguments: {}
+    response: It appears that there are currently no entities with TechDocs available
+      in the system. Therefore, I am unable to retrieve the content of any documentation
+      home page. If you have any other requests or need assistance with something
+      else, feel free to ask!
+    expected_intent: find TechDocs entities and attempt to retrieve documentation
+      content when available
 - conversation_group_id: multi-owner-components-then-coverage
   description: List an owner's components then check their docs coverage
   tag: multi_step
@@ -309,6 +671,10 @@
     - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
         arguments:
           owner: user:payments-team
+    response: There are currently no Components owned by the payments-team. Consequently,
+      the analysis of TechDocs coverage also shows that there are no entities associated
+      with this owner, resulting in a coverage percentage of 0%.
+    expected_intent: list payments-team Components then analyze their TechDocs coverage
 - conversation_group_id: negative-no-execute-template
   description: Read-only intent must not execute a template
   tag: negative
@@ -321,6 +687,9 @@
     tool_calls:
     - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
         arguments: {}
+    response: There are currently no available templates to inspect.
+    expected_intent: inspect templates only without creating or executing a scaffolder
+      task
 - conversation_group_id: negative-empty-filter
   description: Unlikely filter should still use catalog query (empty result OK)
   tag: negative
@@ -337,3 +706,7 @@
         arguments:
           kind: Component
           type: definitely-does-not-exist-xyz
+    response: There are no catalog Components of type "definitely-does-not-exist-xyz"
+      in the Backstage catalog.
+    expected_intent: query the catalog with an unlikely filter and report empty or
+      no matching results

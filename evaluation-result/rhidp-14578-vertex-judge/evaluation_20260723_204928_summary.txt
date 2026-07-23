@@ -1,0 +1,256 @@
+LSC Evaluation Framework - Summary Report
+==================================================
+
+Generated: 2026-07-23 20:49:28 UTC
+Total Evaluations: 42
+
+Overall Statistics:
+--------------------
+Pass: 42 (100.0%)
+Fail: 0 (0.0%)
+Error: 0 (0.0%)
+Skipped: 0 (0.0%)
+
+Token Usage (Judge LLM):
+--------------------
+Input Tokens: 0
+Output Tokens: 0
+Total Tokens: 0
+
+Token Usage (Embeddings):
+--------------------
+Input Tokens: 0
+
+Token Usage (API Calls):
+--------------------
+Input Tokens: 0
+Output Tokens: 0
+Total Tokens: 0
+
+By Metric:
+---------
+custom:intent_eval:
+  Pass: 21 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+custom:tool_eval:
+  Pass: 21 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+By Conversation:
+---------------
+catalog-filter-kind-and-type:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-kind-api:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-kind-component:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-kind-resource:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-owner:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-tags:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-get-entity:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-list-all:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-model-description:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+multi-owner-components-then-coverage:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+multi-techdocs-then-content:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+negative-empty-filter:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+negative-no-execute-template:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-list-actions:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-list-tasks:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-list-templates:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-write-validate-dry-run:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-coverage:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-coverage-by-owner:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-fetch-components:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-list:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+By Tag:
+------
+catalog:
+  Pass: 18 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+multi_step:
+  Pass: 4 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+negative:
+  Pass: 4 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+scaffolder-read:
+  Pass: 6 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+scaffolder-write:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+techdocs:
+  Pass: 8 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+Configuration Parameters:
+-------------------------
+
+Llm:
+  Provider: openai
+  Model: gpt-4o-mini
+  Ssl Verify: True
+  Ssl Cert File: None
+  Temperature: 0.0
+  Max Tokens: 512
+  Timeout: 300
+  Num Retries: 3
+  Cache Enabled: True
+  Parameters: {'temperature': 0.0, 'max_completion_tokens': 512}
+
+Embedding:
+  Provider: huggingface
+  Model: sentence-transformers/all-mpnet-base-v2
+  Provider Kwargs: {'model_kwargs': {'device': 'cpu'}}
+  Cache Enabled: True
+
+Api:
+  Api Base: http://localhost:8080
+  Version: v1
+  Endpoint Type: streaming
+  Timeout: 300
+  Provider: None
+  Model: None
+  No Tools: None
+  System Prompt: None
+  Extra Request Params: None
+  Cache Enabled: True
+  Num Retries: 3
+  Enabled: True
+  Mcp Headers: None
+

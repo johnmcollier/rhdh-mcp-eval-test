@@ -1,0 +1,87 @@
+# Offline tool_eval + Vertex Gemini intent judging (RHIDP-14578).
+# Requires:
+#   export GOOGLE_APPLICATION_CREDENTIALS=...
+#   export GOOGLE_CLOUD_PROJECT=rhdh-ai   # or VERTEXAI_PROJECT
+#   export VERTEXAI_LOCATION=us-central1
+# Optional placeholder OPENAI_API_KEY for framework boot if any openai path is touched.
+core:
+  max_threads: 2
+  cache_enabled: true
+  cache_base_dir: .caches
+  fail_on_invalid_data: true
+
+llm_pool:
+  defaults:
+    timeout: 180
+    num_retries: 2
+    parameters:
+      temperature: 0.0
+      max_completion_tokens: 1024
+  models:
+    judge_gemini_25_flash:
+      provider: vertex
+      # LiteLLM Vertex route; provider:vertex leaves model name as-is
+      model: vertex_ai/gemini-2.5-flash
+
+judge_panel:
+  judges:
+    - judge_gemini_25_flash
+  aggregation_strategy: max
+
+# Not used by tool_eval / intent_eval; kept for framework defaults.
+embedding:
+  provider: huggingface
+  model: sentence-transformers/all-mpnet-base-v2
+  cache_enabled: true
+  cache_dir: .caches/embedding_cache
+  provider_kwargs:
+    model_kwargs:
+      device: cpu
+
+agents:
+  enabled: false
+
+metrics_metadata:
+  turn_level:
+    custom:tool_eval:
+      description: Binary validation of tool calls (exact/regex matching)
+      default: true
+      ordered: true
+      full_match: false
+    custom:intent_eval:
+      description: Vertex Gemini judge — response demonstrates expected intent
+      threshold: 1
+      default: true
+
+storage:
+  - type: file
+    output_dir: evaluation-result/rhidp-14578-vertex-judge
+    base_filename: evaluation
+    enabled_outputs:
+      - csv
+      - json
+      - txt
+    csv_columns:
+      - conversation_group_id
+      - turn_id
+      - metric_identifier
+      - score
+      - threshold
+      - result
+      - reason
+      - query
+
+visualization:
+  figsize:
+    - 10
+    - 6
+  dpi: 150
+  enabled_graphs:
+    - pass_rates
+    - status_breakdown
+
+logging:
+  source_level: INFO
+  package_level: WARNING
+  log_format: '%(asctime)s - %(levelname)s - %(message)s'
+  show_timestamps: true

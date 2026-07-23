@@ -60,7 +60,11 @@ Review `tool_calls`, adjust `expected_tool_calls` in `dataset/eval_data.yaml` wh
 then copy `tool_calls` into `eval_data.yaml` for offline scoring.
 `*.with-traces.yaml` is gitignored (may contain large tool payloads).
 
-## Score (offline tool_eval)
+## Score
+
+Run from the artifacts repo root (or set an absolute `storage.output_dir`).
+
+### Offline tool_eval only
 
 ```bash
 export OPENAI_API_KEY=...   # framework boot; unused by tool_eval scoring itself
@@ -72,15 +76,35 @@ uv run lightspeed-eval \
   --eval-data "$REPO/dataset/eval_data.yaml"
 ```
 
-Run from the artifacts repo root (or set an absolute `storage.output_dir`) so results land under
-`evaluation-result/rhidp-14578-tool-eval/`.
+Outputs: `evaluation-result/rhidp-14578-tool-eval/`
+
+### Offline tool_eval + Vertex Gemini intent judge
+
+Uses ADC / `GOOGLE_APPLICATION_CREDENTIALS` against project `rhdh-ai`
+(`config/system-vertex-judge.yaml`, model `vertex_ai/gemini-2.5-flash`).
+
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS=...
+export GOOGLE_CLOUD_PROJECT=rhdh-ai
+export VERTEXAI_PROJECT=rhdh-ai
+export VERTEXAI_LOCATION=us-central1
+
+REPO="$(pwd)"
+cd /path/to/lightspeed-evaluation
+uv run lightspeed-eval \
+  --system-config "$REPO/config/system-vertex-judge.yaml" \
+  --eval-data "$REPO/dataset/eval_data.yaml" \
+  --metrics custom:tool_eval custom:intent_eval
+```
+
+Outputs: `evaluation-result/rhidp-14578-vertex-judge/`
 
 ### What is scored
 
 | Metric | Mode | Notes |
 | --- | --- | --- |
 | `custom:tool_eval` | Offline | Ordered matching, `full_match: false` (extra helper calls allowed) |
-| Answer quality (ragas / judge panel) | Not required for RHIDP-14578 | Optional follow-up |
+| `custom:intent_eval` | Vertex Gemini judge | Requires `response` + `expected_intent` in the dataset |
 
 Coverage in the checked-in campaign:
 
@@ -91,9 +115,12 @@ Coverage in the checked-in campaign:
 - **multi_step** — catalog→coverage; techdocs fetch→(optional retrieve)
 - **negative** — inspect-only; empty filter
 
-## Latest campaign result
+## Latest campaign results
 
-`evaluation-result/rhidp-14578-tool-eval/` — **21/21 PASS** (`custom:tool_eval`, gpt-4o-mini agent traces).
+| Campaign | Metrics | Result |
+| --- | --- | --- |
+| `evaluation-result/rhidp-14578-tool-eval/` | `custom:tool_eval` | **21/21 PASS** |
+| `evaluation-result/rhidp-14578-vertex-judge/` | `tool_eval` + Vertex `intent_eval` | **42/42 PASS** |
 
 ## Related
 

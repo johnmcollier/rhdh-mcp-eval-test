@@ -2,8 +2,6 @@
 
 Checked-in outputs from MCP eval campaigns (CSV / JSON / TXT / graphs).
 
-Layout convention (per campaign or model):
-
 ```text
 evaluation-result/
   <campaign-or-model>/
@@ -13,4 +11,9 @@ evaluation-result/
     graphs/   # optional
 ```
 
-Do not commit secrets or raw API keys. Traces in reports should be reviewed for sensitive catalog data before publishing.
+| Campaign | Metric | Result |
+| --- | --- | --- |
+| `rhidp-14578-tool-eval` | offline `custom:tool_eval` | 21/21 PASS |
+| `offline-catalog-smoke` | early 3-turn smoke | historical |
+
+Review reports before publishing if they embed sensitive catalog text.

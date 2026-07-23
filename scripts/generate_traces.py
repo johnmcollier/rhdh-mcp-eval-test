@@ -27,6 +27,7 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 from openai import OpenAI
 
+# Backend MCP endpoint (not the frontend on :3000).
 DEFAULT_MCP_URL = "http://localhost:7007/api/mcp-actions/v1"
 DEFAULT_MODEL = "gpt-4o-mini"
 MAX_TOOL_ROUNDS = 8

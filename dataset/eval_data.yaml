@@ -1,252 +1,339 @@
-# RHDH MCP golden set (v1 expanded).
-# tool_calls / response are filled by scripts/generate_traces.py
-# Prefer overlay tools (*-mcp-extras.*) over upstream catalog/scaffolder duplicates.
-#
-# MCP tool name format: <pluginId>.<action-name>
-
-# ── catalog ──────────────────────────────────────────────────────────
+# RHDH MCP golden set (RHIDP-14578).
+# Prefer overlay tools (*-mcp-extras.*) over upstream duplicates.
+# Fixture: mcp-integrations demo catalog (payments-team, security-team, etc.).
+# Template kind count is 0 → execute-template skipped; write path uses dry-run validate.
+# TechDocs may be empty locally; multi-step retrieve is optional when fetch is empty.
+# tool_calls filled from live OpenAI → MCP traces (gpt-4o-mini).
 
 - conversation_group_id: catalog-list-all
   description: List catalog entities with no filters
   tag: catalog
   turns:
-    - turn_id: list_all
-      query: Retrieve all entries in the Backstage Catalog
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments: {}
-
+  - turn_id: list_all
+    query: Retrieve all entries in the Backstage Catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments: {}
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments: {}
 - conversation_group_id: catalog-filter-kind-api
   description: Filter catalog by kind API
   tag: catalog
   turns:
-    - turn_id: filter_api
-      query: Show me all APIs in the catalog
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments:
-              kind: API
-
+  - turn_id: filter_api
+    query: Show me all APIs in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
 - conversation_group_id: catalog-filter-kind-component
   description: Filter catalog by kind Component
   tag: catalog
   turns:
-    - turn_id: filter_component
-      query: List all Components in the software catalog
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments:
-              kind: Component
-
+  - turn_id: filter_component
+    query: List all Components in the software catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
 - conversation_group_id: catalog-filter-kind-resource
   description: Filter catalog by kind Resource
   tag: catalog
   turns:
-    - turn_id: filter_resource
-      query: What Resources are registered in the catalog?
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments:
-              kind: Resource
-
+  - turn_id: filter_resource
+    query: What Resources are registered in the catalog?
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Resource
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Resource
 - conversation_group_id: catalog-filter-owner
-  description: Filter catalog entities by owner
+  description: Filter catalog entities by owner (fixture - payments-team)
   tag: catalog
   turns:
-    - turn_id: filter_owner
-      query: Find catalog entities owned by the payments-team
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments:
-              owner: payments-team
-
+  - turn_id: filter_owner
+    query: Find catalog entities owned by payments-team. Call query-catalog-entities
+      with owner set to payments-team (not a rewritten form like team-payments).
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*payments-team.*
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: payments-team
 - conversation_group_id: catalog-filter-tags
-  description: Filter catalog entities by tag
+  description: Filter catalog entities by tag (fixture - payments)
   tag: catalog
   turns:
-    - turn_id: filter_tags
-      query: Show catalog entities tagged with payments
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments:
-              tags: payments
-
+  - turn_id: filter_tags
+    query: Show catalog entities tagged with payments
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: payments
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: payments
 - conversation_group_id: catalog-filter-kind-and-type
   description: Filter by kind and type together
   tag: catalog
   turns:
-    - turn_id: filter_kind_type
-      query: Find Components of type service in the catalog
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments:
-              kind: Component
-              type: service
-
+  - turn_id: filter_kind_type
+    query: Find Components of type service in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          type: service
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          type: service
 - conversation_group_id: catalog-get-entity
   description: Fetch a single entity by name via upstream catalog tool
   tag: catalog
   turns:
-    - turn_id: get_entity
-      query: Get the catalog entity named consent-management-api
-      expected_tool_calls:
-        - - tool_name: catalog.get-catalog-entity
-            arguments:
-              name: consent-management-api
-
+  - turn_id: get_entity
+    query: Get the catalog entity named consent-management-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: consent-management-api
+    tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: consent-management-api
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          kind: component
+          name: consent-management-api
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          kind: api
+          name: consent-management-api
 - conversation_group_id: catalog-model-description
   description: Ask for the catalog model / kinds description
   tag: catalog
   turns:
-    - turn_id: model_description
-      query: Describe the catalog model and what entity kinds are registered
-      expected_tool_calls:
-        - - tool_name: catalog.get-catalog-model-description
-            arguments: {}
-
-# ── techdocs ─────────────────────────────────────────────────────────
-
+  - turn_id: model_description
+    query: Describe the catalog model and what entity kinds are registered
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-model-description
+        arguments: {}
+    tool_calls:
+    - - tool_name: catalog.get-catalog-model-description
+        arguments: {}
 - conversation_group_id: techdocs-list
   description: List entities that have TechDocs
   tag: techdocs
   turns:
-    - turn_id: fetch_techdocs
-      query: Which entities have TechDocs documentation available?
-      expected_tool_calls:
-        - - tool_name: techdocs-mcp-extras.fetch-techdocs
-            arguments: {}
-
+  - turn_id: fetch_techdocs
+    query: Which entities have TechDocs documentation available?
+    expected_tool_calls:
+    - - - tool_name: techdocs-mcp-extras.fetch-techdocs
+          arguments: {}
+    - - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+          arguments: {}
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments: {}
 - conversation_group_id: techdocs-coverage
   description: Analyze TechDocs coverage across the catalog
   tag: techdocs
   turns:
-    - turn_id: coverage
-      query: What is our TechDocs documentation coverage across catalog entities?
-      expected_tool_calls:
-        - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
-            arguments: {}
-
+  - turn_id: coverage
+    query: What is our TechDocs documentation coverage across catalog entities?
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments: {}
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments: {}
 - conversation_group_id: techdocs-coverage-by-owner
-  description: TechDocs coverage filtered by owner
+  description: TechDocs coverage filtered by owner (fixture - security-team)
   tag: techdocs
   turns:
-    - turn_id: coverage_owner
-      query: Analyze TechDocs coverage for entities owned by security-team
-      expected_tool_calls:
-        - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
-            arguments:
-              owner: security-team
-
+  - turn_id: coverage_owner
+    query: Analyze TechDocs coverage for entities owned by security-team
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*security-team.*
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: user:security-team
 - conversation_group_id: techdocs-fetch-components
   description: Fetch TechDocs entities filtered to Components
   tag: techdocs
   turns:
-    - turn_id: fetch_components
-      query: List TechDocs for Component entities only
-      expected_tool_calls:
-        - - tool_name: techdocs-mcp-extras.fetch-techdocs
-            arguments:
-              entityType: Component
-
-# ── scaffolder-read ──────────────────────────────────────────────────
-
+  - turn_id: fetch_components
+    query: List TechDocs for Component entities only
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: Component
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: Component
 - conversation_group_id: scaffolder-list-templates
   description: List / search software templates
   tag: scaffolder-read
   turns:
-    - turn_id: fetch_templates
-      query: What software templates are available in the scaffolder?
-      expected_tool_calls:
-        - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
-            arguments: {}
-
+  - turn_id: fetch_templates
+    query: What software templates are available in the scaffolder?
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments: {}
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments: {}
 - conversation_group_id: scaffolder-list-actions
   description: List installed scaffolder actions
   tag: scaffolder-read
   turns:
-    - turn_id: list_actions
-      query: List all installed Scaffolder actions
-      expected_tool_calls:
-        # Prefer overlay; accept upstream duplicate
-        - - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
-              arguments: {}
-        - - - tool_name: scaffolder.list-scaffolder-actions
-              arguments: {}
-
+  - turn_id: list_actions
+    query: List all installed Scaffolder actions
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+          arguments: {}
+    - - - tool_name: scaffolder.list-scaffolder-actions
+          arguments: {}
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments: {}
 - conversation_group_id: scaffolder-list-tasks
   description: List recent scaffolder tasks
   tag: scaffolder-read
   turns:
-    - turn_id: list_tasks
-      query: Show recent scaffolder tasks
-      expected_tool_calls:
-        - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
-              arguments: {}
-        - - - tool_name: scaffolder.list-scaffolder-tasks
-              arguments: {}
-
-- conversation_group_id: scaffolder-template-by-name
-  description: Fetch metadata for a specific template name if present
-  tag: scaffolder-read
+  - turn_id: list_tasks
+    query: Show recent scaffolder tasks
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments: {}
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments:
+            limit: .*
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments: {}
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments:
+            limit: .*
+    tool_calls:
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          limit: 5
+- conversation_group_id: scaffolder-write-validate-dry-run
+  description: Sandbox-safe dry-run validation via validate-scaffolder (execute-template
+    skipped — no Templates in fixture)
+  tag: scaffolder-write
   turns:
-    - turn_id: template_by_name
-      query: Get metadata for the software template named example-nodejs-template if it exists
-      expected_tool_calls:
-        - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
-            arguments:
-              name: example-nodejs-template
-
-# ── multi_step ───────────────────────────────────────────────────────
-
+  - turn_id: validate_minimal
+    query: "Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder\
+      \ (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass\
+      \ templateYaml as the following YAML document (name must remain mcp-eval-dry-run):\n\
+      \napiVersion: scaffolder.backstage.io/v1beta3\nkind: Template\nmetadata:\n \
+      \ name: mcp-eval-dry-run\n  title: MCP Eval Dry Run\nspec:\n  type: service\n\
+      \  parameters: []\n  steps:\n    - id: noop\n      name: Noop\n      action:\
+      \ debug:log\n      input:\n        message: mcp-eval-dry-run\n"
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.validate-scaffolder
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    - - - tool_name: scaffolder.dry-run-template
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    tool_calls:
+    - - tool_name: scaffolder.dry-run-template
+        arguments:
+          templateYaml: "apiVersion: scaffolder.backstage.io/v1beta3\nkind: Template\n\
+            metadata:\n  name: mcp-eval-dry-run\n  title: MCP Eval Dry Run\nspec:\n\
+            \  type: service\n  parameters: []\n  steps:\n    - id: noop\n      name:\
+            \ Noop\n      action: debug:log\n      input:\n        message: mcp-eval-dry-run\n"
 - conversation_group_id: multi-techdocs-then-content
   description: Find a documented entity then retrieve its TechDocs content
   tag: multi_step
   turns:
-    - turn_id: fetch_then_retrieve
-      query: Find an entity that has TechDocs and retrieve the content of its documentation home page
-      expected_tool_calls:
-        - - tool_name: techdocs-mcp-extras.fetch-techdocs
-            arguments: {}
-        - - tool_name: techdocs-mcp-extras.retrieve-techdocs-content
-            arguments:
-              # entityRef is chosen dynamically from fetch results
-              entityRef: .*
-
+  - turn_id: fetch_then_retrieve
+    query: Find an entity that has TechDocs and retrieve the content of its documentation
+      home page
+    expected_tool_calls:
+    - - - tool_name: techdocs-mcp-extras.fetch-techdocs
+          arguments: {}
+      - - tool_name: techdocs-mcp-extras.retrieve-techdocs-content
+          arguments:
+            entityRef: .*
+    - - - tool_name: techdocs-mcp-extras.fetch-techdocs
+          arguments: {}
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments: {}
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments: {}
 - conversation_group_id: multi-owner-components-then-coverage
   description: List an owner's components then check their docs coverage
   tag: multi_step
   turns:
-    - turn_id: components_then_coverage
-      query: List Components owned by payments-team, then analyze TechDocs coverage for that same owner
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments:
-              kind: Component
-              owner: payments-team
-        - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
-            arguments:
-              owner: payments-team
-
-# ── negative ─────────────────────────────────────────────────────────
-
+  - turn_id: components_then_coverage
+    query: List Components owned by payments-team, then analyze TechDocs coverage
+      for that same owner
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*payments-team.*
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*payments-team.*
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: user:payments-team
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: user:payments-team
 - conversation_group_id: negative-no-execute-template
   description: Read-only intent must not execute a template
   tag: negative
   turns:
-    - turn_id: inspect_only
-      query: I only want to inspect available templates. Do not create or execute anything.
-      expected_tool_calls:
-        - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
-            arguments: {}
-
+  - turn_id: inspect_only
+    query: I only want to inspect available templates. Do not create or execute anything.
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments: {}
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments: {}
 - conversation_group_id: negative-empty-filter
   description: Unlikely filter should still use catalog query (empty result OK)
   tag: negative
   turns:
-    - turn_id: empty_filter
-      query: Find catalog Components of type definitely-does-not-exist-xyz
-      expected_tool_calls:
-        - - tool_name: software-catalog-mcp-extras.query-catalog-entities
-            arguments:
-              kind: Component
-              type: definitely-does-not-exist-xyz
+  - turn_id: empty_filter
+    query: Find catalog Components of type definitely-does-not-exist-xyz
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          type: definitely-does-not-exist-xyz
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          type: definitely-does-not-exist-xyz

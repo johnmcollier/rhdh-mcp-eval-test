@@ -1,7 +1,7 @@
-# Offline tool_eval for RHDH MCP.
+# Offline tool_eval for RHDH MCP (RHIDP-14578).
 # No live agent — scores pre-filled tool_calls only.
 # lightspeed-eval still initializes an LLM client at startup; set OPENAI_API_KEY
-# (unused by custom:tool_eval if you only score tool matches).
+# for boot even though custom:tool_eval does not call the judge model.
 core:
   max_threads: 1
   cache_enabled: false
@@ -39,7 +39,7 @@ storage:
   - type: file
     # Relative to the process cwd — run lightspeed-eval from this repo root,
     # or pass an absolute path if you invoke it from elsewhere.
-    output_dir: evaluation-result/offline-catalog-smoke
+    output_dir: evaluation-result/rhidp-14578-tool-eval
     base_filename: evaluation
     enabled_outputs:
       - csv

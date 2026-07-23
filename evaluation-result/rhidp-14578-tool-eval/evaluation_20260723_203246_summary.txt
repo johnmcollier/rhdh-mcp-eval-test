@@ -1,0 +1,245 @@
+LSC Evaluation Framework - Summary Report
+==================================================
+
+Generated: 2026-07-23 20:32:46 UTC
+Total Evaluations: 21
+
+Overall Statistics:
+--------------------
+Pass: 21 (100.0%)
+Fail: 0 (0.0%)
+Error: 0 (0.0%)
+Skipped: 0 (0.0%)
+
+Token Usage (Judge LLM):
+--------------------
+Input Tokens: 0
+Output Tokens: 0
+Total Tokens: 0
+
+Token Usage (Embeddings):
+--------------------
+Input Tokens: 0
+
+Token Usage (API Calls):
+--------------------
+Input Tokens: 0
+Output Tokens: 0
+Total Tokens: 0
+
+By Metric:
+---------
+custom:tool_eval:
+  Pass: 21 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+By Conversation:
+---------------
+catalog-filter-kind-and-type:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-kind-api:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-kind-component:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-kind-resource:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-owner:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-tags:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-get-entity:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-list-all:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-model-description:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+multi-owner-components-then-coverage:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+multi-techdocs-then-content:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+negative-empty-filter:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+negative-no-execute-template:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-list-actions:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-list-tasks:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-list-templates:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-write-validate-dry-run:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-coverage:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-coverage-by-owner:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-fetch-components:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-list:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+By Tag:
+------
+catalog:
+  Pass: 9 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+multi_step:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+negative:
+  Pass: 2 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+scaffolder-read:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+scaffolder-write:
+  Pass: 1 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+
+techdocs:
+  Pass: 4 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+Configuration Parameters:
+-------------------------
+
+Llm:
+  Provider: openai
+  Model: gpt-4o-mini
+  Ssl Verify: True
+  Ssl Cert File: None
+  Temperature: 0.0
+  Max Tokens: 512
+  Timeout: 300
+  Num Retries: 3
+  Cache Enabled: False
+  Parameters: {'temperature': 0.0, 'max_completion_tokens': 512}
+
+Embedding:
+  Provider: openai
+  Model: text-embedding-3-small
+  Provider Kwargs: None
+  Cache Enabled: False
+
+Api:
+  Api Base: http://localhost:8080
+  Version: v1
+  Endpoint Type: streaming
+  Timeout: 300
+  Provider: None
+  Model: None
+  No Tools: None
+  System Prompt: None
+  Extra Request Params: None
+  Cache Enabled: False
+  Num Retries: 3
+  Enabled: True
+  Mcp Headers: None
+

@@ -1,0 +1,1053 @@
+{
+  "timestamp": "2026-07-23T20:32:44.723616+00:00",
+  "total_evaluations": 21,
+  "summary_stats": {
+    "overall": {
+      "TOTAL": 21,
+      "PASS": 21,
+      "FAIL": 0,
+      "ERROR": 0,
+      "SKIPPED": 0,
+      "pass_rate": 100.0,
+      "fail_rate": 0.0,
+      "error_rate": 0.0,
+      "skipped_rate": 0.0,
+      "total_judge_llm_input_tokens": 0,
+      "total_judge_llm_output_tokens": 0,
+      "total_judge_llm_tokens": 0,
+      "total_embedding_tokens": 0,
+      "total_api_input_tokens": 0,
+      "total_api_output_tokens": 0,
+      "total_api_tokens": 0,
+      "total_tokens": 0
+    },
+    "by_metric": {
+      "custom:tool_eval": {
+        "pass": 21,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 21,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      }
+    },
+    "by_conversation": {
+      "catalog-filter-kind-and-type": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-kind-api": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-kind-component": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-kind-resource": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-owner": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-filter-tags": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-get-entity": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-list-all": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "catalog-model-description": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "multi-owner-components-then-coverage": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "multi-techdocs-then-content": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "negative-empty-filter": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "negative-no-execute-template": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "scaffolder-list-actions": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "scaffolder-list-tasks": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "scaffolder-list-templates": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "scaffolder-write-validate-dry-run": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "techdocs-coverage": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "techdocs-coverage-by-owner": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "techdocs-fetch-components": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      },
+      "techdocs-list": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0
+      }
+    },
+    "by_tag": {
+      "catalog": {
+        "pass": 9,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 9,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "multi_step": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 2,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "negative": {
+        "pass": 2,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 2,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "scaffolder-read": {
+        "pass": 3,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 3,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      },
+      "scaffolder-write": {
+        "pass": 1,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": null
+        }
+      },
+      "techdocs": {
+        "pass": 4,
+        "fail": 0,
+        "error": 0,
+        "skipped": 0,
+        "pass_rate": 100.0,
+        "fail_rate": 0.0,
+        "error_rate": 0.0,
+        "skipped_rate": 0.0,
+        "score_statistics": {
+          "count": 4,
+          "mean": 1.0,
+          "median": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "confidence_interval": {
+            "low": 1.0,
+            "mean": 1.0,
+            "high": 1.0,
+            "confidence_level": 95.0
+          }
+        }
+      }
+    }
+  },
+  "configuration": {
+    "llm": {
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "ssl_verify": true,
+      "ssl_cert_file": null,
+      "temperature": 0.0,
+      "max_tokens": 512,
+      "timeout": 300,
+      "num_retries": 3,
+      "cache_enabled": false,
+      "parameters": {
+        "temperature": 0.0,
+        "max_completion_tokens": 512
+      }
+    },
+    "embedding": {
+      "provider": "openai",
+      "model": "text-embedding-3-small",
+      "provider_kwargs": null,
+      "cache_enabled": false
+    },
+    "api": {
+      "api_base": "http://localhost:8080",
+      "version": "v1",
+      "endpoint_type": "streaming",
+      "timeout": 300,
+      "provider": null,
+      "model": null,
+      "no_tools": null,
+      "system_prompt": null,
+      "extra_request_params": null,
+      "cache_enabled": false,
+      "num_retries": 3,
+      "enabled": true,
+      "mcp_headers": null
+    }
+  },
+  "results": [
+    {
+      "conversation_group_id": "scaffolder-list-tasks",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "list_tasks",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 5.5791024351492524e-05,
+      "evaluation_latency": 5.5791024351492524e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Alternative 4 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-api",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_api",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 8.358398918062449e-05,
+      "evaluation_latency": 8.358398918062449e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-owner",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_owner",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 0.0001473749871365726,
+      "evaluation_latency": 0.0001473749871365726,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-list-templates",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "fetch_templates",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.304100780747831e-05,
+      "evaluation_latency": 2.304100780747831e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-write-validate-dry-run",
+      "tag": [
+        "scaffolder-write"
+      ],
+      "turn_id": "validate_minimal",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 5.891700857318938e-05,
+      "evaluation_latency": 5.891700857318938e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Alternative 2 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-list",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "fetch_techdocs",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.066700835712254e-05,
+      "evaluation_latency": 2.066700835712254e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Alternative 2 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-coverage-by-owner",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "coverage_owner",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 5.7375000324100256e-05,
+      "evaluation_latency": 5.7375000324100256e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-tags",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_tags",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 7.2750000981614e-05,
+      "evaluation_latency": 7.2750000981614e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-list-all",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "list_all",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 0.00013166698045097291,
+      "evaluation_latency": 0.00013166698045097291,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-get-entity",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "get_entity",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 5.208398215472698e-05,
+      "evaluation_latency": 5.208398215472698e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 2 extra in response: [catalog.get-catalog-entity, catalog.get-catalog-entity] (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "negative-no-execute-template",
+      "tag": [
+        "negative"
+      ],
+      "turn_id": "inspect_only",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 1.5375000657513738e-05,
+      "evaluation_latency": 1.5375000657513738e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "multi-owner-components-then-coverage",
+      "tag": [
+        "multi_step"
+      ],
+      "turn_id": "components_then_coverage",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.1458981791511178e-05,
+      "evaluation_latency": 2.1458981791511178e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 2/2 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-model-description",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "model_description",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 1.6667007002979517e-05,
+      "evaluation_latency": 1.6667007002979517e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-resource",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_resource",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 0.00011691698455251753,
+      "evaluation_latency": 0.00011691698455251753,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "scaffolder-list-actions",
+      "tag": [
+        "scaffolder-read"
+      ],
+      "turn_id": "list_actions",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.2584019461646676e-05,
+      "evaluation_latency": 2.2584019461646676e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-component",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_component",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 4.537502536550164e-05,
+      "evaluation_latency": 4.537502536550164e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "catalog-filter-kind-and-type",
+      "tag": [
+        "catalog"
+      ],
+      "turn_id": "filter_kind_type",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 5.2333984058350325e-05,
+      "evaluation_latency": 5.2333984058350325e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-coverage",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "coverage",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 1.691601937636733e-05,
+      "evaluation_latency": 1.691601937636733e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "multi-techdocs-then-content",
+      "tag": [
+        "multi_step"
+      ],
+      "turn_id": "fetch_then_retrieve",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 2.129198401235044e-05,
+      "evaluation_latency": 2.129198401235044e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Alternative 2 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 1 extra in response: [techdocs-mcp-extras.analyze-techdocs-coverage] (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "negative-empty-filter",
+      "tag": [
+        "negative"
+      ],
+      "turn_id": "empty_filter",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 4.883401561528444e-05,
+      "evaluation_latency": 4.883401561528444e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    },
+    {
+      "conversation_group_id": "techdocs-fetch-components",
+      "tag": [
+        "techdocs"
+      ],
+      "turn_id": "fetch_components",
+      "metric_identifier": "custom:tool_eval",
+      "result": "PASS",
+      "score": 1.0,
+      "threshold": null,
+      "execution_time": 1.7875019693747163e-05,
+      "evaluation_latency": 1.7875019693747163e-05,
+      "judge_llm_input_tokens": 0,
+      "judge_llm_output_tokens": 0,
+      "judge_scores": [
+        {
+          "judge_id": "judge_placeholder",
+          "score": 1.0,
+          "reason": "Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",
+          "judge_input_tokens": 0,
+          "judge_output_tokens": 0,
+          "embedding_tokens": 0
+        }
+      ],
+      "time_to_first_token": null,
+      "streaming_duration": null,
+      "agent_latency": 0.0,
+      "tokens_per_second": null
+    }
+  ]
+}

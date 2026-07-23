@@ -2,37 +2,22 @@
 
 ## `generate_traces.py`
 
-Run an OpenAI tool-calling agent against Backstage MCP and fill `tool_calls`
-(and optional `response`) in `dataset/eval_data.yaml`.
-
-### Setup (once)
+Runs an OpenAI tool-calling agent against Backstage MCP and writes `tool_calls`
+into an eval YAML (default: `dataset/eval_data.with-traces.yaml`).
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r scripts/requirements.txt
-```
 
-### Run
-
-```bash
-export MCP_TOKEN=...          # Backstage/RHDH MCP bearer token
-# optional: export MCP_URL=http://localhost:7007/api/mcp-actions/v1
-# optional: export OPENAI_MODEL=gpt-4o-mini
+export MCP_TOKEN=...
+export MCP_URL=http://localhost:7007/api/mcp-actions/v1
 
 .venv/bin/python scripts/generate_traces.py \
-  --openai-key-file /path/to/openai-key \
-  --in-place
+  --openai-key-file "$HOME/path/to/openai-key" \
+  --no-response
 ```
 
-Without `--in-place`, writes `dataset/eval_data.with-traces.yaml` (gitignored).
+Use `--in-place` to overwrite `dataset/eval_data.yaml`, or `--output` for a separate file.
+Without `--in-place`, the default output is gitignored.
 
-Then score with lightspeed-eval:
-
-```bash
-export OPENAI_API_KEY=...     # framework boot only for offline tool_eval
-REPO="$(pwd)"
-cd /path/to/lightspeed-evaluation
-uv run lightspeed-eval \
-  --system-config "$REPO/config/system-offline-tool-eval.yaml" \
-  --eval-data "$REPO/dataset/eval_data.yaml"
-```
+Score with `lightspeed-eval` and `config/system-offline-tool-eval.yaml` (see root README).

@@ -1,0 +1,38 @@
+conversation_group_id,turn_id,metric_identifier,score,threshold,result,reason,query
+scaffolder-list-tasks,list_tasks,custom:tool_eval,1.0,,PASS,"Alternative 4 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Show recent scaffolder tasks
+catalog-filter-kind-api,filter_api,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Show me all APIs in the catalog
+catalog-filter-owner,filter_owner,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Find catalog entities owned by payments-team. Call query-catalog-entities with owner set to payments-team (not a rewritten form like team-payments).
+scaffolder-list-templates,fetch_templates,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",What software templates are available in the scaffolder?
+scaffolder-write-validate-dry-run,validate_minimal,custom:tool_eval,1.0,,PASS,"Alternative 2 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)","Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (name must remain mcp-eval-dry-run):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+techdocs-list,fetch_techdocs,custom:tool_eval,1.0,,PASS,"Alternative 2 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Which entities have TechDocs documentation available?
+techdocs-coverage-by-owner,coverage_owner,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Analyze TechDocs coverage for entities owned by security-team
+catalog-filter-tags,filter_tags,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Show catalog entities tagged with payments
+catalog-list-all,list_all,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Retrieve all entries in the Backstage Catalog
+catalog-get-entity,get_entity,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 2 extra in response: [catalog.get-catalog-entity, catalog.get-catalog-entity] (partial, ordered)",Get the catalog entity named consent-management-api
+negative-no-execute-template,inspect_only,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",I only want to inspect available templates. Do not create or execute anything.
+multi-owner-components-then-coverage,components_then_coverage,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 2/2 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)","List Components owned by payments-team, then analyze TechDocs coverage for that same owner"
+catalog-model-description,model_description,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Describe the catalog model and what entity kinds are registered
+catalog-filter-kind-resource,filter_resource,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",What Resources are registered in the catalog?
+scaffolder-list-actions,list_actions,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",List all installed Scaffolder actions
+catalog-filter-kind-component,filter_component,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",List all Components in the software catalog
+catalog-filter-kind-and-type,filter_kind_type,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Find Components of type service in the catalog
+techdocs-coverage,coverage,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",What is our TechDocs documentation coverage across catalog entities?
+multi-techdocs-then-content,fetch_then_retrieve,custom:tool_eval,1.0,,PASS,"Alternative 2 matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 1 extra in response: [techdocs-mcp-extras.analyze-techdocs-coverage] (partial, ordered)",Find an entity that has TechDocs and retrieve the content of its documentation home page
+negative-empty-filter,empty_filter,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",Find catalog Components of type definitely-does-not-exist-xyz
+techdocs-fetch-components,fetch_components,custom:tool_eval,1.0,,PASS,"Primary pattern matched: Tool calls: 1/1 expected matched, 0 unmatched: none, 0 extra in response: none (partial, ordered)",List TechDocs for Component entities only

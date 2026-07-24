@@ -1,20 +1,34 @@
-# Evaluation results
+# Evaluation Results
 
-Checked-in outputs from MCP eval campaigns (CSV / JSON / TXT / graphs).
+Per-model MCP evaluation outputs (Lightspeed-style packaging).
 
-```text
-evaluation-result/
-  <campaign-or-model>/
-    *_detailed.csv
-    *_summary.json
-    *_summary.txt
-    graphs/   # optional
-```
+## High-level benchmarks
 
-| Campaign | Metric | Result |
-| --- | --- | --- |
-| `rhidp-14578-tool-eval` | offline `custom:tool_eval` | 21/21 PASS |
-| `rhidp-14578-vertex-judge` | `tool_eval` + Vertex Gemini `intent_eval` | 42/42 PASS |
-| `offline-catalog-smoke` | early 3-turn smoke | historical |
+| Visualization | Description |
+| --- | --- |
+| [model-pass-rate.png](./model-pass-rate.png) | Overall pass rate by agent model |
+| [model-metric-passrate.png](./model-metric-passrate.png) | Pass rate by metric × model |
+| [topic-passrate.png](./topic-passrate.png) | Pass rate by category tag × model |
 
-Review reports before publishing if they embed sensitive catalog text.
+## Model directories
+
+- [gpt-4o-mini](./gpt-4o-mini/)
+- [gpt-5-mini](./gpt-5-mini/)
+- [gpt-5.5](./gpt-5.5/)
+- [gemini-2.5-pro](./gemini-2.5-pro/)
+- [gemini-2.5-flash-lite](./gemini-2.5-flash-lite/)
+- [llama-31-8b](./llama-31-8b/)
+
+Each folder contains `evaluation_dataset.yaml` (gold + that model's traces), summary JSON/TXT/CSV, and per-run graphs.
+
+## Metrics
+
+- `custom:tool_eval`
+- `custom:answer_correctness`
+- `ragas:faithfulness`
+
+Judge panel: `vertex_ai/gemini-2.5-pro` + `openai/gpt-4o-mini` (max aggregation).
+
+## Historical
+
+Earlier smoke / prototype runs live under [historical/](./historical/).

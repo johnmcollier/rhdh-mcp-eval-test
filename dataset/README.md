@@ -1,21 +1,18 @@
 # Dataset
 
-Golden evaluation tasks for RHDH MCP tools.
+Shared golden evaluation tasks for RHDH MCP tools (RHIDP-14578).
 
 | File | Purpose |
 | --- | --- |
-| `eval_data.yaml` | Conversations for `lightspeed-eval` (includes `tool_calls` for offline scoring) |
-| `eval_data.with-traces.yaml` | Local regenerate output (gitignored) |
+| `eval_data.yaml` | Shared gold: `query`, `expected_tool_calls`, `expected_response` (no per-model traces) |
 
-## Schema
+Per-model traces (`tool_calls`, `response`, `contexts`) are written under
+`evaluation-result/<model>/evaluation_dataset.yaml` by `scripts/generate_traces.py`.
 
-Each turn includes:
+Rebuild gold:
 
-- `query` — user prompt
-- `expected_tool_calls` — gold tool name(s) and arguments (regex supported; alternatives as multiple top-level sets)
-- `tool_calls` — what the agent actually did (from live MCP traces)
+```bash
+.venv/bin/python scripts/build_gold_dataset.py
+```
 
-Tool names use Backstage MCP form: `<pluginId>.<action-name>`  
-Example: `software-catalog-mcp-extras.query-catalog-entities`
-
-See `../categories.yaml` for category tags and the root README for fixture assumptions.
+Tool names use Backstage MCP form: `<pluginId>.<action-name>`.

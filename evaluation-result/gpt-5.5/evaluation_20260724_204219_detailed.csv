@@ -1,0 +1,538 @@
+conversation_group_id,turn_id,metric_identifier,score,threshold,result,reason,query
+catalog-filter-component-website,filter_kind_type,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find Components of type website in the catalog
+catalog-filter-component-website,filter_kind_type,custom:answer_correctness,0.2,0.75,FAIL,Max of 2 judges: 0.200,Find Components of type website in the catalog
+catalog-filter-component-website,filter_kind_type,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find Components of type website in the catalog
+techdocs-fetch-api,fetch_typed,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List TechDocs for API entities only
+techdocs-fetch-api,fetch_typed,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List TechDocs for API entities only
+techdocs-fetch-api,fetch_typed,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List TechDocs for API entities only
+scaffolder-template-react-ssr-template,template_by_name,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get metadata for the software template named react-ssr-template if it exists
+scaffolder-template-react-ssr-template,template_by_name,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get metadata for the software template named react-ssr-template if it exists
+scaffolder-template-react-ssr-template,template_by_name,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get metadata for the software template named react-ssr-template if it exists
+techdocs-fetch-system,fetch_typed,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List TechDocs for System entities only
+techdocs-fetch-system,fetch_typed,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List TechDocs for System entities only
+techdocs-fetch-system,fetch_typed,ragas:faithfulness,0.0,0.8,FAIL,Max of 2 judges: 0.000,List TechDocs for System entities only
+scaffolder-template-mcp-eval-dry-run,template_by_name,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get metadata for the software template named mcp-eval-dry-run if it exists
+scaffolder-template-mcp-eval-dry-run,template_by_name,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get metadata for the software template named mcp-eval-dry-run if it exists
+scaffolder-template-mcp-eval-dry-run,template_by_name,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get metadata for the software template named mcp-eval-dry-run if it exists
+techdocs-list,fetch_techdocs,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Which entities have TechDocs documentation available?
+techdocs-list,fetch_techdocs,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Which entities have TechDocs documentation available?
+techdocs-list,fetch_techdocs,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Which entities have TechDocs documentation available?
+catalog-filter-kind-domain,filter_domain,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show me all Domains in the catalog
+catalog-filter-kind-domain,filter_domain,custom:answer_correctness,0.2,0.75,FAIL,Max of 2 judges: 0.200,Show me all Domains in the catalog
+catalog-filter-kind-domain,filter_domain,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show me all Domains in the catalog
+techdocs-coverage,coverage,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,What is our TechDocs documentation coverage across catalog entities?
+techdocs-coverage,coverage,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,What is our TechDocs documentation coverage across catalog entities?
+techdocs-coverage,coverage,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,What is our TechDocs documentation coverage across catalog entities?
+scaffolder-template-example-nodejs-template,template_by_name,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get metadata for the software template named example-nodejs-template if it exists
+scaffolder-template-example-nodejs-template,template_by_name,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get metadata for the software template named example-nodejs-template if it exists
+scaffolder-template-example-nodejs-template,template_by_name,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get metadata for the software template named example-nodejs-template if it exists
+scaffolder-template-docs-template,template_by_name,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get metadata for the software template named docs-template if it exists
+scaffolder-template-docs-template,template_by_name,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get metadata for the software template named docs-template if it exists
+scaffolder-template-docs-template,template_by_name,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get metadata for the software template named docs-template if it exists
+catalog-filter-kind-system,filter_system,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show me all Systems in the catalog
+catalog-filter-kind-system,filter_system,custom:answer_correctness,0.2,0.75,FAIL,Max of 2 judges: 0.200,Show me all Systems in the catalog
+catalog-filter-kind-system,filter_system,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show me all Systems in the catalog
+catalog-filter-kind-user,filter_user,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show me all Users in the catalog
+catalog-filter-kind-user,filter_user,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show me all Users in the catalog
+catalog-filter-kind-user,filter_user,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show me all Users in the catalog
+catalog-get-entity-consent-management-api,get_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named consent-management-api
+catalog-get-entity-consent-management-api,get_entity,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get the catalog entity named consent-management-api
+catalog-get-entity-consent-management-api,get_entity,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get the catalog entity named consent-management-api
+scaffolder-list-templates,fetch_templates,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,What software templates are available in the scaffolder?
+scaffolder-list-templates,fetch_templates,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,What software templates are available in the scaffolder?
+scaffolder-list-templates,fetch_templates,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,What software templates are available in the scaffolder?
+techdocs-fetch-resource,fetch_typed,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List TechDocs for Resource entities only
+techdocs-fetch-resource,fetch_typed,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List TechDocs for Resource entities only
+techdocs-fetch-resource,fetch_typed,ragas:faithfulness,0.0,0.8,FAIL,Max of 2 judges: 0.000,List TechDocs for Resource entities only
+catalog-get-entity-transaction-history-api,get_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named transaction-history-api
+catalog-get-entity-transaction-history-api,get_entity,custom:answer_correctness,0.7,0.75,FAIL,Max of 2 judges: 0.700,Get the catalog entity named transaction-history-api
+catalog-get-entity-transaction-history-api,get_entity,ragas:faithfulness,0.6666666666666666,0.8,FAIL,Max of 2 judges: 0.667,Get the catalog entity named transaction-history-api
+techdocs-fetch-component,fetch_typed,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List TechDocs for Component entities only
+techdocs-fetch-component,fetch_typed,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List TechDocs for Component entities only
+techdocs-fetch-component,fetch_typed,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List TechDocs for Component entities only
+techdocs-coverage-owner-compliance-team,coverage_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by compliance-team
+techdocs-coverage-owner-compliance-team,coverage_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by compliance-team
+techdocs-coverage-owner-compliance-team,coverage_owner,ragas:faithfulness,0.8,0.8,PASS,Max of 2 judges: 0.800,Analyze TechDocs coverage for entities owned by compliance-team
+catalog-filter-kind-group,filter_group,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show me all Groups in the catalog
+catalog-filter-kind-group,filter_group,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show me all Groups in the catalog
+catalog-filter-kind-group,filter_group,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show me all Groups in the catalog
+techdocs-coverage-owner-accounts-team,coverage_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by accounts-team
+techdocs-coverage-owner-accounts-team,coverage_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by accounts-team
+techdocs-coverage-owner-accounts-team,coverage_owner,ragas:faithfulness,0.8,0.8,PASS,Max of 2 judges: 0.800,Analyze TechDocs coverage for entities owned by accounts-team
+catalog-filter-owner-event-team,filter_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog entities owned by event-team. Call query-catalog-entities with owner set to a value containing event-team.
+catalog-filter-owner-event-team,filter_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog entities owned by event-team. Call query-catalog-entities with owner set to a value containing event-team.
+catalog-filter-owner-event-team,filter_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog entities owned by event-team. Call query-catalog-entities with owner set to a value containing event-team.
+catalog-filter-kind-location,filter_location,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show me all Locations in the catalog
+catalog-filter-kind-location,filter_location,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show me all Locations in the catalog
+catalog-filter-kind-location,filter_location,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show me all Locations in the catalog
+catalog-get-entity-payment-initiation-api,get_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named payment-initiation-api
+catalog-get-entity-payment-initiation-api,get_entity,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get the catalog entity named payment-initiation-api
+catalog-get-entity-payment-initiation-api,get_entity,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get the catalog entity named payment-initiation-api
+techdocs-coverage-owner-security-team,coverage_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by security-team
+techdocs-coverage-owner-security-team,coverage_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by security-team
+techdocs-coverage-owner-security-team,coverage_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by security-team
+techdocs-retrieve-home,retrieve_home,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"If any entity has TechDocs, retrieve the content of its documentation home page; otherwise say none are available after checking."
+techdocs-retrieve-home,retrieve_home,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"If any entity has TechDocs, retrieve the content of its documentation home page; otherwise say none are available after checking."
+techdocs-retrieve-home,retrieve_home,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"If any entity has TechDocs, retrieve the content of its documentation home page; otherwise say none are available after checking."
+catalog-filter-owner-open-banking-team,filter_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog entities owned by open-banking-team. Call query-catalog-entities with owner set to a value containing open-banking-team.
+catalog-filter-owner-open-banking-team,filter_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog entities owned by open-banking-team. Call query-catalog-entities with owner set to a value containing open-banking-team.
+catalog-filter-owner-open-banking-team,filter_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog entities owned by open-banking-team. Call query-catalog-entities with owner set to a value containing open-banking-team.
+catalog-get-entity-balance-check-api,get_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named balance-check-api
+catalog-get-entity-balance-check-api,get_entity,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get the catalog entity named balance-check-api
+catalog-get-entity-balance-check-api,get_entity,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get the catalog entity named balance-check-api
+catalog-get-entity-beneficiary-management-api,get_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named beneficiary-management-api
+catalog-get-entity-beneficiary-management-api,get_entity,custom:answer_correctness,0.8,0.75,PASS,Max of 2 judges: 0.800,Get the catalog entity named beneficiary-management-api
+catalog-get-entity-beneficiary-management-api,get_entity,ragas:faithfulness,0.6666666666666666,0.8,FAIL,Max of 2 judges: 0.667,Get the catalog entity named beneficiary-management-api
+scaffolder-list-tasks-limit-10,list_tasks_limit,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,Show the 10 most recent scaffolder tasks
+scaffolder-list-tasks-limit-10,list_tasks_limit,custom:answer_correctness,0.2,0.75,FAIL,Max of 2 judges: 0.200,Show the 10 most recent scaffolder tasks
+scaffolder-list-tasks-limit-10,list_tasks_limit,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show the 10 most recent scaffolder tasks
+catalog-filter-tags-database,filter_tags,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with database
+catalog-filter-tags-database,filter_tags,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with database
+catalog-filter-tags-database,filter_tags,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with database
+catalog-filter-tags-security,filter_tags,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with security
+catalog-filter-tags-security,filter_tags,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with security
+catalog-filter-tags-security,filter_tags,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with security
+scaffolder-list-tasks,list_tasks,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,Show recent scaffolder tasks
+scaffolder-list-tasks,list_tasks,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show recent scaffolder tasks
+scaffolder-list-tasks,list_tasks,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show recent scaffolder tasks
+catalog-filter-resource-database,filter_kind_type,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find Resources of type database in the catalog
+catalog-filter-resource-database,filter_kind_type,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find Resources of type database in the catalog
+catalog-filter-resource-database,filter_kind_type,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find Resources of type database in the catalog
+techdocs-coverage-owner-payments-team,coverage_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by payments-team
+techdocs-coverage-owner-payments-team,coverage_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Analyze TechDocs coverage for entities owned by payments-team
+techdocs-coverage-owner-payments-team,coverage_owner,ragas:faithfulness,0.5,0.8,FAIL,Max of 2 judges: 0.500,Analyze TechDocs coverage for entities owned by payments-team
+catalog-get-entity-webhook-notifications-api,get_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named webhook-notifications-api
+catalog-get-entity-webhook-notifications-api,get_entity,custom:answer_correctness,0.7,0.75,FAIL,Max of 2 judges: 0.700,Get the catalog entity named webhook-notifications-api
+catalog-get-entity-webhook-notifications-api,get_entity,ragas:faithfulness,0.6666666666666666,0.8,FAIL,Max of 2 judges: 0.667,Get the catalog entity named webhook-notifications-api
+catalog-get-entity-account-access-api,get_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named account-access-api
+catalog-get-entity-account-access-api,get_entity,custom:answer_correctness,0.8,0.75,PASS,Max of 2 judges: 0.800,Get the catalog entity named account-access-api
+catalog-get-entity-account-access-api,get_entity,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get the catalog entity named account-access-api
+catalog-filter-tags-pis,filter_tags,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with pis
+catalog-filter-tags-pis,filter_tags,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with pis
+catalog-filter-tags-pis,filter_tags,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with pis
+scaffolder-write-validate-2,validate_minimal,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 2):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-2,validate_minimal,custom:answer_correctness,0.5,0.75,FAIL,Max of 2 judges: 0.500,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 2):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-2,validate_minimal,ragas:faithfulness,0.5,0.8,FAIL,Max of 2 judges: 0.500,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 2):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-list-actions,list_actions,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List all installed Scaffolder actions
+scaffolder-list-actions,list_actions,custom:answer_correctness,0.2,0.75,FAIL,Max of 2 judges: 0.200,List all installed Scaffolder actions
+scaffolder-list-actions,list_actions,ragas:faithfulness,0.4,0.8,FAIL,Max of 2 judges: 0.400,List all installed Scaffolder actions
+catalog-filter-owner-compliance-team,filter_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog entities owned by compliance-team. Call query-catalog-entities with owner set to a value containing compliance-team.
+catalog-filter-owner-compliance-team,filter_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog entities owned by compliance-team. Call query-catalog-entities with owner set to a value containing compliance-team.
+catalog-filter-owner-compliance-team,filter_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog entities owned by compliance-team. Call query-catalog-entities with owner set to a value containing compliance-team.
+catalog-get-entity-standing-orders-api,get_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named standing-orders-api
+catalog-get-entity-standing-orders-api,get_entity,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get the catalog entity named standing-orders-api
+catalog-get-entity-standing-orders-api,get_entity,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get the catalog entity named standing-orders-api
+catalog-filter-owner-security-team,filter_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog entities owned by security-team. Call query-catalog-entities with owner set to a value containing security-team.
+catalog-filter-owner-security-team,filter_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog entities owned by security-team. Call query-catalog-entities with owner set to a value containing security-team.
+catalog-filter-owner-security-team,filter_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog entities owned by security-team. Call query-catalog-entities with owner set to a value containing security-team.
+scaffolder-write-validate-1,validate_minimal,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 1):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-1,validate_minimal,custom:answer_correctness,0.6,0.75,FAIL,Max of 2 judges: 0.600,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 1):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-1,validate_minimal,ragas:faithfulness,0.6,0.8,FAIL,Max of 2 judges: 0.600,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 1):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-4,validate_minimal,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 4):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-4,validate_minimal,custom:answer_correctness,0.4,0.75,FAIL,Max of 2 judges: 0.400,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 4):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-4,validate_minimal,ragas:faithfulness,0.6666666666666666,0.8,FAIL,Max of 2 judges: 0.667,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 4):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-3,validate_minimal,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 3):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-3,validate_minimal,custom:answer_correctness,0.5,0.75,FAIL,Max of 2 judges: 0.500,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 3):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-3,validate_minimal,ragas:faithfulness,0.6666666666666666,0.8,FAIL,Max of 2 judges: 0.667,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 3):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+catalog-filter-kind-component,filter_component,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show me all Components in the catalog
+catalog-filter-kind-component,filter_component,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show me all Components in the catalog
+catalog-filter-kind-component,filter_component,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show me all Components in the catalog
+catalog-filter-tags-consent,filter_tags,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with consent
+catalog-filter-tags-consent,filter_tags,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with consent
+catalog-filter-tags-consent,filter_tags,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with consent
+negative-empty-owner,empty_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog entities owned by no-such-team-xyz-999
+negative-empty-owner,empty_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog entities owned by no-such-team-xyz-999
+negative-empty-owner,empty_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog entities owned by no-such-team-xyz-999
+scaffolder-list-tasks-limit-20,list_tasks_limit,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,Show the 20 most recent scaffolder tasks
+scaffolder-list-tasks-limit-20,list_tasks_limit,custom:answer_correctness,0.2,0.75,FAIL,Max of 2 judges: 0.200,Show the 20 most recent scaffolder tasks
+scaffolder-list-tasks-limit-20,list_tasks_limit,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show the 20 most recent scaffolder tasks
+negative-empty-filter-tag,empty_tag,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with zz-no-such-tag-999
+negative-empty-filter-tag,empty_tag,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with zz-no-such-tag-999
+negative-empty-filter-tag,empty_tag,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with zz-no-such-tag-999
+scaffolder-list-tasks-limit-5,list_tasks_limit,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,Show the 5 most recent scaffolder tasks
+scaffolder-list-tasks-limit-5,list_tasks_limit,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show the 5 most recent scaffolder tasks
+scaffolder-list-tasks-limit-5,list_tasks_limit,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show the 5 most recent scaffolder tasks
+catalog-filter-owner-accounts-team,filter_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog entities owned by accounts-team. Call query-catalog-entities with owner set to a value containing accounts-team.
+catalog-filter-owner-accounts-team,filter_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog entities owned by accounts-team. Call query-catalog-entities with owner set to a value containing accounts-team.
+catalog-filter-owner-accounts-team,filter_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog entities owned by accounts-team. Call query-catalog-entities with owner set to a value containing accounts-team.
+negative-empty-filter-type,empty_filter,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog Components of type definitely-does-not-exist-xyz
+negative-empty-filter-type,empty_filter,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog Components of type definitely-does-not-exist-xyz
+negative-empty-filter-type,empty_filter,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog Components of type definitely-does-not-exist-xyz
+negative-no-execute-template,inspect_only,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,I only want to inspect available templates. Do not create or execute anything.
+negative-no-execute-template,inspect_only,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,I only want to inspect available templates. Do not create or execute anything.
+negative-no-execute-template,inspect_only,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,I only want to inspect available templates. Do not create or execute anything.
+negative-missing-entity-ghost-component-000,missing_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named ghost-component-000
+negative-missing-entity-ghost-component-000,missing_entity,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get the catalog entity named ghost-component-000
+negative-missing-entity-ghost-component-000,missing_entity,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get the catalog entity named ghost-component-000
+catalog-filter-tags-payments,filter_tags,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with payments
+catalog-filter-tags-payments,filter_tags,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with payments
+catalog-filter-tags-payments,filter_tags,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with payments
+catalog-model-description,model_description,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Describe the catalog model and what entity kinds are registered
+catalog-model-description,model_description,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Describe the catalog model and what entity kinds are registered
+catalog-model-description,model_description,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Describe the catalog model and what entity kinds are registered
+catalog-filter-kind-api,filter_api,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show me all APIs in the catalog
+catalog-filter-kind-api,filter_api,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show me all APIs in the catalog
+catalog-filter-kind-api,filter_api,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show me all APIs in the catalog
+multi-techdocs-then-content,fetch_then_retrieve,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find an entity that has TechDocs and retrieve the content of its documentation home page
+multi-techdocs-then-content,fetch_then_retrieve,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find an entity that has TechDocs and retrieve the content of its documentation home page
+multi-techdocs-then-content,fetch_then_retrieve,ragas:faithfulness,0.8,0.8,PASS,Max of 2 judges: 0.800,Find an entity that has TechDocs and retrieve the content of its documentation home page
+multi-templates-then-actions,templates_then_actions,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"List available software templates, then list all installed scaffolder actions"
+multi-templates-then-actions,templates_then_actions,custom:answer_correctness,0.4,0.75,FAIL,Max of 2 judges: 0.400,"List available software templates, then list all installed scaffolder actions"
+multi-templates-then-actions,templates_then_actions,ragas:faithfulness,0.6666666666666666,0.8,FAIL,Max of 2 judges: 0.667,"List available software templates, then list all installed scaffolder actions"
+scaffolder-write-validate-5,validate_minimal,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 5):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-5,validate_minimal,custom:answer_correctness,0.4,0.75,FAIL,Max of 2 judges: 0.400,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 5):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+scaffolder-write-validate-5,validate_minimal,ragas:faithfulness,0.6,0.8,FAIL,Max of 2 judges: 0.600,"Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass templateYaml as the following YAML document (variant 5):
+
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: mcp-eval-dry-run
+  title: MCP Eval Dry Run
+spec:
+  type: service
+  parameters: []
+  steps:
+    - id: noop
+      name: Noop
+      action: debug:log
+      input:
+        message: mcp-eval-dry-run
+"
+catalog-component-tag-payments,kind_tag,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show Component entities tagged with payments
+catalog-component-tag-payments,kind_tag,custom:answer_correctness,0.2,0.75,FAIL,Max of 2 judges: 0.200,Show Component entities tagged with payments
+catalog-component-tag-payments,kind_tag,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show Component entities tagged with payments
+catalog-filter-owner-payments-team,filter_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog entities owned by payments-team. Call query-catalog-entities with owner set to a value containing payments-team.
+catalog-filter-owner-payments-team,filter_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog entities owned by payments-team. Call query-catalog-entities with owner set to a value containing payments-team.
+catalog-filter-owner-payments-team,filter_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog entities owned by payments-team. Call query-catalog-entities with owner set to a value containing payments-team.
+negative-docs-not-execute,docs_not_execute,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,What is our TechDocs coverage? Do not run any scaffolder templates.
+negative-docs-not-execute,docs_not_execute,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,What is our TechDocs coverage? Do not run any scaffolder templates.
+negative-docs-not-execute,docs_not_execute,ragas:faithfulness,0.8,0.8,PASS,Max of 2 judges: 0.800,What is our TechDocs coverage? Do not run any scaffolder templates.
+catalog-component-tag-consent,kind_tag,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show Component entities tagged with consent
+catalog-component-tag-consent,kind_tag,custom:answer_correctness,0.2,0.75,FAIL,Max of 2 judges: 0.200,Show Component entities tagged with consent
+catalog-component-tag-consent,kind_tag,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show Component entities tagged with consent
+negative-missing-entity-definitely-missing-entity-xyz,missing_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named definitely-missing-entity-xyz
+negative-missing-entity-definitely-missing-entity-xyz,missing_entity,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get the catalog entity named definitely-missing-entity-xyz
+negative-missing-entity-definitely-missing-entity-xyz,missing_entity,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get the catalog entity named definitely-missing-entity-xyz
+multi-components-then-coverage-payments-team,components_then_coverage,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"List Components owned by payments-team, then analyze TechDocs coverage for that same owner"
+multi-components-then-coverage-payments-team,components_then_coverage,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"List Components owned by payments-team, then analyze TechDocs coverage for that same owner"
+multi-components-then-coverage-payments-team,components_then_coverage,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"List Components owned by payments-team, then analyze TechDocs coverage for that same owner"
+catalog-filter-component-service,filter_kind_type,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find Components of type service in the catalog
+catalog-filter-component-service,filter_kind_type,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find Components of type service in the catalog
+catalog-filter-component-service,filter_kind_type,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find Components of type service in the catalog
+catalog-resource-owner-accounts-team,kind_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List Resource entities owned by accounts-team
+catalog-resource-owner-accounts-team,kind_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List Resource entities owned by accounts-team
+catalog-resource-owner-accounts-team,kind_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List Resource entities owned by accounts-team
+negative-no-register-on-list,list_not_register,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Just list Components in the software catalog. Do not register or unregister anything.
+negative-no-register-on-list,list_not_register,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Just list Components in the software catalog. Do not register or unregister anything.
+negative-no-register-on-list,list_not_register,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Just list Components in the software catalog. Do not register or unregister anything.
+negative-missing-entity-no-such-api-abc,missing_entity,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Get the catalog entity named no-such-api-abc
+negative-missing-entity-no-such-api-abc,missing_entity,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Get the catalog entity named no-such-api-abc
+negative-missing-entity-no-such-api-abc,missing_entity,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Get the catalog entity named no-such-api-abc
+multi-components-then-coverage-accounts-team,components_then_coverage,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"List Components owned by accounts-team, then analyze TechDocs coverage for that same owner"
+multi-components-then-coverage-accounts-team,components_then_coverage,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"List Components owned by accounts-team, then analyze TechDocs coverage for that same owner"
+multi-components-then-coverage-accounts-team,components_then_coverage,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"List Components owned by accounts-team, then analyze TechDocs coverage for that same owner"
+catalog-filter-api-openapi,filter_kind_type,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find APIs of type openapi in the catalog
+catalog-filter-api-openapi,filter_kind_type,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find APIs of type openapi in the catalog
+catalog-filter-api-openapi,filter_kind_type,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find APIs of type openapi in the catalog
+multi-components-then-coverage-security-team,components_then_coverage,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"List Components owned by security-team, then analyze TechDocs coverage for that same owner"
+multi-components-then-coverage-security-team,components_then_coverage,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"List Components owned by security-team, then analyze TechDocs coverage for that same owner"
+multi-components-then-coverage-security-team,components_then_coverage,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"List Components owned by security-team, then analyze TechDocs coverage for that same owner"
+catalog-api-owner-accounts-team,kind_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List API entities owned by accounts-team
+catalog-api-owner-accounts-team,kind_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List API entities owned by accounts-team
+catalog-api-owner-accounts-team,kind_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List API entities owned by accounts-team
+catalog-filter-tags-ais,filter_tags,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with ais
+catalog-filter-tags-ais,filter_tags,custom:answer_correctness,0.8,0.75,PASS,Max of 2 judges: 0.800,Show catalog entities tagged with ais
+catalog-filter-tags-ais,filter_tags,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show catalog entities tagged with ais
+catalog-filter-kind-resource,filter_resource,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show me all Resources in the catalog
+catalog-filter-kind-resource,filter_resource,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show me all Resources in the catalog
+catalog-filter-kind-resource,filter_resource,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show me all Resources in the catalog
+negative-coverage-no-tasks,trap,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Summarize TechDocs coverage only. Do not list scaffolder tasks.
+negative-coverage-no-tasks,trap,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Summarize TechDocs coverage only. Do not list scaffolder tasks.
+negative-coverage-no-tasks,trap,ragas:faithfulness,0.75,0.8,FAIL,Max of 2 judges: 0.750,Summarize TechDocs coverage only. Do not list scaffolder tasks.
+catalog-api-owner-security-team,kind_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List API entities owned by security-team
+catalog-api-owner-security-team,kind_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List API entities owned by security-team
+catalog-api-owner-security-team,kind_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List API entities owned by security-team
+catalog-api-tag-consent,kind_tag,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show API entities tagged with consent
+catalog-api-tag-consent,kind_tag,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show API entities tagged with consent
+catalog-api-tag-consent,kind_tag,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show API entities tagged with consent
+catalog-component-owner-security-team,kind_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List Component entities owned by security-team
+catalog-component-owner-security-team,kind_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List Component entities owned by security-team
+catalog-component-owner-security-team,kind_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List Component entities owned by security-team
+catalog-resource-owner-payments-team,kind_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List Resource entities owned by payments-team
+catalog-resource-owner-payments-team,kind_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List Resource entities owned by payments-team
+catalog-resource-owner-payments-team,kind_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List Resource entities owned by payments-team
+catalog-api-tag-payments,kind_tag,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show API entities tagged with payments
+catalog-api-tag-payments,kind_tag,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show API entities tagged with payments
+catalog-api-tag-payments,kind_tag,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show API entities tagged with payments
+multi-actions-then-tasks,actions_then_tasks,custom:tool_eval,0.0,,FAIL,Max of 2 judges: 0.000,"List installed scaffolder actions, then show recent scaffolder tasks"
+multi-actions-then-tasks,actions_then_tasks,custom:answer_correctness,0.5,0.75,FAIL,Max of 2 judges: 0.500,"List installed scaffolder actions, then show recent scaffolder tasks"
+multi-actions-then-tasks,actions_then_tasks,ragas:faithfulness,0.6,0.8,FAIL,Max of 2 judges: 0.600,"List installed scaffolder actions, then show recent scaffolder tasks"
+catalog-api-owner-payments-team,kind_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List API entities owned by payments-team
+catalog-api-owner-payments-team,kind_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List API entities owned by payments-team
+catalog-api-owner-payments-team,kind_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List API entities owned by payments-team
+catalog-resource-tag-database,kind_tag,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Show Resource entities tagged with database
+catalog-resource-tag-database,kind_tag,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Show Resource entities tagged with database
+catalog-resource-tag-database,kind_tag,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Show Resource entities tagged with database
+catalog-component-owner-accounts-team,kind_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List Component entities owned by accounts-team
+catalog-component-owner-accounts-team,kind_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List Component entities owned by accounts-team
+catalog-component-owner-accounts-team,kind_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List Component entities owned by accounts-team
+negative-actions-no-dryrun,trap,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List scaffolder actions only. Do not execute or dry-run any template.
+negative-actions-no-dryrun,trap,custom:answer_correctness,0.5,0.75,FAIL,Max of 2 judges: 0.500,List scaffolder actions only. Do not execute or dry-run any template.
+negative-actions-no-dryrun,trap,ragas:faithfulness,0.3333333333333333,0.8,FAIL,Max of 2 judges: 0.333,List scaffolder actions only. Do not execute or dry-run any template.
+catalog-component-owner-payments-team,kind_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,List Component entities owned by payments-team
+catalog-component-owner-payments-team,kind_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,List Component entities owned by payments-team
+catalog-component-owner-payments-team,kind_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,List Component entities owned by payments-team
+negative-owner-not-team-rewrite,owner_exactish,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Find catalog entities owned by payments-team. Use owner payments-team (not a rewritten form like team-payments).
+negative-owner-not-team-rewrite,owner_exactish,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Find catalog entities owned by payments-team. Use owner payments-team (not a rewritten form like team-payments).
+negative-owner-not-team-rewrite,owner_exactish,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Find catalog entities owned by payments-team. Use owner payments-team (not a rewritten form like team-payments).
+multi-apis-then-owner-entities-accounts-team,apis_then_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by accounts-team"
+multi-apis-then-owner-entities-accounts-team,apis_then_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by accounts-team"
+multi-apis-then-owner-entities-accounts-team,apis_then_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by accounts-team"
+negative-resources-no-scaffolder,trap,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Do not use the scaffolder. Only query the catalog for Resources.
+negative-resources-no-scaffolder,trap,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Do not use the scaffolder. Only query the catalog for Resources.
+negative-resources-no-scaffolder,trap,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Do not use the scaffolder. Only query the catalog for Resources.
+multi-apis-then-owner-entities-security-team,apis_then_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by security-team"
+multi-apis-then-owner-entities-security-team,apis_then_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by security-team"
+multi-apis-then-owner-entities-security-team,apis_then_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by security-team"
+multi-get-payment-initiation-api-then-owner-components,get_then_components,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"Get the catalog entity named payment-initiation-api, then list Components owned by payments-team"
+multi-get-payment-initiation-api-then-owner-components,get_then_components,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"Get the catalog entity named payment-initiation-api, then list Components owned by payments-team"
+multi-get-payment-initiation-api-then-owner-components,get_then_components,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"Get the catalog entity named payment-initiation-api, then list Components owned by payments-team"
+multi-get-standing-orders-api-then-owner-components,get_then_components,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"Get the catalog entity named standing-orders-api, then list Components owned by payments-team"
+multi-get-standing-orders-api-then-owner-components,get_then_components,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"Get the catalog entity named standing-orders-api, then list Components owned by payments-team"
+multi-get-standing-orders-api-then-owner-components,get_then_components,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"Get the catalog entity named standing-orders-api, then list Components owned by payments-team"
+multi-apis-then-owner-entities-payments-team,apis_then_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by payments-team"
+multi-apis-then-owner-entities-payments-team,apis_then_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by payments-team"
+multi-apis-then-owner-entities-payments-team,apis_then_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"First list all APIs in the catalog, then find all catalog entities owned by payments-team"
+multi-tag-then-owner,tag_then_owner,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"Show catalog entities tagged with payments, then find entities owned by payments-team"
+multi-tag-then-owner,tag_then_owner,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"Show catalog entities tagged with payments, then find entities owned by payments-team"
+multi-tag-then-owner,tag_then_owner,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"Show catalog entities tagged with payments, then find entities owned by payments-team"
+catalog-list-all,list_all,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,Retrieve all entries in the Backstage Catalog
+catalog-list-all,list_all,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,Retrieve all entries in the Backstage Catalog
+catalog-list-all,list_all,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,Retrieve all entries in the Backstage Catalog
+multi-entity-then-model,entity_then_model,custom:tool_eval,1.0,,PASS,Max of 2 judges: 1.000,"Get the catalog entity named consent-management-api, then describe the catalog model"
+multi-entity-then-model,entity_then_model,custom:answer_correctness,1.0,0.75,PASS,Max of 2 judges: 1.000,"Get the catalog entity named consent-management-api, then describe the catalog model"
+multi-entity-then-model,entity_then_model,ragas:faithfulness,1.0,0.8,PASS,Max of 2 judges: 1.000,"Get the catalog entity named consent-management-api, then describe the catalog model"

@@ -1,0 +1,92 @@
+# Offline MCP scoring for RHIDP-14578.
+# Matches coworker's developer-lightspeed-evaluation config:
+#   max_threads: 50, max_completion_tokens: 16384, cache on,
+#   judge panel gemini-2.5-pro + gpt-4o-mini (max aggregation).
+#
+# Env:
+#   GOOGLE_APPLICATION_CREDENTIALS, GOOGLE_CLOUD_PROJECT / VERTEXAI_PROJECT=rhdh-ai
+#   VERTEXAI_LOCATION=us-central1
+#   OPENAI_API_KEY
+core:
+  max_threads: 50
+  cache_enabled: true
+  cache_base_dir: .caches
+  fail_on_invalid_data: false
+
+llm_pool:
+  defaults:
+    timeout: 300
+    num_retries: 3
+    parameters:
+      temperature: 0.0
+      max_completion_tokens: 16384
+  models:
+    judge_gemini_25_pro:
+      provider: vertex
+      model: vertex_ai/gemini-2.5-pro
+    judge_gpt_4o_mini:
+      provider: openai
+      model: gpt-4o-mini
+
+judge_panel:
+  judges:
+    - judge_gemini_25_pro
+    - judge_gpt_4o_mini
+  aggregation_strategy: max
+
+embedding:
+  provider: openai
+  model: text-embedding-3-small
+  cache_enabled: false
+
+agents:
+  enabled: false
+
+metrics_metadata:
+  turn_level:
+    custom:tool_eval:
+      description: Binary validation of tool calls (exact/regex matching)
+      default: true
+      ordered: true
+      full_match: false
+    custom:answer_correctness:
+      description: Response accuracy vs expected_response (LLM judge panel)
+      threshold: 0.75
+      default: true
+    ragas:faithfulness:
+      description: Response faithfulness to MCP tool result contexts
+      threshold: 0.8
+      default: true
+
+storage:
+  - type: file
+    output_dir: evaluation-result/_scratch
+    base_filename: evaluation
+    enabled_outputs:
+      - csv
+      - json
+      - txt
+    csv_columns:
+      - conversation_group_id
+      - turn_id
+      - metric_identifier
+      - score
+      - threshold
+      - result
+      - reason
+      - query
+
+visualization:
+  figsize:
+    - 10
+    - 6
+  dpi: 150
+  enabled_graphs:
+    - pass_rates
+    - status_breakdown
+
+logging:
+  source_level: INFO
+  package_level: WARNING
+  log_format: '%(asctime)s - %(levelname)s - %(message)s'
+  show_timestamps: true

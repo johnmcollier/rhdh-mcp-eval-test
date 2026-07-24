@@ -1,0 +1,2448 @@
+- conversation_group_id: catalog-list-all
+  description: List catalog entities with no filters
+  tag: catalog
+  turns:
+  - turn_id: list_all
+    query: Retrieve all entries in the Backstage Catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments: {}
+    expected_response: A summary of catalog entities returned by an unfiltered catalog
+      query.
+    expected_intent: list or summarize catalog entities using a catalog query tool
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": "{}"}}'
+- conversation_group_id: catalog-filter-kind-api
+  description: Filter catalog by kind API
+  tag: catalog
+  turns:
+  - turn_id: filter_api
+    query: Show me all APIs in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+    expected_response: Lists APIs from the catalog filtered by kind=API.
+    expected_intent: list APIs from the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "API"}}}'
+- conversation_group_id: catalog-filter-kind-component
+  description: Filter catalog by kind Component
+  tag: catalog
+  turns:
+  - turn_id: filter_component
+    query: Show me all Components in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+    expected_response: Lists Components from the catalog filtered by kind=Component.
+    expected_intent: list Components from the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "Component"}}}'
+- conversation_group_id: catalog-filter-kind-resource
+  description: Filter catalog by kind Resource
+  tag: catalog
+  turns:
+  - turn_id: filter_resource
+    query: Show me all Resources in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Resource
+    expected_response: Lists Resources from the catalog filtered by kind=Resource.
+    expected_intent: list Resources from the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"kind": "Resource"}}'
+- conversation_group_id: catalog-filter-kind-group
+  description: Filter catalog by kind Group
+  tag: catalog
+  turns:
+  - turn_id: filter_group
+    query: Show me all Groups in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Group
+    expected_response: Lists Groups from the catalog filtered by kind=Group.
+    expected_intent: list Groups from the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "Group"}}}'
+- conversation_group_id: catalog-filter-kind-user
+  description: Filter catalog by kind User
+  tag: catalog
+  turns:
+  - turn_id: filter_user
+    query: Show me all Users in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: User
+    expected_response: Lists Users from the catalog filtered by kind=User.
+    expected_intent: list Users from the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "User"}}}'
+- conversation_group_id: catalog-filter-kind-system
+  description: Filter catalog by kind System
+  tag: catalog
+  turns:
+  - turn_id: filter_system
+    query: Show me all Systems in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: System
+    expected_response: Lists Systems from the catalog filtered by kind=System.
+    expected_intent: list Systems from the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "System"}}}'
+- conversation_group_id: catalog-filter-kind-domain
+  description: Filter catalog by kind Domain
+  tag: catalog
+  turns:
+  - turn_id: filter_domain
+    query: Show me all Domains in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Domain
+    expected_response: Lists Domains from the catalog filtered by kind=Domain.
+    expected_intent: list Domains from the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "Domain"}}}'
+- conversation_group_id: catalog-filter-kind-location
+  description: Filter catalog by kind Location
+  tag: catalog
+  turns:
+  - turn_id: filter_location
+    query: Show me all Locations in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Location
+    expected_response: Lists Locations from the catalog filtered by kind=Location.
+    expected_intent: list Locations from the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "Location"}}}'
+- conversation_group_id: catalog-filter-owner-payments-team
+  description: Filter catalog by owner payments-team
+  tag: catalog
+  turns:
+  - turn_id: filter_owner
+    query: Find catalog entities owned by payments-team. Call query-catalog-entities
+      with owner set to a value containing payments-team.
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*payments-team.*
+    expected_response: Lists catalog entities owned by payments-team.
+    expected_intent: find catalog entities owned by payments-team
+    tool_calls: []
+    response: '{"name": "software-catalog-mcp-extras__query-catalog-entities", "parameters":
+      {"query": {"owner": "user:payments-team"}}}'
+- conversation_group_id: catalog-filter-owner-security-team
+  description: Filter catalog by owner security-team
+  tag: catalog
+  turns:
+  - turn_id: filter_owner
+    query: Find catalog entities owned by security-team. Call query-catalog-entities
+      with owner set to a value containing security-team.
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*security-team.*
+    expected_response: Lists catalog entities owned by security-team.
+    expected_intent: find catalog entities owned by security-team
+    tool_calls: []
+    response: '{"name": "software-catalog-mcp-extras__query-catalog-entities", "parameters":
+      {"query": {"owner": "security-team"}}}'
+- conversation_group_id: catalog-filter-owner-accounts-team
+  description: Filter catalog by owner accounts-team
+  tag: catalog
+  turns:
+  - turn_id: filter_owner
+    query: Find catalog entities owned by accounts-team. Call query-catalog-entities
+      with owner set to a value containing accounts-team.
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*accounts-team.*
+    expected_response: Lists catalog entities owned by accounts-team.
+    expected_intent: find catalog entities owned by accounts-team
+    tool_calls: []
+    response: '{"name": "software-catalog-mcp-extras__query-catalog-entities", "parameters":
+      {"query": {"owner": "accounts-team"}}}'
+- conversation_group_id: catalog-filter-owner-open-banking-team
+  description: Filter catalog by owner open-banking-team
+  tag: catalog
+  turns:
+  - turn_id: filter_owner
+    query: Find catalog entities owned by open-banking-team. Call query-catalog-entities
+      with owner set to a value containing open-banking-team.
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*open-banking-team.*
+    expected_response: Lists catalog entities owned by open-banking-team.
+    expected_intent: find catalog entities owned by open-banking-team
+    tool_calls: []
+    response: '{"name": "software-catalog-mcp-extras__query-catalog-entities", "parameters":
+      {"query": {"owner": "open-banking-team"}}}'
+- conversation_group_id: catalog-filter-owner-compliance-team
+  description: Filter catalog by owner compliance-team
+  tag: catalog
+  turns:
+  - turn_id: filter_owner
+    query: Find catalog entities owned by compliance-team. Call query-catalog-entities
+      with owner set to a value containing compliance-team.
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*compliance-team.*
+    expected_response: Lists catalog entities owned by compliance-team.
+    expected_intent: find catalog entities owned by compliance-team
+    tool_calls: []
+    response: '{"name": "software-catalog-mcp-extras__query-catalog-entities", "parameters":
+      {"query": {"owner": "compliance-team"}}}'
+- conversation_group_id: catalog-filter-owner-event-team
+  description: Filter catalog by owner event-team
+  tag: catalog
+  turns:
+  - turn_id: filter_owner
+    query: Find catalog entities owned by event-team. Call query-catalog-entities
+      with owner set to a value containing event-team.
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*event-team.*
+    expected_response: Lists catalog entities owned by event-team.
+    expected_intent: find catalog entities owned by event-team
+    tool_calls: []
+    response: '{"name": "software-catalog-mcp-extras__query-catalog-entities", "parameters":
+      {"query": {"owner": "event-team"}}}'
+- conversation_group_id: catalog-filter-tags-payments
+  description: Filter catalog by tag payments
+  tag: catalog
+  turns:
+  - turn_id: filter_tags
+    query: Show catalog entities tagged with payments
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: payments
+    expected_response: Lists catalog entities that include the tag payments.
+    expected_intent: find catalog entities tagged with payments
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"tags": "payments"}}'
+- conversation_group_id: catalog-filter-tags-consent
+  description: Filter catalog by tag consent
+  tag: catalog
+  turns:
+  - turn_id: filter_tags
+    query: Show catalog entities tagged with consent
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: consent
+    expected_response: Lists catalog entities that include the tag consent.
+    expected_intent: find catalog entities tagged with consent
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: consent
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"consent-store\",\n\
+      \      \"kind\": \"Resource\",\n      \"tags\": \"database,security,consent\"\
+      ,\n      \"description\": \"Secure database for storing user consent records\"\
+      ,\n      \"type\": \"database\",\n      \"owner\": \"security-team\",\n    \
+      \  \"dependsOn\": \"\"\n    },\n    {\n      \"name\": \"consent-management-api\"\
+      ,\n      \"kind\": \"API\",\n      \"tags\": \"consent,authentication\",\n \
+      \     \"description\": \"API to manage user consent for data access\",\n   \
+      \   \"type\": \"openapi\",\n      \"owner\": \"security-team\",\n      \"lifecycle\"\
+      : \"production\",\n      \"dependsOn\": \"\"\n    }\n  ]\n}\n```"
+    response: The output is a JSON array of catalog entities tagged with "consent".
+      The entities are a Resource named "consent-store" and an API named "consent-management-api".
+- conversation_group_id: catalog-filter-tags-database
+  description: Filter catalog by tag database
+  tag: catalog
+  turns:
+  - turn_id: filter_tags
+    query: Show catalog entities tagged with database
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: database
+    expected_response: Lists catalog entities that include the tag database.
+    expected_intent: find catalog entities tagged with database
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: database
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"transaction-store\"\
+      ,\n      \"kind\": \"Resource\",\n      \"tags\": \"database,bigtable,transactions\"\
+      ,\n      \"description\": \"BigTable database for storing transaction history\
+      \ and statements\",\n      \"type\": \"database\",\n      \"owner\": \"accounts-team\"\
+      ,\n      \"dependsOn\": \"\"\n    },\n    {\n      \"name\": \"consent-store\"\
+      ,\n      \"kind\": \"Resource\",\n      \"tags\": \"database,security,consent\"\
+      ,\n      \"description\": \"Secure database for storing user consent records\"\
+      ,\n      \"type\": \"database\",\n      \"owner\": \"security-team\",\n    \
+      \  \"dependsOn\": \"\"\n    }\n  ]\n}\n```"
+    response: This JSON response shows two catalog entities tagged with "database".
+      The first entity is a "transaction-store" which is a BigTable database for storing
+      transaction history and statements, owned by the "accounts-team". The second
+      entity is a "consent-store" which is a secure database for storing user consent
+      records, owned by the "security-team".
+- conversation_group_id: catalog-filter-tags-security
+  description: Filter catalog by tag security
+  tag: catalog
+  turns:
+  - turn_id: filter_tags
+    query: Show catalog entities tagged with security
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: security
+    expected_response: Lists catalog entities that include the tag security.
+    expected_intent: find catalog entities tagged with security
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: security
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"consent-store\",\n\
+      \      \"kind\": \"Resource\",\n      \"tags\": \"database,security,consent\"\
+      ,\n      \"description\": \"Secure database for storing user consent records\"\
+      ,\n      \"type\": \"database\",\n      \"owner\": \"security-team\",\n    \
+      \  \"dependsOn\": \"\"\n    }\n  ]\n}\n```"
+    response: The function `software-catalog-mcp-extras__query-catalog-entities` was
+      used to retrieve catalog entities tagged with "security". The output is a JSON
+      array of entities that match the query. In this case, there is one entity, a
+      Resource named "consent-store", which is a database for storing user consent
+      records and is owned by the "security-team".
+- conversation_group_id: catalog-filter-tags-ais
+  description: Filter catalog by tag ais
+  tag: catalog
+  turns:
+  - turn_id: filter_tags
+    query: Show catalog entities tagged with ais
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: ais
+    expected_response: Lists catalog entities that include the tag ais.
+    expected_intent: find catalog entities tagged with ais
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: ais
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"account-access-api\"\
+      ,\n      \"kind\": \"Component\",\n      \"tags\": \"ais,accounts,banking,fdx\"\
+      ,\n      \"description\": \"API that provides authorized third-party providers\
+      \ access to customer account information.\",\n      \"type\": \"service\",\n\
+      \      \"owner\": \"security-team\",\n      \"lifecycle\": \"production\",\n\
+      \      \"dependsOn\": \"component:default/beneficiary-management-api,component:default/consent-management-api\"\
+      \n    },\n    {\n      \"name\": \"account-access-api\",\n      \"kind\": \"\
+      API\",\n      \"tags\": \"ais,accounts,banking,fdx\",\n      \"description\"\
+      : \"FDX Compliant API to retrieve account details for authorized third-party\
+      \ providers (TPPs)\",\n      \"type\": \"openapi\",\n      \"owner\": \"open-banking-team\"\
+      ,\n      \"lifecycle\": \"production\",\n      \"dependsOn\": \"\"\n    },\n\
+      \    {\n      \"name\": \"transaction-history-api\",\n      \"kind\": \"Component\"\
+      ,\n      \"tags\": \"ais,accounts,banking,fdx\",\n      \"description\": \"\
+      API for retrieving and filtering customer transaction history and statements.\"\
+      ,\n      \"type\": \"service\",\n      \"owner\": \"accounts-team\",\n     \
+      \ \"lifecycle\": \"production\",\n      \"dependsOn\": \"component:default/beneficiary-management-api,component:default/consent-management-api,resource:default/audit-logs-bucket,resource:default/transaction-store\"\
+      \n    }\n  ]\n}\n```"
+    response: This JSON response shows the catalog entities tagged with "ais". The
+      entities are of type "Component" and "API" and are related to banking and account
+      management. The response includes the entity name, kind, tags, description,
+      type, owner, lifecycle, and dependencies.
+- conversation_group_id: catalog-filter-tags-pis
+  description: Filter catalog by tag pis
+  tag: catalog
+  turns:
+  - turn_id: filter_tags
+    query: Show catalog entities tagged with pis
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: pis
+    expected_response: Lists catalog entities that include the tag pis.
+    expected_intent: find catalog entities tagged with pis
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: pis
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"payment-initiation-api\"\
+      ,\n      \"kind\": \"API\",\n      \"tags\": \"pis,payments\",\n      \"description\"\
+      : \"API to initiate payments from customer accounts\",\n      \"type\": \"openapi\"\
+      ,\n      \"owner\": \"payments-team\",\n      \"lifecycle\": \"production\"\
+      ,\n      \"dependsOn\": \"\"\n    }\n  ]\n}\n```"
+    response: 'The function `software-catalog-mcp-extras__query-catalog-entities`
+      was called with the argument `tags: "pis"` to retrieve catalog entities tagged
+      with "pis". The response is a JSON array of entities that match the filter.
+      In this case, there is one entity, a payment initiation API, that is tagged
+      with "pis" and "payments".'
+- conversation_group_id: catalog-filter-component-service
+  description: Filter Component by type service
+  tag: catalog
+  turns:
+  - turn_id: filter_kind_type
+    query: Find Components of type service in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          type: service
+    expected_response: Lists service Components from the catalog.
+    expected_intent: find service Components in the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"type": "service"}}'
+- conversation_group_id: catalog-filter-component-website
+  description: Filter Component by type website
+  tag: catalog
+  turns:
+  - turn_id: filter_kind_type
+    query: Find Components of type website in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          type: website
+    expected_response: Lists website Components from the catalog.
+    expected_intent: find website Components in the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"type": "website"}}'
+- conversation_group_id: catalog-filter-api-openapi
+  description: Filter API by type openapi
+  tag: catalog
+  turns:
+  - turn_id: filter_kind_type
+    query: Find APIs of type openapi in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+          type: openapi
+    expected_response: Lists OpenAPI APIs from the catalog.
+    expected_intent: find OpenAPI APIs in the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "API", "spec": {"type": "openapi"}}}}'
+- conversation_group_id: catalog-filter-resource-database
+  description: Filter Resource by type database
+  tag: catalog
+  turns:
+  - turn_id: filter_kind_type
+    query: Find Resources of type database in the catalog
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Resource
+          type: database
+    expected_response: Lists database Resources from the catalog.
+    expected_intent: find database Resources in the catalog
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          type: database
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Resource
+          type: database
+    contexts:
+    - "```json\n{\n  \"entities\": [],\n  \"error\": \"entity type cannot be specified\
+      \ without an entity kind specified\"\n}\n```"
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"transaction-store\"\
+      ,\n      \"kind\": \"Resource\",\n      \"tags\": \"database,bigtable,transactions\"\
+      ,\n      \"description\": \"BigTable database for storing transaction history\
+      \ and statements\",\n      \"type\": \"database\",\n      \"owner\": \"accounts-team\"\
+      ,\n      \"dependsOn\": \"\"\n    },\n    {\n      \"name\": \"consent-store\"\
+      ,\n      \"kind\": \"Resource\",\n      \"tags\": \"database,security,consent\"\
+      ,\n      \"description\": \"Secure database for storing user consent records\"\
+      ,\n      \"type\": \"database\",\n      \"owner\": \"security-team\",\n    \
+      \  \"dependsOn\": \"\"\n    }\n  ]\n}\n```"
+    response: 'This JSON response indicates that there are two resources of type "database"
+      in the catalog: "transaction-store" and "consent-store". Each resource has a
+      name, kind, tags, description, type, owner, and dependsOn field.'
+- conversation_group_id: catalog-get-entity-consent-management-api
+  description: Fetch entity consent-management-api
+  tag: catalog
+  turns:
+  - turn_id: get_entity
+    query: Get the catalog entity named consent-management-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: consent-management-api
+    expected_response: Returns details for the catalog entity consent-management-api.
+    expected_intent: retrieve the consent-management-api catalog entity
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "consent-management-api"}}'
+- conversation_group_id: catalog-get-entity-payment-initiation-api
+  description: Fetch entity payment-initiation-api
+  tag: catalog
+  turns:
+  - turn_id: get_entity
+    query: Get the catalog entity named payment-initiation-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: payment-initiation-api
+    expected_response: Returns details for the catalog entity payment-initiation-api.
+    expected_intent: retrieve the payment-initiation-api catalog entity
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "payment-initiation-api"}}'
+- conversation_group_id: catalog-get-entity-standing-orders-api
+  description: Fetch entity standing-orders-api
+  tag: catalog
+  turns:
+  - turn_id: get_entity
+    query: Get the catalog entity named standing-orders-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: standing-orders-api
+    expected_response: Returns details for the catalog entity standing-orders-api.
+    expected_intent: retrieve the standing-orders-api catalog entity
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "standing-orders-api"}}'
+- conversation_group_id: catalog-get-entity-beneficiary-management-api
+  description: Fetch entity beneficiary-management-api
+  tag: catalog
+  turns:
+  - turn_id: get_entity
+    query: Get the catalog entity named beneficiary-management-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: beneficiary-management-api
+    expected_response: Returns details for the catalog entity beneficiary-management-api.
+    expected_intent: retrieve the beneficiary-management-api catalog entity
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "beneficiary-management-api"}}'
+- conversation_group_id: catalog-get-entity-account-access-api
+  description: Fetch entity account-access-api
+  tag: catalog
+  turns:
+  - turn_id: get_entity
+    query: Get the catalog entity named account-access-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: account-access-api
+    expected_response: Returns details for the catalog entity account-access-api.
+    expected_intent: retrieve the account-access-api catalog entity
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "account-access-api"}}'
+- conversation_group_id: catalog-get-entity-balance-check-api
+  description: Fetch entity balance-check-api
+  tag: catalog
+  turns:
+  - turn_id: get_entity
+    query: Get the catalog entity named balance-check-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: balance-check-api
+    expected_response: Returns details for the catalog entity balance-check-api.
+    expected_intent: retrieve the balance-check-api catalog entity
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "balance-check-api"}}'
+- conversation_group_id: catalog-get-entity-transaction-history-api
+  description: Fetch entity transaction-history-api
+  tag: catalog
+  turns:
+  - turn_id: get_entity
+    query: Get the catalog entity named transaction-history-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: transaction-history-api
+    expected_response: Returns details for the catalog entity transaction-history-api.
+    expected_intent: retrieve the transaction-history-api catalog entity
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "transaction-history-api"}}'
+- conversation_group_id: catalog-get-entity-webhook-notifications-api
+  description: Fetch entity webhook-notifications-api
+  tag: catalog
+  turns:
+  - turn_id: get_entity
+    query: Get the catalog entity named webhook-notifications-api
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: webhook-notifications-api
+    expected_response: Returns details for the catalog entity webhook-notifications-api.
+    expected_intent: retrieve the webhook-notifications-api catalog entity
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "webhook-notifications-api"}}'
+- conversation_group_id: catalog-model-description
+  description: Catalog model description
+  tag: catalog
+  turns:
+  - turn_id: model_description
+    query: Describe the catalog model and what entity kinds are registered
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-model-description
+        arguments: {}
+    expected_response: Describes the Backstage catalog model and registered entity
+      kinds.
+    expected_intent: describe the Backstage catalog model / entity kinds
+    tool_calls:
+    - - tool_name: catalog.get-catalog-model-description
+        arguments: {}
+    contexts:
+    - "```json\n{\n  \"description\": \"# Catalog Model\\n\\nThe software catalog\
+      \ contains a few key concepts:\\n\\n* Entities\\n  * rich objects with various\
+      \ kinds, with different schemas\\n  * can have relations between each other\\\
+      n* Locations\\n  * registered as type/target pairs\\n  * typically in the form\
+      \ of URLs that the catalog has been tasked with keeping track of\\n\\n## Entities\\\
+      n\\nThe catalog contains entities of different kinds. Every entity is an object\
+      \ with\\nfields \\\"kind\\\", \\\"apiVersion\\\", \\\"metadata\\\", and optionally\
+      \ \\\"spec\\\" and \\\"relations\\\".\\n\\nWhen querying the catalog you use\
+      \ dot path notation to address fields, e.g. \\\"metadata.name\\\".\\nWhen querying\
+      \ for entity relationships, prefer using relations over spec fields, e.g. the\\\
+      nspecial syntax \\\"relations.ownedBy\\\" instead of \\\"spec.owner\\\".\\n\\\
+      nThe unique identifying key for an entity is its so called entity reference\
+      \ (or entity ref\\nfor short), on the form of \\\"kind:namespace/name\\\", e.g.\
+      \ \\\"component:default/my-service\\\".\\nThese are always uniformly lowercased\
+      \ in the \\\"en-US\\\" locale.\\n\\n## Entity Metadata field\\n\\nThe \\\"metadata\\\
+      \" object field on all entities has the same static schema. Some common fields\\\
+      nthere are:\\n\\n* \\\"name\\\": The name of the entity. Must be unique within\
+      \ the catalog at any given point in time, for any given namespace + kind pair.\
+      \ This value is part of the technical identifier of the entity, and as such\
+      \ it will appear in URLs, database tables, entity references, and similar. It\
+      \ is subject to restrictions regarding what characters are allowed. If you want\
+      \ to use a different, more human readable string with fewer restrictions on\
+      \ it in user interfaces, see the \\\"title\\\" field below.\\n* \\\"namespace\\\
+      \" (default value: \\\"default\\\"): The namespace that the entity belongs to.\\\
+      n* \\\"uid\\\": A globally unique ID for the entity. This field can not be set\
+      \ by the user at creation time, and the server will reject an attempt to do\
+      \ so. The field will be populated in read operations. The field can (optionally)\
+      \ be specified when performing update or delete operations, but the server is\
+      \ free to reject requests that do so in such a way that it breaks semantics.\\\
+      n* \\\"etag\\\": An opaque string that changes for each update operation to\
+      \ any part of the entity, including metadata. This field can not be set by the\
+      \ user at creation time, and the server will reject an attempt to do so. The\
+      \ field will be populated in read operations. The field can (optionally) be\
+      \ specified when performing update or delete operations, and the server will\
+      \ then reject the operation if it does not match the current stored value.\\\
+      n* \\\"title\\\": A display name of the entity, to be presented in user interfaces\
+      \ instead of the name property, when available. This field is sometimes useful\
+      \ when the name is cumbersome or ends up being perceived as overly technical.\
+      \ The title generally does not have as stringent format requirements on it,\
+      \ so it may contain special characters and be more explanatory. Do keep it very\
+      \ short though, and avoid situations where a title can be confused with the\
+      \ name of another entity, or where two entities share a title. Note that this\
+      \ is only for display purposes, and may be ignored by some parts of the code.\
+      \ Entity references still always make use of the name property, not the title.\\\
+      n* \\\"description\\\": A short (typically relatively few words, on one line)\
+      \ description of the entity.\\n* \\\"annotations\\\": A map of annotations on\
+      \ the entity.\\n* \\\"labels\\\": A map of labels on the entity.\\n* \\\"tags\\\
+      \": A list of tags on the entity.\\n* \\\"links\\\": A list of links on the\
+      \ entity.\\n\\n### Annotation \\\"backstage.io/managed-by-location\\\"\\n\\\
+      nThe location reference that the catalog uses to manage and update the entity.\\\
+      n\\n### Annotation \\\"backstage.io/managed-by-origin-location\\\"\\n\\nThe\
+      \ original location reference that first discovered the entity.\\n\\n### Annotation\
+      \ \\\"backstage.io/source-location\\\"\\n\\nThe location reference of the source\
+      \ data for the entity, e.g. a file in a repository.\\n\\n### Annotation \\\"\
+      ba"
+    response: This is the description of the catalog model. It contains information
+      about the different entity kinds, metadata fields, and relations.
+- conversation_group_id: techdocs-list
+  description: List entities with TechDocs
+  tag: techdocs
+  turns:
+  - turn_id: fetch_techdocs
+    query: Which entities have TechDocs documentation available?
+    expected_tool_calls:
+    - - - tool_name: techdocs-mcp-extras.fetch-techdocs
+          arguments: {}
+    - - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+          arguments: {}
+    expected_response: Reports which catalog entities have TechDocs, or that none
+      are indexed.
+    expected_intent: report which entities have TechDocs available
+    tool_calls: []
+    response: '{"type": "function", "function": "techdocs-mcp-extras__analyze-techdocs-coverage",
+      "parameters": {"entityType": "Component", "namespace": "default", "owner": "user:default/exampleuser",
+      "lifecycle": "production", "tags": "genai,ibm,llm,granite,conversational,task-text-generation"}}'
+- conversation_group_id: techdocs-coverage
+  description: TechDocs coverage overall
+  tag: techdocs
+  turns:
+  - turn_id: coverage
+    query: What is our TechDocs documentation coverage across catalog entities?
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments: {}
+    expected_response: Reports TechDocs coverage statistics across the catalog.
+    expected_intent: report TechDocs documentation coverage across the catalog
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          entityType: Component
+          namespace: default
+          owner: user:default/exampleuser
+          lifecycle: production
+          tags: genai,ibm,llm,granite,conversational,task-text-generation
+    contexts:
+    - "```json\n{\n  \"totalEntities\": 0,\n  \"entitiesWithDocs\": 0,\n  \"coveragePercentage\"\
+      : 0\n}\n```"
+    response: The function `techdocs-mcp-extras__analyze-techdocs-coverage` was called
+      with the specified parameters. The output is a JSON object with the total number
+      of entities, the number of entities with TechDocs, and the coverage percentage.
+- conversation_group_id: techdocs-coverage-owner-payments-team
+  description: TechDocs coverage for payments-team
+  tag: techdocs
+  turns:
+  - turn_id: coverage_owner
+    query: Analyze TechDocs coverage for entities owned by payments-team
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*payments-team.*
+    expected_response: Reports TechDocs coverage for entities owned by payments-team.
+    expected_intent: report TechDocs coverage for payments-team owned entities
+    tool_calls: []
+    response: '{"type": "function", "function": "techdocs-mcp-extras__analyze-techdocs-coverage",
+      "parameters": {"owner": "payments-team"}}'
+- conversation_group_id: techdocs-coverage-owner-security-team
+  description: TechDocs coverage for security-team
+  tag: techdocs
+  turns:
+  - turn_id: coverage_owner
+    query: Analyze TechDocs coverage for entities owned by security-team
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*security-team.*
+    expected_response: Reports TechDocs coverage for entities owned by security-team.
+    expected_intent: report TechDocs coverage for security-team owned entities
+    tool_calls: []
+    response: '{"type": "function", "function": "techdocs-mcp-extras__analyze-techdocs-coverage",
+      "parameters": {"owner": "security-team"}}'
+- conversation_group_id: techdocs-coverage-owner-accounts-team
+  description: TechDocs coverage for accounts-team
+  tag: techdocs
+  turns:
+  - turn_id: coverage_owner
+    query: Analyze TechDocs coverage for entities owned by accounts-team
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*accounts-team.*
+    expected_response: Reports TechDocs coverage for entities owned by accounts-team.
+    expected_intent: report TechDocs coverage for accounts-team owned entities
+    tool_calls: []
+    response: '{"type": "function", "function": "techdocs-mcp-extras__analyze-techdocs-coverage",
+      "parameters": {"owner": "accounts-team"}}'
+- conversation_group_id: techdocs-coverage-owner-compliance-team
+  description: TechDocs coverage for compliance-team
+  tag: techdocs
+  turns:
+  - turn_id: coverage_owner
+    query: Analyze TechDocs coverage for entities owned by compliance-team
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*compliance-team.*
+    expected_response: Reports TechDocs coverage for entities owned by compliance-team.
+    expected_intent: report TechDocs coverage for compliance-team owned entities
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: compliance-team
+    contexts:
+    - "```json\n{\n  \"totalEntities\": 1,\n  \"entitiesWithDocs\": 0,\n  \"coveragePercentage\"\
+      : 0\n}\n```"
+    response: 'The function `techdocs-mcp-extras__analyze-techdocs-coverage` was called
+      with the argument `owner: compliance-team`. The output is a JSON object with
+      the total number of entities, the number of entities with TechDocs, and the
+      coverage percentage. In this case, there is 1 entity, but none of them have
+      TechDocs, resulting in a coverage percentage of 0.'
+- conversation_group_id: techdocs-fetch-component
+  description: Fetch TechDocs for Component
+  tag: techdocs
+  turns:
+  - turn_id: fetch_typed
+    query: List TechDocs for Component entities only
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: Component
+    expected_response: Lists TechDocs associated with Component entities (may be empty).
+    expected_intent: list TechDocs for Component entities
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: Component
+    contexts:
+    - "```json\n{\n  \"entities\": []\n}\n```"
+    response: This will return a list of TechDocs for Component entities only.
+- conversation_group_id: techdocs-fetch-api
+  description: Fetch TechDocs for API
+  tag: techdocs
+  turns:
+  - turn_id: fetch_typed
+    query: List TechDocs for API entities only
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: API
+    expected_response: Lists TechDocs associated with API entities (may be empty).
+    expected_intent: list TechDocs for API entities
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: API
+    contexts:
+    - "```json\n{\n  \"entities\": []\n}\n```"
+    response: The output is a JSON array of TechDocs for API entities.
+- conversation_group_id: techdocs-fetch-system
+  description: Fetch TechDocs for System
+  tag: techdocs
+  turns:
+  - turn_id: fetch_typed
+    query: List TechDocs for System entities only
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: System
+    expected_response: Lists TechDocs associated with System entities (may be empty).
+    expected_intent: list TechDocs for System entities
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: System
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: System
+          namespace: default
+          owner: user:john.doe
+          lifecycle: production
+          tags: genai,ibm,llm
+    contexts:
+    - "```json\n{\n  \"entities\": []\n}\n```"
+    - "```json\n{\n  \"entities\": []\n}\n```"
+    response: The output is a JSON array of TechDocs for System entities.
+- conversation_group_id: techdocs-fetch-resource
+  description: Fetch TechDocs for Resource
+  tag: techdocs
+  turns:
+  - turn_id: fetch_typed
+    query: List TechDocs for Resource entities only
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: Resource
+    expected_response: Lists TechDocs associated with Resource entities (may be empty).
+    expected_intent: list TechDocs for Resource entities
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.fetch-techdocs
+        arguments:
+          entityType: Resource
+    contexts:
+    - "```json\n{\n  \"entities\": []\n}\n```"
+    response: The output is an empty array because the function fetches TechDocs for
+      all Resource entities, but since there are no Resource entities in the catalog,
+      the output is empty.
+- conversation_group_id: techdocs-retrieve-home
+  description: Retrieve TechDocs content when possible
+  tag: techdocs
+  turns:
+  - turn_id: retrieve_home
+    query: If any entity has TechDocs, retrieve the content of its documentation home
+      page; otherwise say none are available after checking.
+    expected_tool_calls:
+    - - - tool_name: techdocs-mcp-extras.fetch-techdocs
+          arguments: {}
+      - - tool_name: techdocs-mcp-extras.retrieve-techdocs-content
+          arguments:
+            entityRef: .*
+    - - - tool_name: techdocs-mcp-extras.fetch-techdocs
+          arguments: {}
+    expected_response: Retrieves TechDocs home content for an entity, or reports none
+      available.
+    expected_intent: find TechDocs entities and retrieve documentation content when
+      available
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.retrieve-techdocs-content
+        arguments:
+          entityRef: component:default/developer-model-service
+          pagePath: index.html
+    - - tool_name: techdocs-mcp-extras.retrieve-techdocs-content
+        arguments:
+          entityRef: component:default/developer-model-service
+          pagePath: index.html
+    contexts:
+    - "```json\n{\n  \"entityRef\": \"component:default/developer-model-service\"\
+      ,\n  \"name\": \"developer-model-service\",\n  \"title\": \"developer-model-service\"\
+      ,\n  \"kind\": \"component\",\n  \"namespace\": \"default\",\n  \"content\"\
+      : \"\",\n  \"contentType\": \"text\",\n  \"error\": \"TechDocs content not found\
+      \ for component:default/developer-model-service at path: index.html. The documentation\
+      \ may not have been built yet. Please visit the TechDocs page in RHDH to trigger\
+      \ a build.\"\n}\n```"
+    - "```json\n{\n  \"entityRef\": \"component:default/developer-model-service\"\
+      ,\n  \"name\": \"developer-model-service\",\n  \"title\": \"developer-model-service\"\
+      ,\n  \"kind\": \"component\",\n  \"namespace\": \"default\",\n  \"content\"\
+      : \"\",\n  \"contentType\": \"text\",\n  \"error\": \"TechDocs content not found\
+      \ for component:default/developer-model-service at path: index.html. The documentation\
+      \ may not have been built yet. Please visit the TechDocs page in RHDH to trigger\
+      \ a build.\"\n}\n```"
+    response: The function `techdocs-mcp-extras__retrieve-techdocs-content` is called
+      with the entity reference `component:default/developer-model-service` and the
+      page path `index.html`. The function returns the content of the documentation
+      home page if it exists, otherwise it returns an error message.
+- conversation_group_id: scaffolder-list-templates
+  description: List software templates
+  tag: scaffolder-read
+  turns:
+  - turn_id: fetch_templates
+    query: What software templates are available in the scaffolder?
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments: {}
+    expected_response: Lists available software templates (fixture may return none).
+    expected_intent: list available software templates
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments: {}
+    contexts:
+    - "```json\n{\n  \"templates\": []\n}\n```"
+    response: This will return a list of available software templates in the scaffolder.
+- conversation_group_id: scaffolder-template-example-nodejs-template
+  description: Fetch template metadata for example-nodejs-template
+  tag: scaffolder-read
+  turns:
+  - turn_id: template_by_name
+    query: Get metadata for the software template named example-nodejs-template if
+      it exists
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: example-nodejs-template
+    expected_response: Returns metadata for template example-nodejs-template, or indicates
+      it was not found.
+    expected_intent: fetch metadata for template example-nodejs-template
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: example-nodejs-template
+    contexts:
+    - "```json\n{\n  \"templates\": []\n}\n```"
+    response: 'The function `scaffolder-mcp-extras__fetch-template-metadata` was called
+      with the argument `name: example-nodejs-template`. The function returned an
+      empty list of templates, indicating that the template does not exist in the
+      catalog.'
+- conversation_group_id: scaffolder-template-react-ssr-template
+  description: Fetch template metadata for react-ssr-template
+  tag: scaffolder-read
+  turns:
+  - turn_id: template_by_name
+    query: Get metadata for the software template named react-ssr-template if it exists
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: react-ssr-template
+    expected_response: Returns metadata for template react-ssr-template, or indicates
+      it was not found.
+    expected_intent: fetch metadata for template react-ssr-template
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: react-ssr-template
+    contexts:
+    - "```json\n{\n  \"templates\": []\n}\n```"
+    response: 'The function `scaffolder-mcp-extras__fetch-template-metadata` was called
+      with the argument `name: "react-ssr-template"`. The function returned an empty
+      list of templates, indicating that the template named "react-ssr-template" does
+      not exist in the catalog.'
+- conversation_group_id: scaffolder-template-docs-template
+  description: Fetch template metadata for docs-template
+  tag: scaffolder-read
+  turns:
+  - turn_id: template_by_name
+    query: Get metadata for the software template named docs-template if it exists
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: docs-template
+    expected_response: Returns metadata for template docs-template, or indicates it
+      was not found.
+    expected_intent: fetch metadata for template docs-template
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: docs-template
+    contexts:
+    - "```json\n{\n  \"templates\": []\n}\n```"
+    response: 'The function `scaffolder-mcp-extras__fetch-template-metadata` was called
+      with the argument `name: docs-template`. The function returned an empty list
+      of templates, indicating that the template named `docs-template` does not exist
+      in the catalog.'
+- conversation_group_id: scaffolder-template-mcp-eval-dry-run
+  description: Fetch template metadata for mcp-eval-dry-run
+  tag: scaffolder-read
+  turns:
+  - turn_id: template_by_name
+    query: Get metadata for the software template named mcp-eval-dry-run if it exists
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: mcp-eval-dry-run
+    expected_response: Returns metadata for template mcp-eval-dry-run, or indicates
+      it was not found.
+    expected_intent: fetch metadata for template mcp-eval-dry-run
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: mcp-eval-dry-run
+    contexts:
+    - "```json\n{\n  \"templates\": []\n}\n```"
+    response: The tool returned an empty list of templates because the template named
+      "mcp-eval-dry-run" does not exist in the catalog.
+- conversation_group_id: scaffolder-list-actions
+  description: List scaffolder actions
+  tag: scaffolder-read
+  turns:
+  - turn_id: list_actions
+    query: List all installed Scaffolder actions
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+          arguments: {}
+    - - - tool_name: scaffolder.list-scaffolder-actions
+          arguments: {}
+    expected_response: Lists installed scaffolder action IDs and descriptions.
+    expected_intent: list installed scaffolder actions
+    tool_calls:
+    - - tool_name: scaffolder.list-scaffolder-actions
+        arguments: {}
+    - - tool_name: scaffolder.list-scaffolder-actions
+        arguments: {}
+    contexts:
+    - "```json\n{\n  \"actions\": [\n    {\n      \"id\": \"catalog:fetch\",\n   \
+      \   \"description\": \"Returns entity or entities from the catalog by entity\
+      \ reference(s)\",\n      \"schema\": {\n        \"input\": {\n          \"type\"\
+      : \"object\",\n          \"properties\": {\n            \"entityRef\": {\n \
+      \             \"type\": \"string\",\n              \"description\": \"Entity\
+      \ reference of the entity to get\"\n            },\n            \"entityRefs\"\
+      : {\n              \"type\": \"array\",\n              \"items\": {\n      \
+      \          \"type\": \"string\"\n              },\n              \"description\"\
+      : \"Entity references of the entities to get\"\n            },\n           \
+      \ \"optional\": {\n              \"type\": \"boolean\",\n              \"description\"\
+      : \"Allow the entity or entities to optionally exist. Default: false\"\n   \
+      \         },\n            \"defaultKind\": {\n              \"type\": \"string\"\
+      ,\n              \"description\": \"The default kind\"\n            },\n   \
+      \         \"defaultNamespace\": {\n              \"type\": \"string\",\n   \
+      \           \"description\": \"The default namespace\"\n            }\n    \
+      \      },\n          \"additionalProperties\": false,\n          \"$schema\"\
+      : \"http://json-schema.org/draft-07/schema#\"\n        },\n        \"output\"\
+      : {\n          \"type\": \"object\",\n          \"properties\": {\n        \
+      \    \"entity\": {\n              \"description\": \"Object containing same\
+      \ values used in the Entity schema. Only when used with `entityRef` parameter.\"\
+      \n            },\n            \"entities\": {\n              \"type\": \"array\"\
+      \n            }\n          },\n          \"additionalProperties\": false,\n\
+      \          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n      \
+      \  }\n      },\n      \"examples\": [\n        {\n          \"description\"\
+      : \"Fetch entity by reference\",\n          \"example\": \"steps:\\n  - action:\
+      \ catalog:fetch\\n    id: fetch\\n    name: Fetch catalog entity\\n    input:\\\
+      n      entityRef: component:default/name\\n\"\n        },\n        {\n     \
+      \     \"description\": \"Fetch multiple entities by reference\",\n         \
+      \ \"example\": \"steps:\\n  - action: catalog:fetch\\n    id: fetchMultiple\\\
+      n    name: Fetch catalog entities\\n    input:\\n      entityRefs:\\n      \
+      \  - component:default/name\\n\"\n        }\n      ]\n    },\n    {\n      \"\
+      id\": \"catalog:get-catalog-entity\",\n      \"description\": \"\\nThis allows\
+      \ you to get a single entity from the software catalog.\\nEach entity in the\
+      \ software catalog has a unique name, kind, and namespace. The default namespace\
+      \ is \\\"default\\\".\\nEach entity is identified by a unique entity reference,\
+      \ which is a string of the form \\\"kind:namespace/name\\\".\\n    \",\n   \
+      \   \"schema\": {\n        \"input\": {\n          \"type\": \"object\",\n \
+      \         \"properties\": {\n            \"kind\": {\n              \"type\"\
+      : \"string\",\n              \"description\": \"The kind of the entity to query.\
+      \ If the kind is unknown it can be omitted.\"\n            },\n            \"\
+      namespace\": {\n              \"type\": \"string\",\n              \"description\"\
+      : \"The namespace of the entity to query. If the namespace is unknown it can\
+      \ be omitted.\"\n            },\n            \"name\": {\n              \"type\"\
+      : \"string\",\n              \"description\": \"The name of the entity to query\"\
+      \n            }\n          },\n          \"required\": [\n            \"name\"\
+      \n          ],\n          \"additionalProperties\": false,\n          \"$schema\"\
+      : \"http://json-schema.org/draft-07/schema#\"\n        },\n        \"output\"\
+      : {\n          \"type\": \"object\",\n          \"properties\": {},\n      \
+      \    \"additionalProperties\": true,\n          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\
+      \n        }\n      },\n      \"examples\": []\n    },\n    {\n      \"id\":\
+      \ \"catalog:get-catalog-model-description\",\n      \"description\": \"Returns\
+      \ a markdown formatted description of the current catalog model, including all\
+      \ registered entity kinds, annotations, labels, tags, and relations.\",\n  \
+      \    \"schema\": {\n        \"input\": {\n          \"type\": \"object\",\n\
+      \          \"properties\": {},\n          \"additionalProperties\": false,\n\
+      \          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n      \
+      \  },\n        \"output\": {\n          \"type\": \"ob"
+    - "```json\n{\n  \"actions\": [\n    {\n      \"id\": \"catalog:fetch\",\n   \
+      \   \"description\": \"Returns entity or entities from the catalog by entity\
+      \ reference(s)\",\n      \"schema\": {\n        \"input\": {\n          \"type\"\
+      : \"object\",\n          \"properties\": {\n            \"entityRef\": {\n \
+      \             \"type\": \"string\",\n              \"description\": \"Entity\
+      \ reference of the entity to get\"\n            },\n            \"entityRefs\"\
+      : {\n              \"type\": \"array\",\n              \"items\": {\n      \
+      \          \"type\": \"string\"\n              },\n              \"description\"\
+      : \"Entity references of the entities to get\"\n            },\n           \
+      \ \"optional\": {\n              \"type\": \"boolean\",\n              \"description\"\
+      : \"Allow the entity or entities to optionally exist. Default: false\"\n   \
+      \         },\n            \"defaultKind\": {\n              \"type\": \"string\"\
+      ,\n              \"description\": \"The default kind\"\n            },\n   \
+      \         \"defaultNamespace\": {\n              \"type\": \"string\",\n   \
+      \           \"description\": \"The default namespace\"\n            }\n    \
+      \      },\n          \"additionalProperties\": false,\n          \"$schema\"\
+      : \"http://json-schema.org/draft-07/schema#\"\n        },\n        \"output\"\
+      : {\n          \"type\": \"object\",\n          \"properties\": {\n        \
+      \    \"entity\": {\n              \"description\": \"Object containing same\
+      \ values used in the Entity schema. Only when used with `entityRef` parameter.\"\
+      \n            },\n            \"entities\": {\n              \"type\": \"array\"\
+      \n            }\n          },\n          \"additionalProperties\": false,\n\
+      \          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n      \
+      \  }\n      },\n      \"examples\": [\n        {\n          \"description\"\
+      : \"Fetch entity by reference\",\n          \"example\": \"steps:\\n  - action:\
+      \ catalog:fetch\\n    id: fetch\\n    name: Fetch catalog entity\\n    input:\\\
+      n      entityRef: component:default/name\\n\"\n        },\n        {\n     \
+      \     \"description\": \"Fetch multiple entities by reference\",\n         \
+      \ \"example\": \"steps:\\n  - action: catalog:fetch\\n    id: fetchMultiple\\\
+      n    name: Fetch catalog entities\\n    input:\\n      entityRefs:\\n      \
+      \  - component:default/name\\n\"\n        }\n      ]\n    },\n    {\n      \"\
+      id\": \"catalog:get-catalog-entity\",\n      \"description\": \"\\nThis allows\
+      \ you to get a single entity from the software catalog.\\nEach entity in the\
+      \ software catalog has a unique name, kind, and namespace. The default namespace\
+      \ is \\\"default\\\".\\nEach entity is identified by a unique entity reference,\
+      \ which is a string of the form \\\"kind:namespace/name\\\".\\n    \",\n   \
+      \   \"schema\": {\n        \"input\": {\n          \"type\": \"object\",\n \
+      \         \"properties\": {\n            \"kind\": {\n              \"type\"\
+      : \"string\",\n              \"description\": \"The kind of the entity to query.\
+      \ If the kind is unknown it can be omitted.\"\n            },\n            \"\
+      namespace\": {\n              \"type\": \"string\",\n              \"description\"\
+      : \"The namespace of the entity to query. If the namespace is unknown it can\
+      \ be omitted.\"\n            },\n            \"name\": {\n              \"type\"\
+      : \"string\",\n              \"description\": \"The name of the entity to query\"\
+      \n            }\n          },\n          \"required\": [\n            \"name\"\
+      \n          ],\n          \"additionalProperties\": false,\n          \"$schema\"\
+      : \"http://json-schema.org/draft-07/schema#\"\n        },\n        \"output\"\
+      : {\n          \"type\": \"object\",\n          \"properties\": {},\n      \
+      \    \"additionalProperties\": true,\n          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\
+      \n        }\n      },\n      \"examples\": []\n    },\n    {\n      \"id\":\
+      \ \"catalog:get-catalog-model-description\",\n      \"description\": \"Returns\
+      \ a markdown formatted description of the current catalog model, including all\
+      \ registered entity kinds, annotations, labels, tags, and relations.\",\n  \
+      \    \"schema\": {\n        \"input\": {\n          \"type\": \"object\",\n\
+      \          \"properties\": {},\n          \"additionalProperties\": false,\n\
+      \          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n      \
+      \  },\n        \"output\": {\n          \"type\": \"ob"
+    response: 'The list of installed Scaffolder actions is:
+
+
+      * catalog:fetch
+
+      * catalog:get-catalog-entity
+
+      * catalog:get-catalog-model-description
+
+      * catalog:query-catalog-entities'
+- conversation_group_id: scaffolder-list-tasks
+  description: List scaffolder tasks
+  tag: scaffolder-read
+  turns:
+  - turn_id: list_tasks
+    query: Show recent scaffolder tasks
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments: {}
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments:
+            limit: .*
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments: {}
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments:
+            limit: .*
+    expected_response: Lists recent scaffolder tasks and their statuses.
+    expected_intent: list recent scaffolder tasks
+    tool_calls: []
+    response: '{"type": "function", "function": "scaffolder__list-scaffolder-tasks",
+      "parameters": {"owned": "false", "limit": "100", "offset": "0"}}'
+- conversation_group_id: scaffolder-list-tasks-limit-5
+  description: List scaffolder tasks with limit 5
+  tag: scaffolder-read
+  turns:
+  - turn_id: list_tasks_limit
+    query: Show the 5 most recent scaffolder tasks
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments:
+            limit: '5'
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments:
+            limit: '5'
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments: {}
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments: {}
+    expected_response: Lists up to 5 recent scaffolder tasks.
+    expected_intent: list recent scaffolder tasks
+    tool_calls:
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          limit: '5'
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          limit: 5
+    contexts:
+    - "InputError: Invalid input to action \"scaffolder:list-scaffolder-tasks\"; caused\
+      \ by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n\
+      \    \"received\": \"string\",\n    \"path\": [\n      \"limit\"\n    ],\n \
+      \   \"message\": \"Expected number, received string\"\n  }\n]"
+    - "```json\n{\n  \"tasks\": [],\n  \"totalTasks\": 0\n}\n```"
+    response: The output shows that there are no scaffolder tasks available.
+- conversation_group_id: scaffolder-list-tasks-limit-10
+  description: List scaffolder tasks with limit 10
+  tag: scaffolder-read
+  turns:
+  - turn_id: list_tasks_limit
+    query: Show the 10 most recent scaffolder tasks
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments:
+            limit: '10'
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments:
+            limit: '10'
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments: {}
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments: {}
+    expected_response: Lists up to 10 recent scaffolder tasks.
+    expected_intent: list recent scaffolder tasks
+    tool_calls:
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          limit: '10'
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          limit: 10
+    contexts:
+    - "InputError: Invalid input to action \"scaffolder:list-scaffolder-tasks\"; caused\
+      \ by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n\
+      \    \"received\": \"string\",\n    \"path\": [\n      \"limit\"\n    ],\n \
+      \   \"message\": \"Expected number, received string\"\n  }\n]"
+    - "```json\n{\n  \"tasks\": [],\n  \"totalTasks\": 0\n}\n```"
+    response: The output shows that there are no scaffolder tasks available.
+- conversation_group_id: scaffolder-list-tasks-limit-20
+  description: List scaffolder tasks with limit 20
+  tag: scaffolder-read
+  turns:
+  - turn_id: list_tasks_limit
+    query: Show the 20 most recent scaffolder tasks
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments:
+            limit: '20'
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments:
+            limit: '20'
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+          arguments: {}
+    - - - tool_name: scaffolder.list-scaffolder-tasks
+          arguments: {}
+    expected_response: Lists up to 20 recent scaffolder tasks.
+    expected_intent: list recent scaffolder tasks
+    tool_calls:
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          limit: '20'
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          limit: 20
+    contexts:
+    - "InputError: Invalid input to action \"scaffolder:list-scaffolder-tasks\"; caused\
+      \ by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n\
+      \    \"received\": \"string\",\n    \"path\": [\n      \"limit\"\n    ],\n \
+      \   \"message\": \"Expected number, received string\"\n  }\n]"
+    - "```json\n{\n  \"tasks\": [],\n  \"totalTasks\": 0\n}\n```"
+    response: The output shows that there are no scaffolder tasks available.
+- conversation_group_id: scaffolder-write-validate-1
+  description: Sandbox-safe dry-run validation (execute-template skipped — no Templates
+    in fixture)
+  tag: scaffolder-write
+  turns:
+  - turn_id: validate_minimal
+    query: "Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder\
+      \ (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass\
+      \ templateYaml as the following YAML document (variant 1):\n\napiVersion: scaffolder.backstage.io/v1beta3\n\
+      kind: Template\nmetadata:\n  name: mcp-eval-dry-run\n  title: MCP Eval Dry Run\n\
+      spec:\n  type: service\n  parameters: []\n  steps:\n    - id: noop\n      name:\
+      \ Noop\n      action: debug:log\n      input:\n        message: mcp-eval-dry-run\n"
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.validate-scaffolder
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    - - - tool_name: scaffolder.dry-run-template
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    expected_response: Dry-runs/validates the provided template YAML without creating
+      a scaffolder task.
+    expected_intent: dry-run/validate the provided scaffolder template without executing
+      a real task
+    tool_calls: []
+    response: '{"name": "scaffolder-mcp-extras__validate-scaffolder", "parameters":
+      {"templateYaml": "apiVersion: scaffolder.backstage.io/v1beta3\nkind: Template\nmetadata:\n  name:
+      mcp-eval-dry-run\n  title: MCP Eval Dry Run\nspec:\n  type: service\n  parameters:
+      []\n  steps:\n  - id: noop\n    name: Noop\n    action: debug:log\n    input:\n      message:
+      mcp-eval-dry-run", "values": "{}", "files": "[]"}}'
+- conversation_group_id: scaffolder-write-validate-2
+  description: Sandbox-safe dry-run validation (execute-template skipped — no Templates
+    in fixture)
+  tag: scaffolder-write
+  turns:
+  - turn_id: validate_minimal
+    query: "Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder\
+      \ (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass\
+      \ templateYaml as the following YAML document (variant 2):\n\napiVersion: scaffolder.backstage.io/v1beta3\n\
+      kind: Template\nmetadata:\n  name: mcp-eval-dry-run\n  title: MCP Eval Dry Run\n\
+      spec:\n  type: service\n  parameters: []\n  steps:\n    - id: noop\n      name:\
+      \ Noop\n      action: debug:log\n      input:\n        message: mcp-eval-dry-run\n"
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.validate-scaffolder
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    - - - tool_name: scaffolder.dry-run-template
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    expected_response: Dry-runs/validates the provided template YAML without creating
+      a scaffolder task.
+    expected_intent: dry-run/validate the provided scaffolder template without executing
+      a real task
+    tool_calls: []
+    response: '{"name": "scaffolder-mcp-extras__validate-scaffolder", "parameters":
+      {"templateYaml": "apiVersion: scaffolder.backstage.io/v1beta3\nkind: Template\nmetadata:\n  name:
+      mcp-eval-dry-run\n  title: MCP Eval Dry Run\nspec:\n  type: service\n  parameters:
+      []\n  steps:\n  - id: noop\n    name: Noop\n    action: debug:log\n    input:\n      message:
+      mcp-eval-dry-run", "values": "{}", "files": "[]"}}'
+- conversation_group_id: scaffolder-write-validate-3
+  description: Sandbox-safe dry-run validation (execute-template skipped — no Templates
+    in fixture)
+  tag: scaffolder-write
+  turns:
+  - turn_id: validate_minimal
+    query: "Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder\
+      \ (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass\
+      \ templateYaml as the following YAML document (variant 3):\n\napiVersion: scaffolder.backstage.io/v1beta3\n\
+      kind: Template\nmetadata:\n  name: mcp-eval-dry-run\n  title: MCP Eval Dry Run\n\
+      spec:\n  type: service\n  parameters: []\n  steps:\n    - id: noop\n      name:\
+      \ Noop\n      action: debug:log\n      input:\n        message: mcp-eval-dry-run\n"
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.validate-scaffolder
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    - - - tool_name: scaffolder.dry-run-template
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    expected_response: Dry-runs/validates the provided template YAML without creating
+      a scaffolder task.
+    expected_intent: dry-run/validate the provided scaffolder template without executing
+      a real task
+    tool_calls: []
+    response: '{"name": "scaffolder-mcp-extras__validate-scaffolder", "parameters":
+      {"templateYaml": "apiVersion: scaffolder.backstage.io/v1beta3\nkind: Template\nmetadata:\n  name:
+      mcp-eval-dry-run\n  title: MCP Eval Dry Run\nspec:\n  type: service\n  parameters:
+      []\n  steps:\n  - id: noop\n    name: Noop\n    action: debug:log\n    input:\n      message:
+      mcp-eval-dry-run", "values": "{}", "files": "[]"}}'
+- conversation_group_id: scaffolder-write-validate-4
+  description: Sandbox-safe dry-run validation (execute-template skipped — no Templates
+    in fixture)
+  tag: scaffolder-write
+  turns:
+  - turn_id: validate_minimal
+    query: "Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder\
+      \ (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass\
+      \ templateYaml as the following YAML document (variant 4):\n\napiVersion: scaffolder.backstage.io/v1beta3\n\
+      kind: Template\nmetadata:\n  name: mcp-eval-dry-run\n  title: MCP Eval Dry Run\n\
+      spec:\n  type: service\n  parameters: []\n  steps:\n    - id: noop\n      name:\
+      \ Noop\n      action: debug:log\n      input:\n        message: mcp-eval-dry-run\n"
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.validate-scaffolder
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    - - - tool_name: scaffolder.dry-run-template
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    expected_response: Dry-runs/validates the provided template YAML without creating
+      a scaffolder task.
+    expected_intent: dry-run/validate the provided scaffolder template without executing
+      a real task
+    tool_calls: []
+    response: '{"name": "scaffolder-mcp-extras__validate-scaffolder", "parameters":
+      {"templateYaml": "apiVersion: scaffolder.backstage.io/v1beta3\nkind: Template\nmetadata:\n  name:
+      mcp-eval-dry-run\n  title: MCP Eval Dry Run\nspec:\n  type: service\n  parameters:
+      []\n  steps:\n  - id: noop\n    name: Noop\n    action: debug:log\n    input:\n      message:
+      mcp-eval-dry-run", "values": "{}", "files": "[]"}}'
+- conversation_group_id: scaffolder-write-validate-5
+  description: Sandbox-safe dry-run validation (execute-template skipped — no Templates
+    in fixture)
+  tag: scaffolder-write
+  turns:
+  - turn_id: validate_minimal
+    query: "Validate this scaffolder template by dry-running it. Prefer scaffolder-mcp-extras.validate-scaffolder\
+      \ (or scaffolder.dry-run-template). Do not execute a real scaffolder task. Pass\
+      \ templateYaml as the following YAML document (variant 5):\n\napiVersion: scaffolder.backstage.io/v1beta3\n\
+      kind: Template\nmetadata:\n  name: mcp-eval-dry-run\n  title: MCP Eval Dry Run\n\
+      spec:\n  type: service\n  parameters: []\n  steps:\n    - id: noop\n      name:\
+      \ Noop\n      action: debug:log\n      input:\n        message: mcp-eval-dry-run\n"
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.validate-scaffolder
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    - - - tool_name: scaffolder.dry-run-template
+          arguments:
+            templateYaml: (?s).*mcp-eval-dry-run.*
+    expected_response: Dry-runs/validates the provided template YAML without creating
+      a scaffolder task.
+    expected_intent: dry-run/validate the provided scaffolder template without executing
+      a real task
+    tool_calls: []
+    response: '{"name": "scaffolder-mcp-extras__validate-scaffolder", "parameters":
+      {"templateYaml": "apiVersion: scaffolder.backstage.io/v1beta3\nkind: Template\nmetadata:\n  name:
+      mcp-eval-dry-run\n  title: MCP Eval Dry Run\nspec:\n  type: service\n  parameters:
+      []\n  steps:\n  - id: noop\n    name: Noop\n    action: debug:log\n    input:\n      message:
+      mcp-eval-dry-run", "values": "{}", "files": "[]"}}'
+- conversation_group_id: multi-components-then-coverage-payments-team
+  description: Components then TechDocs coverage for payments-team
+  tag: multi_step
+  turns:
+  - turn_id: components_then_coverage
+    query: List Components owned by payments-team, then analyze TechDocs coverage
+      for that same owner
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*payments-team.*
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*payments-team.*
+    expected_response: Lists Components for payments-team and reports their TechDocs
+      coverage.
+    expected_intent: list payments-team Components then analyze their TechDocs coverage
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: team:payments-team
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: team:payments-team
+    contexts:
+    - "```json\n{\n  \"entities\": []\n}\n```"
+    - "```json\n{\n  \"totalEntities\": 0,\n  \"entitiesWithDocs\": 0,\n  \"coveragePercentage\"\
+      : 0\n}\n```"
+    response: The first function call lists all Components owned by payments-team,
+      and the second function call analyzes TechDocs coverage for the same owner.
+- conversation_group_id: multi-apis-then-owner-entities-payments-team
+  description: APIs then all entities for payments-team
+  tag: multi_step
+  turns:
+  - turn_id: apis_then_owner
+    query: First list all APIs in the catalog, then find all catalog entities owned
+      by payments-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*payments-team.*
+    expected_response: Lists APIs, then entities owned by payments-team.
+    expected_intent: list APIs then list entities owned by payments-team
+    tool_calls: []
+    response: '{"type": "function", "name": "catalog__query-catalog-entities", "parameters":
+      {"query": {"kind": "API"}}}'
+- conversation_group_id: multi-components-then-coverage-security-team
+  description: Components then TechDocs coverage for security-team
+  tag: multi_step
+  turns:
+  - turn_id: components_then_coverage
+    query: List Components owned by security-team, then analyze TechDocs coverage
+      for that same owner
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*security-team.*
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*security-team.*
+    expected_response: Lists Components for security-team and reports their TechDocs
+      coverage.
+    expected_intent: list security-team Components then analyze their TechDocs coverage
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: security-team
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: security-team
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"account-access-api\"\
+      ,\n      \"kind\": \"Component\",\n      \"tags\": \"ais,accounts,banking,fdx\"\
+      ,\n      \"description\": \"API that provides authorized third-party providers\
+      \ access to customer account information.\",\n      \"type\": \"service\",\n\
+      \      \"owner\": \"security-team\",\n      \"lifecycle\": \"production\",\n\
+      \      \"dependsOn\": \"component:default/beneficiary-management-api,component:default/consent-management-api\"\
+      \n    },\n    {\n      \"name\": \"consent-management-api\",\n      \"kind\"\
+      : \"Component\",\n      \"tags\": \"\",\n      \"description\": \"API for managing\
+      \ user consents under open banking regulations.\",\n      \"type\": \"service\"\
+      ,\n      \"owner\": \"security-team\",\n      \"lifecycle\": \"production\"\
+      ,\n      \"dependsOn\": \"resource:default/audit-logs-bucket,resource:default/consent-store\"\
+      \n    }\n  ]\n}\n```"
+    - "```json\n{\n  \"totalEntities\": 4,\n  \"entitiesWithDocs\": 0,\n  \"coveragePercentage\"\
+      : 0\n}\n```"
+    response: The first function call lists all Components owned by the security-team.
+      The second function call analyzes TechDocs coverage for the same owner. The
+      output shows that there are 4 entities in total, but none of them have TechDocs
+      available, resulting in a coverage percentage of 0%.
+- conversation_group_id: multi-apis-then-owner-entities-security-team
+  description: APIs then all entities for security-team
+  tag: multi_step
+  turns:
+  - turn_id: apis_then_owner
+    query: First list all APIs in the catalog, then find all catalog entities owned
+      by security-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*security-team.*
+    expected_response: Lists APIs, then entities owned by security-team.
+    expected_intent: list APIs then list entities owned by security-team
+    tool_calls: []
+    response: '{"type": "function", "name": "catalog__query-catalog-entities", "parameters":
+      {"query": {"kind": "API"}}}'
+- conversation_group_id: multi-components-then-coverage-accounts-team
+  description: Components then TechDocs coverage for accounts-team
+  tag: multi_step
+  turns:
+  - turn_id: components_then_coverage
+    query: List Components owned by accounts-team, then analyze TechDocs coverage
+      for that same owner
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*accounts-team.*
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: .*accounts-team.*
+    expected_response: Lists Components for accounts-team and reports their TechDocs
+      coverage.
+    expected_intent: list accounts-team Components then analyze their TechDocs coverage
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: accounts-team
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owner: accounts-team
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"balance-check-api\"\
+      ,\n      \"kind\": \"Component\",\n      \"tags\": \"\",\n      \"description\"\
+      : \"API for real-time account balance inquiries and balance history.\",\n  \
+      \    \"type\": \"service\",\n      \"owner\": \"accounts-team\",\n      \"lifecycle\"\
+      : \"production\",\n      \"dependsOn\": \"component:default/consent-management-api\"\
+      \n    },\n    {\n      \"name\": \"transaction-history-api\",\n      \"kind\"\
+      : \"Component\",\n      \"tags\": \"ais,accounts,banking,fdx\",\n      \"description\"\
+      : \"API for retrieving and filtering customer transaction history and statements.\"\
+      ,\n      \"type\": \"service\",\n      \"owner\": \"accounts-team\",\n     \
+      \ \"lifecycle\": \"production\",\n      \"dependsOn\": \"component:default/beneficiary-management-api,component:default/consent-management-api,resource:default/audit-logs-bucket,resource:default/transaction-store\"\
+      \n    }\n  ]\n}\n```"
+    - "```json\n{\n  \"totalEntities\": 5,\n  \"entitiesWithDocs\": 0,\n  \"coveragePercentage\"\
+      : 0\n}\n```"
+    response: The first function call lists all Components owned by accounts-team,
+      and the second function call analyzes TechDocs coverage for the same owner.
+      The output of the first function call is a list of Components owned by accounts-team,
+      and the output of the second function call is a JSON object containing the total
+      number of entities, the number of entities with TechDocs, and the coverage percentage.
+- conversation_group_id: multi-apis-then-owner-entities-accounts-team
+  description: APIs then all entities for accounts-team
+  tag: multi_step
+  turns:
+  - turn_id: apis_then_owner
+    query: First list all APIs in the catalog, then find all catalog entities owned
+      by accounts-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*accounts-team.*
+    expected_response: Lists APIs, then entities owned by accounts-team.
+    expected_intent: list APIs then list entities owned by accounts-team
+    tool_calls: []
+    response: '{"type": "function", "name": "catalog__query-catalog-entities", "parameters":
+      {"query": {"kind": "API"}}}'
+- conversation_group_id: multi-techdocs-then-content
+  description: Fetch TechDocs then retrieve content if present
+  tag: multi_step
+  turns:
+  - turn_id: fetch_then_retrieve
+    query: Find an entity that has TechDocs and retrieve the content of its documentation
+      home page
+    expected_tool_calls:
+    - - - tool_name: techdocs-mcp-extras.fetch-techdocs
+          arguments: {}
+      - - tool_name: techdocs-mcp-extras.retrieve-techdocs-content
+          arguments:
+            entityRef: .*
+    - - - tool_name: techdocs-mcp-extras.fetch-techdocs
+          arguments: {}
+    expected_response: Fetches TechDocs entities and retrieves content when available.
+    expected_intent: find TechDocs entities and retrieve documentation content when
+      available
+    tool_calls: []
+    response: '{"type": "function", "function": "techdocs-mcp-extras__retrieve-techdocs-content",
+      "parameters": {"entityRef": "component:default/developer-model-service", "pagePath":
+      "index.html"}}'
+- conversation_group_id: multi-templates-then-actions
+  description: List templates then list actions
+  tag: multi_step
+  turns:
+  - turn_id: templates_then_actions
+    query: List available software templates, then list all installed scaffolder actions
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments: {}
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments: {}
+    expected_response: Lists templates and then installed scaffolder actions.
+    expected_intent: list templates then list scaffolder actions
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: 'null'
+          title: 'null'
+          uid: 'null'
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments: {}
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments:
+          owned: 'true'
+    contexts:
+    - "```json\n{\n  \"templates\": []\n}\n```"
+    - 'AuthenticationError: Missing credentials'
+    - 'AuthenticationError: Missing credentials'
+    response: To list all installed scaffolder actions, you need to provide a valid
+      user identity. Please provide a valid user identity to proceed.
+- conversation_group_id: multi-entity-then-model
+  description: Get entity then catalog model
+  tag: multi_step
+  turns:
+  - turn_id: entity_then_model
+    query: Get the catalog entity named consent-management-api, then describe the
+      catalog model
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: consent-management-api
+    - - tool_name: catalog.get-catalog-model-description
+        arguments: {}
+    expected_response: Fetches consent-management-api then describes the catalog model.
+    expected_intent: retrieve consent-management-api then describe the catalog model
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "consent-management-api"}};
+      {"type": "function", "function": "catalog__get-catalog-model-description", "parameters":
+      {}}'
+- conversation_group_id: negative-no-execute-template
+  description: Inspect templates only — must not execute
+  tag: negative
+  turns:
+  - turn_id: inspect_only
+    query: I only want to inspect available templates. Do not create or execute anything.
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments: {}
+    expected_response: Inspects templates without executing or creating scaffolder
+      tasks.
+    expected_intent: inspect templates only without creating or executing a scaffolder
+      task
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.fetch-template-metadata
+        arguments:
+          name: ''
+          title: ''
+          uid: ''
+    contexts:
+    - "```json\n{\n  \"templates\": []\n}\n```"
+    response: This function call will return a list of available templates without
+      executing or creating anything.
+- conversation_group_id: negative-empty-filter-type
+  description: Unlikely type filter — empty OK
+  tag: negative
+  turns:
+  - turn_id: empty_filter
+    query: Find catalog Components of type definitely-does-not-exist-xyz
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          type: definitely-does-not-exist-xyz
+    expected_response: Queries the catalog and reports no matching Components for
+      that type.
+    expected_intent: query the catalog with an unlikely filter and report empty or
+      no matching results
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"type": "definitely-does-not-exist-xyz"}}'
+- conversation_group_id: negative-empty-filter-tag
+  description: Unlikely tag filter — empty OK
+  tag: negative
+  turns:
+  - turn_id: empty_tag
+    query: Show catalog entities tagged with zz-no-such-tag-999
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: zz-no-such-tag-999
+    expected_response: Queries the catalog and reports no entities for that tag.
+    expected_intent: query the catalog with an unlikely tag and report empty results
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"tags": "zz-no-such-tag-999"}}'
+- conversation_group_id: negative-empty-owner
+  description: Unlikely owner filter — empty OK
+  tag: negative
+  turns:
+  - turn_id: empty_owner
+    query: Find catalog entities owned by no-such-team-xyz-999
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*no-such-team-xyz-999.*
+    expected_response: Queries the catalog and reports no entities for that owner.
+    expected_intent: query the catalog for a non-existent owner and report empty results
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"relations": {"ownedby": "team:no-such-team-xyz-999"}}}}'
+- conversation_group_id: negative-missing-entity-definitely-missing-entity-xyz
+  description: Missing entity definitely-missing-entity-xyz
+  tag: negative
+  turns:
+  - turn_id: missing_entity
+    query: Get the catalog entity named definitely-missing-entity-xyz
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: definitely-missing-entity-xyz
+    expected_response: Attempts to fetch definitely-missing-entity-xyz and reports
+      it was not found or unavailable.
+    expected_intent: attempt to retrieve missing entity definitely-missing-entity-xyz
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "", "namespace": "", "name": "definitely-missing-entity-xyz"}}'
+- conversation_group_id: negative-missing-entity-no-such-api-abc
+  description: Missing entity no-such-api-abc
+  tag: negative
+  turns:
+  - turn_id: missing_entity
+    query: Get the catalog entity named no-such-api-abc
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: no-such-api-abc
+    expected_response: Attempts to fetch no-such-api-abc and reports it was not found
+      or unavailable.
+    expected_intent: attempt to retrieve missing entity no-such-api-abc
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "", "namespace": "default", "name": "no-such-api-abc"}}'
+- conversation_group_id: negative-missing-entity-ghost-component-000
+  description: Missing entity ghost-component-000
+  tag: negative
+  turns:
+  - turn_id: missing_entity
+    query: Get the catalog entity named ghost-component-000
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: ghost-component-000
+    expected_response: Attempts to fetch ghost-component-000 and reports it was not
+      found or unavailable.
+    expected_intent: attempt to retrieve missing entity ghost-component-000
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "Component", "namespace": "default", "name": "ghost-component-000"}}'
+- conversation_group_id: negative-no-register-on-list
+  description: Listing catalog must not register entities
+  tag: negative
+  turns:
+  - turn_id: list_not_register
+    query: Just list Components in the software catalog. Do not register or unregister
+      anything.
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+    expected_response: Lists Components without registering or unregistering entities.
+    expected_intent: list Components without mutating the catalog
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__query-catalog-entities",
+      "parameters": {"query": {"kind": "Component"}}}'
+- conversation_group_id: negative-docs-not-execute
+  description: Docs question must not execute templates
+  tag: negative
+  turns:
+  - turn_id: docs_not_execute
+    query: What is our TechDocs coverage? Do not run any scaffolder templates.
+    expected_tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments: {}
+    expected_response: Reports TechDocs coverage without executing scaffolder templates.
+    expected_intent: report TechDocs coverage without executing templates
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          owned: 'false'
+    contexts:
+    - "```json\n{\n  \"totalEntities\": 39,\n  \"entitiesWithDocs\": 0,\n  \"coveragePercentage\"\
+      : 0\n}\n```"
+    response: This function call will return the TechDocs coverage for all entities
+      in the catalog, without running any scaffolder templates. The output will be
+      a JSON object with the total number of entities, the number of entities with
+      TechDocs, and the coverage percentage.
+- conversation_group_id: negative-owner-not-team-rewrite
+  description: Owner must be payments-team not rewritten
+  tag: negative
+  turns:
+  - turn_id: owner_exactish
+    query: Find catalog entities owned by payments-team. Use owner payments-team (not
+      a rewritten form like team-payments).
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*payments-team.*
+    expected_response: Lists entities owned by payments-team using the correct owner
+      filter.
+    expected_intent: find catalog entities owned by payments-team
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: payments-team
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"standing-orders-api\"\
+      ,\n      \"kind\": \"Component\",\n      \"tags\": \"\",\n      \"description\"\
+      : \"API for managing recurring payments and standing orders.\",\n      \"type\"\
+      : \"service\",\n      \"owner\": \"payments-team\",\n      \"lifecycle\": \"\
+      production\",\n      \"dependsOn\": \"component:default/beneficiary-management-api,component:default/consent-management-api\"\
+      \n    },\n    {\n      \"name\": \"payment-events-topic\",\n      \"kind\":\
+      \ \"Resource\",\n      \"tags\": \"messaging,pubsub,payments\",\n      \"description\"\
+      : \"Pub/Sub topic for payment-related events and notifications\",\n      \"\
+      type\": \"messaging\",\n      \"owner\": \"payments-team\",\n      \"dependsOn\"\
+      : \"\"\n    },\n    {\n      \"name\": \"beneficiary-management-api\",\n   \
+      \   \"kind\": \"Component\",\n      \"tags\": \"\",\n      \"description\":\
+      \ \"API for managing trusted payees and beneficiaries.\",\n      \"type\": \"\
+      service\",\n      \"owner\": \"payments-team\",\n      \"lifecycle\": \"production\"\
+      ,\n      \"dependsOn\": \"component:default/consent-management-api\"\n    },\n\
+      \    {\n      \"name\": \"payment-initiation-api\",\n      \"kind\": \"Component\"\
+      ,\n      \"tags\": \"\",\n      \"description\": \"API for initiating payments\
+      \ from customer accounts, supporting SEPA credit transfers.\",\n      \"type\"\
+      : \"service\",\n      \"owner\": \"payments-team\",\n      \"lifecycle\": \"\
+      production\",\n      \"dependsOn\": \"component:default/consent-management-api,resource:default/audit-logs-bucket,resource:default/payment-events-topic\"\
+      \n    },\n    {\n      \"name\": \"beneficiary-management-api\",\n      \"kind\"\
+      : \"API\",\n      \"tags\": \"payments,beneficiaries\",\n      \"description\"\
+      : \"API for managing trusted payees and beneficiaries\",\n      \"type\": \"\
+      openapi\",\n      \"owner\": \"payments-team\",\n      \"lifecycle\": \"production\"\
+      ,\n      \"dependsOn\": \"\"\n    },\n    {\n      \"name\": \"payment-initiation-api\"\
+      ,\n      \"kind\": \"API\",\n      \"tags\": \"pis,payments\",\n      \"description\"\
+      : \"API to initiate payments from customer accounts\",\n      \"type\": \"openapi\"\
+      ,\n      \"owner\": \"payments-team\",\n      \"lifecycle\": \"production\"\
+      ,\n      \"dependsOn\": \"\"\n    },\n    {\n      \"name\": \"standing-orders-api\"\
+      ,\n      \"kind\": \"API\",\n      \"tags\": \"\",\n      \"description\": \"\
+      API for managing recurring payments and standing orders\",\n      \"type\":\
+      \ \"openapi\",\n      \"owner\": \"payments-team\",\n      \"lifecycle\": \"\
+      production\",\n      \"dependsOn\": \"\"\n    }\n  ]\n}\n```"
+    response: This JSON response shows the catalog entities owned by payments-team.
+      The entities include APIs and components related to payments and beneficiary
+      management.
+- conversation_group_id: catalog-component-owner-payments-team
+  description: Component owned by payments-team
+  tag: catalog
+  turns:
+  - turn_id: kind_owner
+    query: List Component entities owned by payments-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*payments-team.*
+    expected_response: Lists Component entities owned by payments-team.
+    expected_intent: list Component entities owned by payments-team
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"type": "Component", "owner": "team:payments-team"}}'
+- conversation_group_id: catalog-api-owner-payments-team
+  description: API owned by payments-team
+  tag: catalog
+  turns:
+  - turn_id: kind_owner
+    query: List API entities owned by payments-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+          owner: .*payments-team.*
+    expected_response: Lists API entities owned by payments-team.
+    expected_intent: list API entities owned by payments-team
+    tool_calls: []
+    response: '{"name": "catalog__query-catalog-entities", "parameters": {"query":
+      {"relations": {"ownedby": "group:default/payments-team"}, "kind": "API"}}}'
+- conversation_group_id: catalog-component-owner-security-team
+  description: Component owned by security-team
+  tag: catalog
+  turns:
+  - turn_id: kind_owner
+    query: List Component entities owned by security-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*security-team.*
+    expected_response: Lists Component entities owned by security-team.
+    expected_intent: list Component entities owned by security-team
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          type: Component
+          owner: security-team
+    contexts:
+    - "```json\n{\n  \"entities\": [],\n  \"error\": \"entity type cannot be specified\
+      \ without an entity kind specified\"\n}\n```"
+    response: 'The function `software-catalog-mcp-extras__query-catalog-entities`
+      was called with the parameters `type: Component` and `owner: security-team`.
+      However, the function returned an error because the `type` parameter cannot
+      be specified without an entity kind specified. To fix this, you can remove the
+      `type` parameter or specify a valid entity kind.'
+- conversation_group_id: catalog-api-owner-security-team
+  description: API owned by security-team
+  tag: catalog
+  turns:
+  - turn_id: kind_owner
+    query: List API entities owned by security-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+          owner: .*security-team.*
+    expected_response: Lists API entities owned by security-team.
+    expected_intent: list API entities owned by security-team
+    tool_calls: []
+    response: '{"name": "catalog__query-catalog-entities", "parameters": {"query":
+      {"relations": "ownedby: security-team"}}}'
+- conversation_group_id: catalog-resource-owner-payments-team
+  description: Resource owned by payments-team
+  tag: catalog
+  turns:
+  - turn_id: kind_owner
+    query: List Resource entities owned by payments-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Resource
+          owner: .*payments-team.*
+    expected_response: Lists Resource entities owned by payments-team.
+    expected_intent: list Resource entities owned by payments-team
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"type": "Resource", "owner": "team:payments-team"}}'
+- conversation_group_id: catalog-api-owner-accounts-team
+  description: API owned by accounts-team
+  tag: catalog
+  turns:
+  - turn_id: kind_owner
+    query: List API entities owned by accounts-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+          owner: .*accounts-team.*
+    expected_response: Lists API entities owned by accounts-team.
+    expected_intent: list API entities owned by accounts-team
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"query": {"relations": "ownedby: user:accounts-team"}}}'
+- conversation_group_id: catalog-component-owner-accounts-team
+  description: Component owned by accounts-team
+  tag: catalog
+  turns:
+  - turn_id: kind_owner
+    query: List Component entities owned by accounts-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*accounts-team.*
+    expected_response: Lists Component entities owned by accounts-team.
+    expected_intent: list Component entities owned by accounts-team
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"query": {"kind": "Component", "relations": {"ownedby": "group:default/accounts-team"}}}}'
+- conversation_group_id: catalog-resource-owner-accounts-team
+  description: Resource owned by accounts-team
+  tag: catalog
+  turns:
+  - turn_id: kind_owner
+    query: List Resource entities owned by accounts-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Resource
+          owner: .*accounts-team.*
+    expected_response: Lists Resource entities owned by accounts-team.
+    expected_intent: list Resource entities owned by accounts-team
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"query": {"kind": "Resource", "spec": {"owner": "accounts-team"}}}}'
+- conversation_group_id: catalog-component-tag-payments
+  description: Component tagged payments
+  tag: catalog
+  turns:
+  - turn_id: kind_tag
+    query: Show Component entities tagged with payments
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          tags: payments
+    expected_response: Lists Component entities tagged payments.
+    expected_intent: list Component entities tagged with payments
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"tags": "payments", "kind": "Component"}}'
+- conversation_group_id: catalog-api-tag-payments
+  description: API tagged payments
+  tag: catalog
+  turns:
+  - turn_id: kind_tag
+    query: Show API entities tagged with payments
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+          tags: payments
+    expected_response: Lists API entities tagged payments.
+    expected_intent: list API entities tagged with payments
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"tags": "payments"}}'
+- conversation_group_id: catalog-api-tag-consent
+  description: API tagged consent
+  tag: catalog
+  turns:
+  - turn_id: kind_tag
+    query: Show API entities tagged with consent
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: API
+          tags: consent
+    expected_response: Lists API entities tagged consent.
+    expected_intent: list API entities tagged with consent
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: consent
+    contexts:
+    - "```json\n{\n  \"entities\": [\n    {\n      \"name\": \"consent-store\",\n\
+      \      \"kind\": \"Resource\",\n      \"tags\": \"database,security,consent\"\
+      ,\n      \"description\": \"Secure database for storing user consent records\"\
+      ,\n      \"type\": \"database\",\n      \"owner\": \"security-team\",\n    \
+      \  \"dependsOn\": \"\"\n    },\n    {\n      \"name\": \"consent-management-api\"\
+      ,\n      \"kind\": \"API\",\n      \"tags\": \"consent,authentication\",\n \
+      \     \"description\": \"API to manage user consent for data access\",\n   \
+      \   \"type\": \"openapi\",\n      \"owner\": \"security-team\",\n      \"lifecycle\"\
+      : \"production\",\n      \"dependsOn\": \"\"\n    }\n  ]\n}\n```"
+    response: The output is a JSON array of API entities tagged with "consent". The
+      array contains two objects, each representing an API entity. The first entity
+      is a "Resource" named "consent-store" with a description of "Secure database
+      for storing user consent records". The second entity is an "API" named "consent-management-api"
+      with a description of "API to manage user consent for data access". Both entities
+      have a tag of "consent" and are owned by the "security-team".
+- conversation_group_id: catalog-component-tag-consent
+  description: Component tagged consent
+  tag: catalog
+  turns:
+  - turn_id: kind_tag
+    query: Show Component entities tagged with consent
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          tags: consent
+    expected_response: Lists Component entities tagged consent.
+    expected_intent: list Component entities tagged with consent
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: consent
+          kind: Component
+    contexts:
+    - "```json\n{\n  \"entities\": []\n}\n```"
+    response: The query returned no results.
+- conversation_group_id: catalog-resource-tag-database
+  description: Resource tagged database
+  tag: catalog
+  turns:
+  - turn_id: kind_tag
+    query: Show Resource entities tagged with database
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Resource
+          tags: database
+    expected_response: Lists Resource entities tagged database.
+    expected_intent: list Resource entities tagged with database
+    tool_calls: []
+    response: '{"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"type": "Resource", "tags": "database"}}'
+- conversation_group_id: negative-resources-no-scaffolder
+  description: negative-resources-no-scaffolder
+  tag: negative
+  turns:
+  - turn_id: trap
+    query: Do not use the scaffolder. Only query the catalog for Resources.
+    expected_tool_calls:
+    - - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+          arguments:
+            kind: Resource
+    expected_response: Lists Resources via catalog query without using scaffolder
+      tools.
+    expected_intent: list Resources without using scaffolder tools
+    tool_calls: []
+    response: '{"name": "catalog__query-catalog-entities", "parameters": {"query":
+      {"kind": "Resource"}}}'
+- conversation_group_id: negative-coverage-no-tasks
+  description: negative-coverage-no-tasks
+  tag: negative
+  turns:
+  - turn_id: trap
+    query: Summarize TechDocs coverage only. Do not list scaffolder tasks.
+    expected_tool_calls:
+    - - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+          arguments: {}
+    expected_response: Reports TechDocs coverage without listing scaffolder tasks.
+    expected_intent: report TechDocs coverage without listing scaffolder tasks
+    tool_calls:
+    - - tool_name: techdocs-mcp-extras.analyze-techdocs-coverage
+        arguments:
+          entityType: Component
+          namespace: default
+          owner: user:default/exampleuser
+          lifecycle: production
+          tags: ''
+    contexts:
+    - "```json\n{\n  \"totalEntities\": 0,\n  \"entitiesWithDocs\": 0,\n  \"coveragePercentage\"\
+      : 0\n}\n```"
+    response: This function call will return the total number of entities, the number
+      of entities with TechDocs, and the percentage of entities with TechDocs for
+      the specified entity type, namespace, owner, lifecycle, and tags.
+- conversation_group_id: negative-actions-no-dryrun
+  description: negative-actions-no-dryrun
+  tag: negative
+  turns:
+  - turn_id: trap
+    query: List scaffolder actions only. Do not execute or dry-run any template.
+    expected_tool_calls:
+    - - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+          arguments: {}
+    expected_response: Lists scaffolder actions without dry-running or executing templates.
+    expected_intent: list scaffolder actions without validating or executing templates
+    tool_calls:
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments: {}
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments:
+          credentials: your_credentials
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments:
+          credentials: your_credentials
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments:
+          credentials: your_credentials
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments:
+          credentials: your_credentials
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments:
+          credentials: your_credentials
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments:
+          credentials: your_credentials
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments:
+          credentials: your_credentials
+    contexts:
+    - 'AuthenticationError: Missing credentials'
+    - 'AuthenticationError: Missing credentials'
+    - 'AuthenticationError: Missing credentials'
+    - 'AuthenticationError: Missing credentials'
+    - 'AuthenticationError: Missing credentials'
+    - 'AuthenticationError: Missing credentials'
+    - 'AuthenticationError: Missing credentials'
+    - 'AuthenticationError: Missing credentials'
+- conversation_group_id: multi-tag-then-owner
+  description: Tag filter then owner filter
+  tag: multi_step
+  turns:
+  - turn_id: tag_then_owner
+    query: Show catalog entities tagged with payments, then find entities owned by
+      payments-team
+    expected_tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: payments
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: .*payments-team.*
+    expected_response: Lists payments-tagged entities, then payments-team owned entities.
+    expected_intent: list payments-tagged entities then payments-team owned entities
+    tool_calls:
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: payments
+          verbose: 'false'
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          tags: payments
+          verbose: 'true'
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: payments-team
+          verbose: 'true'
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: payments-team
+          verbose: 'false'
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: payments-team
+          verbose: 'true'
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: payments-team
+          verbose: 'false'
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: payments-team
+          verbose: 'true'
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          owner: payments-team
+          verbose: 'false'
+    contexts:
+    - "InputError: Invalid input to action \"software-catalog-mcp-extras:query-catalog-entities\"\
+      ; caused by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"verbose\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+    - "InputError: Invalid input to action \"software-catalog-mcp-extras:query-catalog-entities\"\
+      ; caused by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"verbose\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+    - "InputError: Invalid input to action \"software-catalog-mcp-extras:query-catalog-entities\"\
+      ; caused by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"verbose\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+    - "InputError: Invalid input to action \"software-catalog-mcp-extras:query-catalog-entities\"\
+      ; caused by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"verbose\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+    - "InputError: Invalid input to action \"software-catalog-mcp-extras:query-catalog-entities\"\
+      ; caused by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"verbose\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+    - "InputError: Invalid input to action \"software-catalog-mcp-extras:query-catalog-entities\"\
+      ; caused by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"verbose\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+    - "InputError: Invalid input to action \"software-catalog-mcp-extras:query-catalog-entities\"\
+      ; caused by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"verbose\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+    - "InputError: Invalid input to action \"software-catalog-mcp-extras:query-catalog-entities\"\
+      ; caused by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"verbose\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+- conversation_group_id: multi-actions-then-tasks
+  description: List actions then tasks
+  tag: multi_step
+  turns:
+  - turn_id: actions_then_tasks
+    query: List installed scaffolder actions, then show recent scaffolder tasks
+    expected_tool_calls:
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-actions
+        arguments: {}
+    - - tool_name: scaffolder-mcp-extras.list-scaffolder-tasks
+        arguments: {}
+    expected_response: Lists scaffolder actions and then recent tasks.
+    expected_intent: list scaffolder actions then list recent tasks
+    tool_calls:
+    - - tool_name: scaffolder.list-scaffolder-actions
+        arguments: {}
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          owned: 'true'
+          limit: '10'
+          offset: '0'
+    - - tool_name: scaffolder.list-scaffolder-tasks
+        arguments:
+          owned: 'true'
+          limit: 10
+          offset: 0
+    contexts:
+    - "```json\n{\n  \"actions\": [\n    {\n      \"id\": \"catalog:fetch\",\n   \
+      \   \"description\": \"Returns entity or entities from the catalog by entity\
+      \ reference(s)\",\n      \"schema\": {\n        \"input\": {\n          \"type\"\
+      : \"object\",\n          \"properties\": {\n            \"entityRef\": {\n \
+      \             \"type\": \"string\",\n              \"description\": \"Entity\
+      \ reference of the entity to get\"\n            },\n            \"entityRefs\"\
+      : {\n              \"type\": \"array\",\n              \"items\": {\n      \
+      \          \"type\": \"string\"\n              },\n              \"description\"\
+      : \"Entity references of the entities to get\"\n            },\n           \
+      \ \"optional\": {\n              \"type\": \"boolean\",\n              \"description\"\
+      : \"Allow the entity or entities to optionally exist. Default: false\"\n   \
+      \         },\n            \"defaultKind\": {\n              \"type\": \"string\"\
+      ,\n              \"description\": \"The default kind\"\n            },\n   \
+      \         \"defaultNamespace\": {\n              \"type\": \"string\",\n   \
+      \           \"description\": \"The default namespace\"\n            }\n    \
+      \      },\n          \"additionalProperties\": false,\n          \"$schema\"\
+      : \"http://json-schema.org/draft-07/schema#\"\n        },\n        \"output\"\
+      : {\n          \"type\": \"object\",\n          \"properties\": {\n        \
+      \    \"entity\": {\n              \"description\": \"Object containing same\
+      \ values used in the Entity schema. Only when used with `entityRef` parameter.\"\
+      \n            },\n            \"entities\": {\n              \"type\": \"array\"\
+      \n            }\n          },\n          \"additionalProperties\": false,\n\
+      \          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n      \
+      \  }\n      },\n      \"examples\": [\n        {\n          \"description\"\
+      : \"Fetch entity by reference\",\n          \"example\": \"steps:\\n  - action:\
+      \ catalog:fetch\\n    id: fetch\\n    name: Fetch catalog entity\\n    input:\\\
+      n      entityRef: component:default/name\\n\"\n        },\n        {\n     \
+      \     \"description\": \"Fetch multiple entities by reference\",\n         \
+      \ \"example\": \"steps:\\n  - action: catalog:fetch\\n    id: fetchMultiple\\\
+      n    name: Fetch catalog entities\\n    input:\\n      entityRefs:\\n      \
+      \  - component:default/name\\n\"\n        }\n      ]\n    },\n    {\n      \"\
+      id\": \"catalog:get-catalog-entity\",\n      \"description\": \"\\nThis allows\
+      \ you to get a single entity from the software catalog.\\nEach entity in the\
+      \ software catalog has a unique name, kind, and namespace. The default namespace\
+      \ is \\\"default\\\".\\nEach entity is identified by a unique entity reference,\
+      \ which is a string of the form \\\"kind:namespace/name\\\".\\n    \",\n   \
+      \   \"schema\": {\n        \"input\": {\n          \"type\": \"object\",\n \
+      \         \"properties\": {\n            \"kind\": {\n              \"type\"\
+      : \"string\",\n              \"description\": \"The kind of the entity to query.\
+      \ If the kind is unknown it can be omitted.\"\n            },\n            \"\
+      namespace\": {\n              \"type\": \"string\",\n              \"description\"\
+      : \"The namespace of the entity to query. If the namespace is unknown it can\
+      \ be omitted.\"\n            },\n            \"name\": {\n              \"type\"\
+      : \"string\",\n              \"description\": \"The name of the entity to query\"\
+      \n            }\n          },\n          \"required\": [\n            \"name\"\
+      \n          ],\n          \"additionalProperties\": false,\n          \"$schema\"\
+      : \"http://json-schema.org/draft-07/schema#\"\n        },\n        \"output\"\
+      : {\n          \"type\": \"object\",\n          \"properties\": {},\n      \
+      \    \"additionalProperties\": true,\n          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\
+      \n        }\n      },\n      \"examples\": []\n    },\n    {\n      \"id\":\
+      \ \"catalog:get-catalog-model-description\",\n      \"description\": \"Returns\
+      \ a markdown formatted description of the current catalog model, including all\
+      \ registered entity kinds, annotations, labels, tags, and relations.\",\n  \
+      \    \"schema\": {\n        \"input\": {\n          \"type\": \"object\",\n\
+      \          \"properties\": {},\n          \"additionalProperties\": false,\n\
+      \          \"$schema\": \"http://json-schema.org/draft-07/schema#\"\n      \
+      \  },\n        \"output\": {\n          \"type\": \"ob"
+    - "InputError: Invalid input to action \"scaffolder:list-scaffolder-tasks\"; caused\
+      \ by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"owned\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  },\n  {\n    \"code\"\
+      : \"invalid_type\",\n    \"expected\": \"number\",\n    \"received\": \"string\"\
+      ,\n    \"path\": [\n      \"limit\"\n    ],\n    \"message\": \"Expected number,\
+      \ received string\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\"\
+      : \"number\",\n    \"received\": \"string\",\n    \"path\": [\n      \"offset\"\
+      \n    ],\n    \"message\": \"Expected number, received string\"\n  }\n]"
+    - "InputError: Invalid input to action \"scaffolder:list-scaffolder-tasks\"; caused\
+      \ by [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"boolean\"\
+      ,\n    \"received\": \"string\",\n    \"path\": [\n      \"owned\"\n    ],\n\
+      \    \"message\": \"Expected boolean, received string\"\n  }\n]"
+    response: The function `scaffolder__list-scaffolder-tasks` requires boolean, integer,
+      and integer parameters, but the input provided is a string, string, and string.
+- conversation_group_id: multi-get-payment-initiation-api-then-owner-components
+  description: Get payment-initiation-api then list owner components
+  tag: multi_step
+  turns:
+  - turn_id: get_then_components
+    query: Get the catalog entity named payment-initiation-api, then list Components
+      owned by payments-team
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: payment-initiation-api
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*payments-team.*
+    expected_response: Fetches payment-initiation-api then lists payments-team Components.
+    expected_intent: retrieve payment-initiation-api then list payments-team Components
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "payment-initiation-api"}};
+      {"type": "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"kind": "Component", "owner": "team:payments-team"}}'
+- conversation_group_id: multi-get-standing-orders-api-then-owner-components
+  description: Get standing-orders-api then list owner components
+  tag: multi_step
+  turns:
+  - turn_id: get_then_components
+    query: Get the catalog entity named standing-orders-api, then list Components
+      owned by payments-team
+    expected_tool_calls:
+    - - tool_name: catalog.get-catalog-entity
+        arguments:
+          name: standing-orders-api
+    - - tool_name: software-catalog-mcp-extras.query-catalog-entities
+        arguments:
+          kind: Component
+          owner: .*payments-team.*
+    expected_response: Fetches standing-orders-api then lists payments-team Components.
+    expected_intent: retrieve standing-orders-api then list payments-team Components
+    tool_calls: []
+    response: '{"type": "function", "function": "catalog__get-catalog-entity", "parameters":
+      {"kind": "API", "namespace": "default", "name": "standing-orders-api"}}; {"type":
+      "function", "function": "software-catalog-mcp-extras__query-catalog-entities",
+      "parameters": {"kind": "Component", "owner": "team:payments-team"}}'

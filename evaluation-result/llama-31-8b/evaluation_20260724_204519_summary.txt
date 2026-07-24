@@ -1,0 +1,656 @@
+LSC Evaluation Framework - Summary Report
+==================================================
+
+Generated: 2026-07-24 20:45:19 UTC
+Total Evaluations: 297
+
+Overall Statistics:
+--------------------
+Pass: 119 (40.1%)
+Fail: 50 (16.8%)
+Error: 128 (43.1%)
+Skipped: 0 (0.0%)
+
+Token Usage (Judge LLM):
+--------------------
+Input Tokens: 165,411
+Output Tokens: 234,905
+Total Tokens: 400,316
+
+Token Usage (Embeddings):
+--------------------
+Input Tokens: 0
+
+Token Usage (API Calls):
+--------------------
+Input Tokens: 0
+Output Tokens: 0
+Total Tokens: 0
+
+By Metric:
+---------
+custom:answer_correctness:
+  Pass: 77 (77.8%)
+  Fail: 20 (20.2%)
+  Error: 2 (2.0%)
+  Score Statistics:
+    Mean: 0.875
+    Median: 1.000
+    Min: 0.200, Max: 1.000
+    Std Dev: 0.236
+
+custom:tool_eval:
+  Pass: 27 (27.3%)
+  Fail: 10 (10.1%)
+  Error: 62 (62.6%)
+  Score Statistics:
+    Mean: 0.730
+    Median: 1.000
+    Min: 0.000, Max: 1.000
+    Std Dev: 0.450
+
+ragas:faithfulness:
+  Pass: 15 (15.2%)
+  Fail: 20 (20.2%)
+  Error: 64 (64.6%)
+  Score Statistics:
+    Mean: 0.613
+    Median: 0.667
+    Min: 0.000, Max: 1.000
+    Std Dev: 0.386
+
+By Conversation:
+---------------
+catalog-api-owner-accounts-team:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+catalog-api-owner-payments-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-api-owner-security-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-api-tag-consent:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+catalog-api-tag-payments:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-component-owner-accounts-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-component-owner-payments-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-component-owner-security-team:
+  Pass: 0 (0.0%)
+  Fail: 3 (100.0%)
+  Error: 0 (0.0%)
+
+catalog-component-tag-consent:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+catalog-component-tag-payments:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-api-openapi:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-component-service:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-component-website:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+catalog-filter-kind-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-kind-component:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-kind-domain:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-kind-group:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-kind-location:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-kind-resource:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-kind-system:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-kind-user:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-owner-accounts-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-owner-compliance-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-owner-event-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-owner-open-banking-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-owner-payments-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-owner-security-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-resource-database:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-tags-ais:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-tags-consent:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+catalog-filter-tags-database:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+catalog-filter-tags-payments:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-filter-tags-pis:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+catalog-filter-tags-security:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+catalog-get-entity-account-access-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-get-entity-balance-check-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-get-entity-beneficiary-management-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-get-entity-consent-management-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-get-entity-payment-initiation-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-get-entity-standing-orders-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-get-entity-transaction-history-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-get-entity-webhook-notifications-api:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-list-all:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-model-description:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+catalog-resource-owner-accounts-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-resource-owner-payments-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+catalog-resource-tag-database:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+multi-actions-then-tasks:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+multi-apis-then-owner-entities-accounts-team:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+multi-apis-then-owner-entities-payments-team:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+multi-apis-then-owner-entities-security-team:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+multi-components-then-coverage-accounts-team:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+multi-components-then-coverage-payments-team:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+multi-components-then-coverage-security-team:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+multi-entity-then-model:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+multi-get-payment-initiation-api-then-owner-components:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+multi-get-standing-orders-api-then-owner-components:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+multi-tag-then-owner:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+multi-techdocs-then-content:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+multi-templates-then-actions:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+negative-actions-no-dryrun:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+negative-coverage-no-tasks:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+negative-docs-not-execute:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+negative-empty-filter-tag:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+negative-empty-filter-type:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+negative-empty-owner:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+negative-missing-entity-definitely-missing-entity-xyz:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+negative-missing-entity-ghost-component-000:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+negative-missing-entity-no-such-api-abc:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+negative-no-execute-template:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+negative-no-register-on-list:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+negative-owner-not-team-rewrite:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+negative-resources-no-scaffolder:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+scaffolder-list-actions:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+scaffolder-list-tasks:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+scaffolder-list-tasks-limit-10:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+scaffolder-list-tasks-limit-20:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-list-tasks-limit-5:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-list-templates:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+scaffolder-template-docs-template:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+scaffolder-template-example-nodejs-template:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+scaffolder-template-mcp-eval-dry-run:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+scaffolder-template-react-ssr-template:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+scaffolder-write-validate-1:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+scaffolder-write-validate-2:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+scaffolder-write-validate-3:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+scaffolder-write-validate-4:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+scaffolder-write-validate-5:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+techdocs-coverage:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+techdocs-coverage-owner-accounts-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+techdocs-coverage-owner-compliance-team:
+  Pass: 3 (100.0%)
+  Fail: 0 (0.0%)
+  Error: 0 (0.0%)
+
+techdocs-coverage-owner-payments-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+techdocs-coverage-owner-security-team:
+  Pass: 1 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 2 (66.7%)
+
+techdocs-fetch-api:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+techdocs-fetch-component:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+techdocs-fetch-resource:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+techdocs-fetch-system:
+  Pass: 2 (66.7%)
+  Fail: 1 (33.3%)
+  Error: 0 (0.0%)
+
+techdocs-list:
+  Pass: 0 (0.0%)
+  Fail: 1 (33.3%)
+  Error: 2 (66.7%)
+
+techdocs-retrieve-home:
+  Pass: 1 (33.3%)
+  Fail: 2 (66.7%)
+  Error: 0 (0.0%)
+
+By Tag:
+------
+catalog:
+  Pass: 56 (39.7%)
+  Fail: 11 (7.8%)
+  Error: 74 (52.5%)
+  Score Statistics:
+    Mean: 0.893
+    Median: 1.000
+    Min: 0.000, Max: 1.000
+    Std Dev: 0.249
+
+multi_step:
+  Pass: 11 (28.2%)
+  Fail: 12 (30.8%)
+  Error: 16 (41.0%)
+  Score Statistics:
+    Mean: 0.622
+    Median: 0.700
+    Min: 0.000, Max: 1.000
+    Std Dev: 0.388
+
+negative:
+  Pass: 12 (30.8%)
+  Fail: 9 (23.1%)
+  Error: 18 (46.2%)
+  Score Statistics:
+    Mean: 0.683
+    Median: 1.000
+    Min: 0.000, Max: 1.000
+    Std Dev: 0.392
+
+scaffolder-read:
+  Pass: 20 (66.7%)
+  Fail: 8 (26.7%)
+  Error: 2 (6.7%)
+  Score Statistics:
+    Mean: 0.808
+    Median: 1.000
+    Min: 0.000, Max: 1.000
+    Std Dev: 0.350
+
+scaffolder-write:
+  Pass: 5 (33.3%)
+  Fail: 0 (0.0%)
+  Error: 10 (66.7%)
+  Score Statistics:
+    Mean: 1.000
+    Median: 1.000
+    Min: 1.000, Max: 1.000
+    Std Dev: 0.000
+
+techdocs:
+  Pass: 15 (45.5%)
+  Fail: 10 (30.3%)
+  Error: 8 (24.2%)
+  Score Statistics:
+    Mean: 0.690
+    Median: 0.875
+    Min: 0.000, Max: 1.000
+    Std Dev: 0.396
+
+Configuration Parameters:
+-------------------------
+
+Llm:
+  Provider: openai
+  Model: gpt-4o-mini
+  Ssl Verify: True
+  Ssl Cert File: None
+  Temperature: 0.0
+  Max Tokens: 512
+  Timeout: 300
+  Num Retries: 3
+  Cache Enabled: True
+  Parameters: {'temperature': 0.0, 'max_completion_tokens': 512}
+
+Embedding:
+  Provider: openai
+  Model: text-embedding-3-small
+  Provider Kwargs: None
+  Cache Enabled: False
+
+Api:
+  Api Base: http://localhost:8080
+  Version: v1
+  Endpoint Type: streaming
+  Timeout: 300
+  Provider: None
+  Model: None
+  No Tools: None
+  System Prompt: None
+  Extra Request Params: None
+  Cache Enabled: True
+  Num Retries: 3
+  Enabled: True
+  Mcp Headers: None
+
